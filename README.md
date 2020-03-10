@@ -1,4 +1,4 @@
-# fullstack-social-media
+# Social Media Check List
 
 - [ ] Sign in, Sign up
 - [ ] Chat room
