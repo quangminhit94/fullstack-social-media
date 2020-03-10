@@ -1,5 +1,5 @@
-* [ ] Backend modules
-  * [ ] Knex setup
+* [x] Backend modules
+  * [x] Knex setup
   * [ ] Express setup
 * [ ] Frontend modules
   * [ ] Post
