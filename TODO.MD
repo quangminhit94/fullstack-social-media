@@ -1,6 +1,6 @@
 * [x] Backend modules
   * [x] Knex setup
-  * [ ] Express setup
+  * [x] Express setup
 * [ ] Frontend modules
   * [ ] Post
   * [ ] Profile
