@@ -17,6 +17,7 @@ import RenderListItem from './functional/RenderListItem';
 import SignUp from './functional/Signup';
 
 import Posts from './Blog/Posts';
+import PostsHooks from './Blog/PostsHooks';
 import AddPost from './Blog/AddPost';
 import ShowPost from './Blog/ShowPost';
 import EditPost from './Blog/EditPost';
@@ -90,6 +91,7 @@ class Routes extends Component {
               <PrivateRoute path="/reply_to_message" auth={auth} component={ReplytoMessage} />
 
               <Route path='/posts' component={Posts} />
+              <Route path='/posts_hooks' component={PostsHooks} />
               <Route path='/post/:pid' component={ShowPost} />
               <Route path='/edit_post/:pid' component={EditPost} />
               <Route path='/add_post' component={AddPost} />
