@@ -7,11 +7,11 @@ router.get('/', function (req, res, next) {
   res.render('index', { title: 'Posts' });
 });
 
-router.get('/all', function (req, res, next) {
+router.get('/get/all_posts', function (req, res, next) {
   Posts.getAll().then(posts => res.json(posts))
 });
 
-router.get('/post_to_db', function (req, res, next) {
+router.post('/post_to_db', function (req, res, next) {
   const body_vector = String(req.body.body)
   const title_vector = String(req.body.title)
   const user_vector = String(req.body.username)
@@ -26,8 +26,8 @@ router.get('/post_to_db', function (req, res, next) {
     author: req.body.username,
     date_created: new Date()
   }
-  Posts.create(post).then(ids => {
-    res.json(ids[0])
+  Posts.create(post).then(id => {
+    res.json({ pid: id })
   })
 });
 

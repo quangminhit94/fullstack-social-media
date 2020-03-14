@@ -6,6 +6,7 @@ exports.up = function (knex, Promise) {
     table.text('body');
     table.integer('user_id').references('users.uid').unsigned().onDelete('cascade');
     table.string('author').references('users.username');
+    table.specificType('search_vector', 'TSVECTOR');
     table.datetime('date_created');
     table.specificType('like_user_id', 'integer ARRAY');
     table.integer('likes').defaultTo(0);

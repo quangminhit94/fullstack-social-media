@@ -1,7 +1,8 @@
 * [ ] Blog system with jwt
   * [ ] Copy and refactor frontend system of fullstack blog
     * [x] React setup project
-    * [ ] Move module post React
+    * [ ] Move module post React use redux
+    * [ ] Convert post module to hook concept using hook cheat sheet
     * [ ] Move module login and register React
     * [ ] Write authentication on React side with jwt
     * [ ] Move module profile
@@ -9,6 +10,6 @@
   * [ ] Copy and refactor backend system of fullstack knex with jwt
     * [x] Express setup
     * [x] Rewrite database
-    * [ ] Move module post React
+    * [x] Move module post React
     * [ ] Write authentication on node js side with jwt
     * [ ] Connect database and check all function again
