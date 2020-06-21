@@ -30,6 +30,7 @@ import ReplytoMessage from './Profile/ReplyToMessage';
 import * as ACTIONS from './store/actions/actions';
 
 import HooksContainer from './hooks/HooksContainer'
+import HooksForm from './hooks/HooksForm'
 
 import Auth from './utils/Auth';
 import AuthCheck from './utils/AuthCheck';
@@ -88,6 +89,7 @@ class Routes extends Component {
               {/* <Route path='/render_list' component={RenderList} /> */}
 
               <Route path='/hooks' component={HooksContainer} />
+              <Route path='/hooks_form' component={HooksForm} />
 
               <Route path="/user/:name" component={ShowUser} />
               <PrivateRoute path="/send_message" auth={auth} component={SendMessage} />

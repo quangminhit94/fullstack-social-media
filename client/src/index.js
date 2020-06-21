@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App'
+import AppHooks from './AppHooks'
 
 import { Provider } from 'react-redux'
 import rootReducer from './store/reducers'
@@ -36,6 +37,6 @@ const store = createStore(rootReducer, persistedState, composeWithDevTools(
 store.subscribe(() => saveToLocalStorage(store.getState()))
 
 ReactDOM.render(<Provider store={store}>
-  <App />
+  <AppHooks />
 </Provider>, document.getElementById('root'));
 

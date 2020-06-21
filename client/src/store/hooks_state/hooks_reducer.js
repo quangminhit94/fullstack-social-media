@@ -2,6 +2,7 @@ import * as ACTION_TYPES from '../actions/action_types'
 
 export const initialState = {
   is_authenticated: false,
+  state_prop1: false,
   profile: null,
   db_profile: null
 }
@@ -13,12 +14,14 @@ export const HooksReducer = (state = initialState, { type, payload }) => {
     case ACTION_TYPES.LOGIN_SUCCESS:
       return {
         ...state,
-        is_authenticated: true
+        is_authenticated: true,
+        state_prop1: true
       }
     case ACTION_TYPES.LOGIN_FAILURE:
       return {
         ...state,
-        is_authenticated: false
+        is_authenticated: false,
+        state_prop1: false
       }
     case ACTION_TYPES.ADD_PROFILE:
       return {

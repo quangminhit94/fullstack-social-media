@@ -147,3 +147,17 @@ export const removeUserMessages = () => {
 		type: ACTION_TYPES.REMOVE_USER_MESSAGES
 	}
 }
+
+export const userInputChange = (text) => {
+	return {
+		type: ACTION_TYPES.USER_INPUT_CHANGE,
+		payload: text
+	}
+}
+
+export const userInputSubmit = (text) => {
+	return {
+		type: ACTION_TYPES.USER_INPUT_SUBMIT,
+		payload: text
+	}
+}
