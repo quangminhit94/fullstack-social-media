@@ -21,8 +21,11 @@ class Header extends Component {
         <Link to='/form1' style={{ padding: '5px' }}>
           Form 1
           </Link>
-        <Link to='/posts_hooks' style={{ padding: '5px' }}>
+        <Link to='/hooks' style={{ padding: '5px' }}>
           Hooks
+          </Link>
+        <Link to='/posts_hooks' style={{ padding: '5px' }}>
+          Post Hooks
           </Link>
         <Link to='/posts' style={{ padding: '5px' }}>
           Forum

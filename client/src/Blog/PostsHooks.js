@@ -12,7 +12,7 @@ import Pagination from "react-js-pagination";
 
 export default function PostsHooks() {
   const [posts, setPosts] = useState([]);
-  const [state, dispatch] = useReducer(reducer, initialState);
+  // const [state, dispatch] = useReducer(reducer, initialState);
   const [opacity, setOpacity] = useState(0);
   const [posts_motion, setPosts_motion] = useState([]);
   const [num_posts, setNum_posts] = useState(0);

@@ -29,6 +29,8 @@ import ReplytoMessage from './Profile/ReplyToMessage';
 
 import * as ACTIONS from './store/actions/actions';
 
+import HooksContainer from './hooks/HooksContainer'
+
 import Auth from './utils/Auth';
 import AuthCheck from './utils/AuthCheck';
 import history from './utils/history';
@@ -83,7 +85,9 @@ class Routes extends Component {
               <Route exact path='/container1' render={() => <Container1 auth={auth} />} />
               <Route path='/auth_check' render={() => <AuthCheck auth={auth} />} />
               <Route path='/redirect' component={UnAuthRedirect} />
-              {/* <Route path='/renderlist' component={RenderList} /> */}
+              {/* <Route path='/render_list' component={RenderList} /> */}
+
+              <Route path='/hooks' component={HooksContainer} />
 
               <Route path="/user/:name" component={ShowUser} />
               <PrivateRoute path="/send_message" auth={auth} component={SendMessage} />
