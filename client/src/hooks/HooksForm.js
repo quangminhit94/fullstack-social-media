@@ -1,13 +1,16 @@
-import React, { useState, useReducer } from 'react'
+import React, { useState, useReducer, useContext } from 'react'
 
 import * as Reducer from '../store/hooks_state/user_input_hooks_reducer'
 import * as ACTIONS from '../store/actions/actions'
+import Context from '../utils/context'
 
 const HooksForm = () => {
   const [valueChange, setValueChange] = useState('')
   const [valueSubmit, setValueSubmit] = useState('')
 
   const [userState, userDispatch] = useReducer(Reducer.UserHooksReducer, Reducer.initialState)
+
+  const context = useContext(Context)
 
   const handleUseStateChange = (event) => {
     setValueChange(event.target.value)
@@ -83,6 +86,35 @@ const HooksForm = () => {
             </td>
             <td>{userState.user_text_change ? userState.user_text_change : 'no change value'}</td>
             <td>{userState.user_text_submit ? userState.user_text_submit : 'no submit value'}</td>
+          </tr>
+        </tbody>
+      </table>
+      <br/>
+
+      <table 
+        border="1" 
+        style={{
+          borderCollapse: "collapse"
+        }}>
+        <caption><h3>React useContext:</h3></caption>
+        <thead>
+          <tr>
+            <th>Demo React useContext:</th>
+            <th>Change Result:</th>
+            <th>Submit Result:</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td> 
+              <form onSubmit={context.useHandleContextSubmit}>
+                <label htmlFor="useContext">React useContext:</label><br/>
+                <input type="text" name="useContext" id="useContext" onChange={context.useHandleContextChange} /><br/>
+                <button type="submit">Submit</button>
+              </form>
+            </td>
+            <td>{context.userTextContextChange ? context.userTextContextChange : 'no change value'}</td>
+            <td>{context.userTextContextSubmit ? context.userTextContextSubmit : 'no submit value'}</td>
           </tr>
         </tbody>
       </table>
