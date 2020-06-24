@@ -1,14 +1,14 @@
 import * as ACTION_TYPES from '../actions/action_types'
 
 export const initialState = {
-  posts: [],
+  posts: null,
   comments: [],
   user_posts: [],
   search_posts: []
 }
 
 
-const PostsReducer = (state = initialState, { type, payload }) => {
+export const PostsReducer = (state = initialState, { type, payload }) => {
   switch (type) {
 
     case ACTION_TYPES.FETCH_DB_POSTS:
@@ -55,5 +55,3 @@ const PostsReducer = (state = initialState, { type, payload }) => {
       return state
   }
 }
-
-export default PostsReducer

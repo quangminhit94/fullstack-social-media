@@ -7,7 +7,7 @@ export const initialState = {
 }
 
 
-const AuthReducer = (state = initialState, { type, payload }) => {
+export const AuthReducer = (state = initialState, { type, payload }) => {
   switch (type) {
 
     case ACTION_TYPES.LOGIN_SUCCESS:
@@ -45,4 +45,3 @@ const AuthReducer = (state = initialState, { type, payload }) => {
   }
 }
 
-export default AuthReducer

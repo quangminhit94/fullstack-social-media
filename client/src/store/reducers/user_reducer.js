@@ -7,7 +7,7 @@ const initialState = {
   user_messages: []
 }
 
-const userReducer = (state = initialState, { type, payload }) => {
+export const UserReducer = (state = initialState, { type, payload }) => {
   switch (type) {
 
     case ACTION_TYPES.USER_INPUT:
@@ -49,5 +49,3 @@ const userReducer = (state = initialState, { type, payload }) => {
       return state
   }
 }
-
-export default userReducer
