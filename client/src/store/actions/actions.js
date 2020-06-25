@@ -19,6 +19,13 @@ export const userInput = (payload) => {
 	}
 }
 
+export const userLoginSubmit = (payload) => {
+	return {
+		type: ACTION_TYPES.USER_LOGIN_SUBMIT,
+		payload
+	}
+}
+
 export const loginSuccess = () => {
 	return {
 		type: ACTION_TYPES.LOGIN_SUCCESS

@@ -31,6 +31,7 @@ import * as ACTIONS from './store/actions/actions';
 
 import HooksContainer from './hooks/HooksContainer'
 import HooksForm from './hooks/HooksForm'
+import Login from './Users/Login'
 
 import Auth from './utils/Auth';
 import AuthCheck from './utils/AuthCheck';
@@ -101,6 +102,7 @@ class Routes extends Component {
               <Route path='/post/:pid' component={ShowPost} />
               <Route path='/edit_post/:pid' component={EditPost} />
               <Route path='/add_post' component={AddPost} />
+              <Route path='/login' component={Login} />
               <Route path="/signup" render={(props) => <SignUp auth={auth} {...props} />} />
 
               <Route path='/callback' render={(props) => { handleAuthentication(props); return <Callback /> }} />

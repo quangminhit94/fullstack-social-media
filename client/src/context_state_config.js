@@ -10,6 +10,7 @@ import * as PostsReducer from './store/reducers/posts_reducer';
 import Routes from './Routes';
 
 import Auth from './utils/Auth';
+import Axios from 'axios';
 
 const auth = new Auth()
 
@@ -21,7 +22,24 @@ const ContextState = (props) => {
     const [stateAuthReducer, dispatchAuthReducer] = useReducer(AuthReducer.AuthReducer,
                                                                AuthReducer.initialState)
 
-
+    const handleLoginForm = (event) => {
+      event.preventDefault();
+      event.persist();
+      const user = {
+        email: event.target.email.value,
+        password: event.target.password.value
+      }
+      const config = {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }
+      Axios.post('/auth/login', user)
+      .then(res => console.log(res))
+      .catch(err => console.log(err))
+      dispatchAuthReducer(ACTIONS.userLoginSubmit(user))
+    }
+    
     const handleLogin = () => {
       dispatchAuthReducer(ACTIONS.loginSuccess())
     }
@@ -109,6 +127,10 @@ const ContextState = (props) => {
             handleUserRemoveProfile: () => handleRemoveProfile(),
             handleUserLogin: () => handleLogin(),
             handleUserLogout: () => handleLogout(),
+
+            // user login
+            userState: stateAuthReducer.user,
+            loginSubmit: (event) => handleLoginForm(event),
 
             //Form Reducer
             useContextChangeState: stateFormReducer.user_textChange,

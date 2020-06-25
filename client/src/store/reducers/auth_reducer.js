@@ -3,13 +3,19 @@ import * as ACTION_TYPES from '../actions/action_types'
 export const initialState = {
   is_authenticated: false,
   profile: null,
-  db_profile: null
+  db_profile: null,
+  user: {}
 }
 
 
 export const AuthReducer = (state = initialState, { type, payload }) => {
   switch (type) {
 
+    case ACTION_TYPES.USER_LOGIN_SUBMIT:
+      return {
+        ...state,
+        user: payload
+      }
     case ACTION_TYPES.LOGIN_SUCCESS:
       return {
         ...state,

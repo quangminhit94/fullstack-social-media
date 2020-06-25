@@ -107,14 +107,14 @@ const HooksForm = () => {
         <tbody>
           <tr>
             <td> 
-              <form onSubmit={context.useHandleContextSubmit}>
+              <form onSubmit={context.useContextSubmit}>
                 <label htmlFor="useContext">React useContext:</label><br/>
-                <input type="text" name="useContext" id="useContext" onChange={context.useHandleContextChange} /><br/>
+                <input type="text" name="useContext" id="useContext" onChange={context.useContextChange} /><br/>
                 <button type="submit">Submit</button>
               </form>
             </td>
-            <td>{context.userTextContextChange ? context.userTextContextChange : 'no change value'}</td>
-            <td>{context.userTextContextSubmit ? context.userTextContextSubmit : 'no submit value'}</td>
+            <td>{context.useContextChangeState ? context.useContextChangeState : 'no change value'}</td>
+            <td>{context.useContextSubmitState ? context.useContextSubmitState : 'no submit value'}</td>
           </tr>
         </tbody>
       </table>

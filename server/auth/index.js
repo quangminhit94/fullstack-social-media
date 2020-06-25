@@ -37,8 +37,9 @@ router.post('/sign_up', (req, res, next) => {
               // insert pws to db
               const user = {
                 email: req.body.email,
+                username: req.body.email.substring(0, req.body.email.indexOf('@')),
                 password: hash,
-                created_at: new Date()
+                date_created: new Date()
               }
               User.create(user).then(id => {
 
@@ -72,7 +73,7 @@ router.post('/login', (req, res, next) => {
             if (result) {
               // set-cookie header
               const isSecure = req.app.get('env') !== 'development';
-              res.cookie('user_id', user.id, {
+              res.cookie('user_id', user.uid, {
                 httpOnly: true,
                 signed: true,
                 secure: isSecure, // when production
