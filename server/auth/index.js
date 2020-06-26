@@ -79,7 +79,7 @@ router.post('/login', (req, res, next) => {
                 secure: isSecure, // when production
               })
               res.json({
-                result,
+                user_id: user.uid,
                 message: 'Logging in...'
               })
             }

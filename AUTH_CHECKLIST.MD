@@ -21,7 +21,7 @@ View a Video Walkthrough of this checklist [here](https://www.youtube.com/watch?
 		* [x] compare password with hashed password in db
 		* [x] Set a cookie with user_id after creating user
 			* [x] Best Practices
-			* [ ] Cross origin cookie!
+			* [x] Cross origin cookie!
 * [ ] Create login form; show errors; redirect;
  	* [ ] validate required fields
 * [ ] Create sign up form; show errors; redirect;

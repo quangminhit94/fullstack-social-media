@@ -112,44 +112,44 @@ const ContextState = (props) => {
 
     return(
       <div>
-      <Context.Provider
-          value={{
+        <Context.Provider
+            value={{
 
-            //Auth Reducer
-            //keep for global state
-            authState: stateAuthReducer.is_authenticated,
-            dbProfileState: stateAuthReducer.db_profile,
-            profileState:  stateAuthReducer.profile,
+              //Auth Reducer
+              //keep for global state
+              authState: stateAuthReducer.is_authenticated,
+              dbProfileState: stateAuthReducer.db_profile,
+              profileState:  stateAuthReducer.profile,
 
-            handleAddDBProfile: (profile) => handleDBProfile(profile),
-            handleRemoveDBProfile: () => handleRemoveDBProfile(),
-            handleUserAddProfile: (profile) => handleAddProfile(profile),
-            handleUserRemoveProfile: () => handleRemoveProfile(),
-            handleUserLogin: () => handleLogin(),
-            handleUserLogout: () => handleLogout(),
+              handleAddDBProfile: (profile) => handleDBProfile(profile),
+              handleRemoveDBProfile: () => handleRemoveDBProfile(),
+              handleUserAddProfile: (profile) => handleAddProfile(profile),
+              handleUserRemoveProfile: () => handleRemoveProfile(),
+              handleUserLogin: () => handleLogin(),
+              handleUserLogout: () => handleLogout(),
 
-            // user login
-            userState: stateAuthReducer.user,
-            loginSubmit: (event) => handleLoginForm(event),
+              // user login
+              userState: stateAuthReducer.user,
+              loginSubmit: (event) => handleLoginForm(event),
 
-            //Form Reducer
-            useContextChangeState: stateFormReducer.user_textChange,
-            useContextSubmitState: stateFormReducer.user_textSubmit,
-            useContextSubmit: (event) => handleFormSubmit(event),
-            useContextChange: (event) => handleFormChange(event),
+              //Form Reducer
+              useContextChangeState: stateFormReducer.user_textChange,
+              useContextSubmitState: stateFormReducer.user_textSubmit,
+              useContextSubmit: (event) => handleFormSubmit(event),
+              useContextChange: (event) => handleFormChange(event),
 
-            //Posts State
-            postsState: statePostsReducer.posts,
-            handleAddPosts: (posts) => handleSetPosts(posts),
-            handleRemovePosts: () => handleRemovePosts(),
+              //Posts State
+              postsState: statePostsReducer.posts,
+              handleAddPosts: (posts) => handleSetPosts(posts),
+              handleRemovePosts: () => handleRemovePosts(),
 
-            //Handle auth
-            //keep for global state
-            handleAuth: (props) => handleAuthentication(props),
-            authObj: auth
-          }}>
-          <Routes />
-      </Context.Provider>
+              //Handle auth
+              //keep for global state
+              handleAuth: (props) => handleAuthentication(props),
+              authObj: auth
+            }}>
+            <Routes />
+        </Context.Provider>
       </div>
     )
 }
