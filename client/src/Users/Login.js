@@ -23,6 +23,7 @@ import VisibilityOff from '@material-ui/icons/VisibilityOff';
 
 import Button from '@material-ui/core/Button';
 
+
 const Login = () => {
 
   const useStyles = makeStyles((theme) => ({
@@ -61,6 +62,10 @@ const Login = () => {
   };
 
   const context = useContext(Context)
+
+  const validator = context.simpleValidator
+
+  validator.purgeFields();
   
   return (
     <div>
@@ -75,8 +80,10 @@ const Login = () => {
                 <AccountCircle />
               </InputAdornment>
             }
+            aria-describedby="email-error-text"
             labelWidth={40}
           />
+          <div id="email-error-text">{validator.message('email', context.userState.email, 'required|email')}</div>
         </FormControl>
         
         <FormControl className={clsx(classes.margin, classes.textField)} variant="outlined">
@@ -103,15 +110,18 @@ const Login = () => {
                 </IconButton>
               </InputAdornment>
             }
+            aria-describedby="password-error-text"
             labelWidth={70}
           />
+          <div id="password-error-text">{validator.message('password', context.userState.password, 'required|min:6|max:120')}</div>
         </FormControl>
+
         <FormControl className={clsx(classes.margin)} variant="outlined">
           <Button variant="contained" color="secondary" size="large" type="submit">
             Login
           </Button>
-
         </FormControl>
+
         <br/>
         {context.userState.email ? <p>{context.userState.email}</p> : ""}
         {context.userState.password ? <p>{context.userState.password}</p> : ""}

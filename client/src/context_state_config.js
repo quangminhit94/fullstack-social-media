@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react';
+import React, { useEffect, useReducer, useState, useRef } from 'react';
 import Context from './utils/context';
 import * as ACTIONS from './store/actions/actions';
 
@@ -6,11 +6,12 @@ import * as AuthReducer from './store/reducers/auth_reducer';
 import * as FormReducer from './store/reducers/form_reducer';
 import * as PostsReducer from './store/reducers/posts_reducer';
 
-
 import Routes from './Routes';
 
 import Auth from './utils/Auth';
 import Axios from 'axios';
+
+import SimpleReactValidator from 'simple-react-validator';
 
 const auth = new Auth()
 
@@ -19,25 +20,43 @@ const ContextState = (props) => {
     /*
       Auth Reducer
     */
-    const [stateAuthReducer, dispatchAuthReducer] = useReducer(AuthReducer.AuthReducer,
-                                                               AuthReducer.initialState)
+    const [stateAuthReducer, dispatchAuthReducer] = useReducer(AuthReducer.AuthReducer, AuthReducer.initialState)
 
+    const [, forceUpdate] = useState();
+    const simpleValidator = useRef(new SimpleReactValidator())
+    
+    useEffect(() => {
+      // if all fields valid, send request to server
+      sendLoginRequest(stateAuthReducer.user);
+
+    }, [stateAuthReducer.user])
+
+    const sendLoginRequest = (user) => {
+      if (simpleValidator.current.allValid()) {
+        // alert('You submitted the form and stuff!');
+        Axios.post('/auth/login', user)
+          .then(res => console.log(res))
+          .catch(err => console.log(err))
+      } else {
+        simpleValidator.current.showMessages();
+        // rerender to show messages for the first time
+        // you can use the autoForceUpdate option to do this automatically`
+        forceUpdate(1);
+      }
+    } 
+    
     const handleLoginForm = (event) => {
       event.preventDefault();
       event.persist();
+
+      // dispatch user to state
       const user = {
         email: event.target.email.value,
         password: event.target.password.value
       }
-      const config = {
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      }
-      Axios.post('/auth/login', user)
-      .then(res => console.log(res))
-      .catch(err => console.log(err))
+      // set user state 
       dispatchAuthReducer(ACTIONS.userLoginSubmit(user))
+      // after that we use useEffect to check user state change then send request to server 
     }
     
     const handleLogin = () => {
@@ -131,6 +150,7 @@ const ContextState = (props) => {
               // user login
               userState: stateAuthReducer.user,
               loginSubmit: (event) => handleLoginForm(event),
+              simpleValidator: simpleValidator.current,
 
               //Form Reducer
               useContextChangeState: stateFormReducer.user_textChange,
