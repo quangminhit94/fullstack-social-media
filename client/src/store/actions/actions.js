@@ -168,3 +168,10 @@ export const userInputSubmit = (text) => {
 		payload: text
 	}
 }
+
+export const formSubmitStatus = (text) => {
+	return {
+		type: ACTION_TYPES.FORM_SUBMIT_STATUS,
+		payload: text
+	}
+}

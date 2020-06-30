@@ -102,7 +102,7 @@ class Routes extends Component {
               <Route path='/post/:pid' component={ShowPost} />
               <Route path='/edit_post/:pid' component={EditPost} />
               <Route path='/add_post' component={AddPost} />
-              <Route path='/login' component={Login} />
+              <Route path='/login' render={(props) => <Login image='/image_demo.png' {...props} />} />
               <Route path="/signup" render={(props) => <SignUp auth={auth} {...props} />} />
 
               <Route path='/callback' render={(props) => { handleAuthentication(props); return <Callback /> }} />

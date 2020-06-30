@@ -22,8 +22,8 @@ View a Video Walkthrough of this checklist [here](https://www.youtube.com/watch?
 		* [x] Set a cookie with user_id after creating user
 			* [x] Best Practices
 			* [x] Cross origin cookie!
-* [ ] Create login form; show errors; redirect;
- 	* [ ] validate required fields
+* [x] Create login form; show errors; redirect;
+ 	* [x] validate required fields
 * [ ] Create sign up form; show errors; redirect;
 	* [ ] Validate required fields
 

@@ -1,4 +1,6 @@
 import React, {useContext} from 'react'
+import PropTypes from 'prop-types'
+
 import * as Reducer from '../store/hooks_state/user_input_hooks_reducer'
 import * as ACTIONS from '../store/actions/actions'
 import Context from '../utils/context'
@@ -24,7 +26,7 @@ import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import Button from '@material-ui/core/Button';
 
 
-const Login = () => {
+const Login = ({image, forgotText}) => {
 
   const useStyles = makeStyles((theme) => ({
     root: {
@@ -49,7 +51,7 @@ const Login = () => {
     showPassword: false,
   });
 
-  const handleChange = (prop) => (event) => {
+  const handleChange = (prop, event) => {
     setValues({ ...values, [prop]: event.target.value });
   };
 
@@ -82,6 +84,8 @@ const Login = () => {
             }
             aria-describedby="email-error-text"
             labelWidth={40}
+            onChange={context.handleBlurEmailField}
+            onBlur={() => validator.showMessageFor('email')}
           />
           <div id="email-error-text">{validator.message('email', context.userState.email, 'required|email')}</div>
         </FormControl>
@@ -92,7 +96,7 @@ const Login = () => {
             id="password"
             type={values.showPassword ? 'text' : 'password'}
             value={values.password}
-            onChange={handleChange('password')}
+            
             startAdornment={
               <InputAdornment position="start">
                 <Lock />
@@ -112,6 +116,12 @@ const Login = () => {
             }
             aria-describedby="password-error-text"
             labelWidth={70}
+            onChange={(event) => {
+                handleChange('password', event)
+                context.handleBlurPasswordField(event)
+              }
+            }
+            onBlur={() => validator.showMessageFor('password')}
           />
           <div id="password-error-text">{validator.message('password', context.userState.password, 'required|min:6|max:120')}</div>
         </FormControl>
@@ -121,6 +131,7 @@ const Login = () => {
             Login
           </Button>
         </FormControl>
+        <div id="status-error-text">{ context.formSubmitStatus ? context.formSubmitStatus : null}</div>
 
         <br/>
         {context.userState.email ? <p>{context.userState.email}</p> : ""}
@@ -129,5 +140,16 @@ const Login = () => {
     </div>
   )
 }
+
+Login.defaultProps = {
+  image: '/image.jpg',
+  forgotText: 'Forgot your password?',
+}
+
+Login.propTypes = {
+  image: PropTypes.string.isRequired,
+  forgotText: PropTypes.string,
+}
+
 
 export default Login

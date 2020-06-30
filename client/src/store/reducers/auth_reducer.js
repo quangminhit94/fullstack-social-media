@@ -4,13 +4,18 @@ export const initialState = {
   is_authenticated: false,
   profile: null,
   db_profile: null,
-  user: {}
+  user: {},
+  form_submit_status: ''
 }
 
 
 export const AuthReducer = (state = initialState, { type, payload }) => {
   switch (type) {
-
+    case ACTION_TYPES.FORM_SUBMIT_STATUS:
+      return {
+        ...state,
+        form_submit_status: payload
+      }
     case ACTION_TYPES.USER_LOGIN_SUBMIT:
       return {
         ...state,

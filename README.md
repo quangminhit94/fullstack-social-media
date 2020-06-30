@@ -19,3 +19,7 @@
 # Hooks Front End
 
 [Hooks course](https://www.youtube.com/watch?v=l8ODM-KoDpA&list=PLMc67XEAt-ywplHhDpoj5vakceZNr8S0B&index=1)
+
+# Authentication Course
+
+[Authentication Course](https://www.youtube.com/watch?v=H7qkTzxk_0I&list=PLM_i0obccy3t3qe805JmyAz5Wnjy2OclO&index=1)
