@@ -24,8 +24,8 @@ View a Video Walkthrough of this checklist [here](https://www.youtube.com/watch?
 			* [x] Cross origin cookie!
 * [x] Create login form; show errors; redirect;
  	* [x] validate required fields
-* [ ] Create sign up form; show errors; redirect;
-	* [ ] Validate required fields
+* [x] Create sign up form; show errors; redirect;
+	* [x] Validate required fields
 
 ### Authorization:
 * [ ] Visitors can only see the homepage

@@ -14,7 +14,8 @@ import PrivateComponent from './functional/PrivateComponent';
 import UnAuthRedirect from './functional/UnAuthRedirect';
 // import Home from './functional/home';
 import RenderListItem from './functional/RenderListItem';
-import SignUp from './functional/Signup';
+import SignUpPost from './functional/Signup';
+import SignUp from './Users/SignUp';
 
 import Posts from './Blog/Posts';
 import PostsHooks from './Blog/PostsHooks';
@@ -103,7 +104,8 @@ class Routes extends Component {
               <Route path='/edit_post/:pid' component={EditPost} />
               <Route path='/add_post' component={AddPost} />
               <Route path='/login' render={(props) => <Login image='/image_demo.png' {...props} />} />
-              <Route path="/signup" render={(props) => <SignUp auth={auth} {...props} />} />
+              <Route path="/signup_post" render={(props) => <SignUpPost auth={auth} {...props} />} />
+              <Route path="/signup" render={(props) => <SignUp image='/image_demo.png' {...props} />} />
 
               <Route path='/callback' render={(props) => { handleAuthentication(props); return <Callback /> }} />
               {/* <Route path="/component1" render={(props) => <Component1 {...props} /> } /> */}

@@ -53,13 +53,15 @@ router.post('/sign_up', (req, res, next) => {
             })
         }
         else {
-          next(new Error('Email in use'))
+          res.status(409).json('Email in use');
+          // next(new Error('Email in use'))
         }
       })
   }
   else {
     // send an error
-    next(new Error('Invalid User'))
+    res.status(401).json('Invalid User');
+    // next(new Error('Invalid User'))
   }
 })
 
@@ -84,17 +86,20 @@ router.post('/login', (req, res, next) => {
               })
             }
             else {
-              next(new Error('Invalid login'))
+              res.status(401).json('Invalid login');
+              // next(new Error('Invalid login'))
             }
           })
       }
       else {
-        next(new Error('Invalid login'))
+        res.status(401).json('Invalid login');
+        // next(new Error('Invalid login'))
       }
     })
   }
   else {
-    next(new Error('Invalid login'))
+    res.status(401).json('Invalid login');
+    // next(new Error('Invalid login'))
   }
 
 })

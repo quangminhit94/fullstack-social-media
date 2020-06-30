@@ -85,7 +85,7 @@ const Login = ({image, forgotText}) => {
             aria-describedby="email-error-text"
             labelWidth={40}
             onChange={context.handleBlurEmailField}
-            onBlur={() => validator.showMessageFor('email')}
+            onBlur={validator.showMessageFor('email')}
           />
           <div id="email-error-text">{validator.message('email', context.userState.email, 'required|email')}</div>
         </FormControl>
@@ -121,7 +121,7 @@ const Login = ({image, forgotText}) => {
                 context.handleBlurPasswordField(event)
               }
             }
-            onBlur={() => validator.showMessageFor('password')}
+            onBlur={validator.showMessageFor('password')}
           />
           <div id="password-error-text">{validator.message('password', context.userState.password, 'required|min:6|max:120')}</div>
         </FormControl>

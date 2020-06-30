@@ -56,7 +56,7 @@ const ContextState = (props) => {
         password: event.target.password.value
       }
       // set user state 
-      dispatchAuthReducer(ACTIONS.userLoginSubmit(user))
+      dispatchAuthReducer(ACTIONS.userLoginSubmit({ ...stateAuthReducer.user, ...user}))
       // after that we use useEffect to check user state change then send request to server
 
       sendLoginRequest(stateAuthReducer.user)
@@ -69,10 +69,10 @@ const ContextState = (props) => {
           .then(res => {
             console.log(res)
             // login success -> show user profile here
-            history.replace('/signup/')
+            history.replace('/hooks/')
           })
           .catch(err => {
-            dispatchAuthReducer(ACTIONS.formSubmitStatus(`${err}`))
+            dispatchAuthReducer(ACTIONS.formSubmitStatus(`${err.response.data}`))
           })
       } else {
         simpleValidator.current.showMessages();
@@ -80,6 +80,43 @@ const ContextState = (props) => {
         // you can use the autoForceUpdate option to do this automatically`
         forceUpdate(1);
       }
+    }
+
+    const handleSignUpForm = (event) => {
+      event.preventDefault();
+      event.persist();
+
+      // dispatch user to state
+      const user = {
+        email: event.target.email.value,
+        password: event.target.password.value
+      }
+      // set user state 
+      dispatchAuthReducer(ACTIONS.userLoginSubmit(user))
+      // after that we use useEffect to check user state change then send request to server
+
+      sendSignUpRequest(stateAuthReducer.user)
+    }
+
+    const sendSignUpRequest = (user) => {
+      if (simpleValidator.current.allValid()) {
+        // alert('You submitted the form and stuff!');
+        Axios.post('/auth/sign_up', user)
+          .then(res => {
+            console.log(res)
+            // login success -> show user profile here
+            history.replace('/hooks/')
+          })
+          .catch(err => {
+            dispatchAuthReducer(ACTIONS.formSubmitStatus(`${err.response.data}`))
+          })
+      } else {
+        simpleValidator.current.showMessages();
+        // rerender to show messages for the first time
+        // you can use the autoForceUpdate option to do this automatically`
+        forceUpdate(1);
+      }
+
     }
     
     const handleLogin = () => {
@@ -177,6 +214,7 @@ const ContextState = (props) => {
               simpleValidator: simpleValidator.current,
               handleBlurEmailField: (event) => handleSetEmail(event),
               handleBlurPasswordField: (event) => handleSetPassword(event),
+              signUpSubmit: (event) => handleSignUpForm(event),
 
               //Form Reducer
               useContextChangeState: stateFormReducer.user_textChange,
