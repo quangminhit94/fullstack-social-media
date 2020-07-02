@@ -1,4 +1,6 @@
 import React, { useEffect, useReducer, useState, useRef } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
 import history from './utils/history'
 import Context from './utils/context';
 import * as ACTIONS from './store/actions/actions';
@@ -22,6 +24,8 @@ const ContextState = (props) => {
       Auth Reducer
     */
     const [stateAuthReducer, dispatchAuthReducer] = useReducer(AuthReducer.AuthReducer, AuthReducer.initialState)
+
+    const dispatchProfile = useDispatch();
 
     const [, forceUpdate] = useState();
     const simpleValidator = useRef(new SimpleReactValidator())
@@ -62,15 +66,24 @@ const ContextState = (props) => {
       sendLoginRequest(stateAuthReducer.user)
     }
 
+    const addUserInfoToPage = (res) => {
+      // login success -> set user profile here
+      const profileData = res.data
+      dispatchProfile(ACTIONS.addProfile({ ...stateAuthReducer.profile, ...profileData}))
+      return profileData
+    }
+
+    const redirectToPage = (profileData) => {
+      // redirect to profile page
+      history.replace(`/profile1/${profileData.user_id}`)
+    }
+
     const sendLoginRequest = (user) => {
       if (simpleValidator.current.allValid()) {
         // alert('You submitted the form and stuff!');
         Axios.post('/auth/login', user)
-          .then(res => {
-            console.log(res)
-            // login success -> show user profile here
-            history.replace('/hooks/')
-          })
+          .then(addUserInfoToPage)
+          .then(redirectToPage)
           .catch(err => {
             dispatchAuthReducer(ACTIONS.formSubmitStatus(`${err.response.data}`))
           })
@@ -102,11 +115,8 @@ const ContextState = (props) => {
       if (simpleValidator.current.allValid()) {
         // alert('You submitted the form and stuff!');
         Axios.post('/auth/sign_up', user)
-          .then(res => {
-            console.log(res)
-            // login success -> show user profile here
-            history.replace('/hooks/')
-          })
+          .then(addUserInfoToPage)
+          .then(redirectToPage)
           .catch(err => {
             dispatchAuthReducer(ACTIONS.formSubmitStatus(`${err.response.data}`))
           })

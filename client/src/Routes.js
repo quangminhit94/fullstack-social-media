@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import Container1 from './containers/Container1'
 import Header from './containers/Header';
 import Profile from './containers/Profile';
+import Profile1 from './containers/Profile1';
 import Form1 from './containers/Form1';
 // import RenderList from './containers/renderlist';
 
@@ -114,6 +115,7 @@ class Routes extends Component {
 
               <PrivateRoute path="/private_route" auth={auth} component={PrivateComponent} />
               <PrivateRoute path="/profile" auth={auth} component={Profile} />
+              <Route path="/profile1/:uid" component={Profile1} />
 
             </Switch>
           </div>

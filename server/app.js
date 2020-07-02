@@ -12,6 +12,8 @@ var usersRouter = require('./routes/users');
 var postsRouter = require('./routes/posts');
 var authRouter = require('./auth');
 
+var authMiddleware = require('./auth/middleware');
+
 var app = express();
 
 // view engine setup
@@ -30,7 +32,7 @@ app.use(cors({
 
 app.use('/auth', authRouter);
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/users', authMiddleware.ensureLoggedIn, usersRouter);
 app.use('/posts', postsRouter);
 
 // catch 404 and forward to error handler
@@ -45,7 +47,7 @@ app.use(function (err, req, res, next) {
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
   // render the error page
-  res.status(err.status || 500);
+  res.status(err.status || res.statusCode || 500);
   res.render('error');
 });
 

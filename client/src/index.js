@@ -30,11 +30,11 @@ function loadFromLocalStorage() {
 
 const persistedState = loadFromLocalStorage()
 
-const store = createStore(rootReducer, persistedState, composeWithDevTools(
+const store = createStore(rootReducer, composeWithDevTools(
   applyMiddleware()
 ));
 
-store.subscribe(() => saveToLocalStorage(store.getState()))
+// store.subscribe(() => saveToLocalStorage(store.getState()))
 
 ReactDOM.render(<Provider store={store}>
   <AppHooks />

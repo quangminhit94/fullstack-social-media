@@ -28,11 +28,11 @@ View a Video Walkthrough of this checklist [here](https://www.youtube.com/watch?
 	* [x] Validate required fields
 
 ### Authorization:
-* [ ] Visitors can only see the homepage
-	* [ ] isLoggedIn middleware
-		* [ ] user_id cookie must be set
-		* [ ] send an unauthorized error message
-	* [ ] redirect to login form
+* [x] Visitors can only see the homepage
+	* [x] isLoggedIn middleware
+		* [x] user_id cookie must be set
+		* [x] send an unauthorized error message
+	* [x] redirect to login form
 * [ ] Logged in users can only see their page
 	* [ ] allowAccess middleware
 		* [ ] id in url must match user_id in cookie
