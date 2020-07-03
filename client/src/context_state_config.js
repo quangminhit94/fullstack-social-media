@@ -69,6 +69,8 @@ const ContextState = (props) => {
     const addUserInfoToPage = (res) => {
       // login success -> set user profile here
       const profileData = res.data
+      localStorage.user_id = profileData.user_id
+      dispatchProfile(ACTIONS.loginSuccess())
       dispatchProfile(ACTIONS.addProfile({ ...stateAuthReducer.profile, ...profileData}))
       return profileData
     }
@@ -76,6 +78,12 @@ const ContextState = (props) => {
     const redirectToPage = (profileData) => {
       // redirect to profile page
       history.replace(`/profile1/${profileData.user_id}`)
+    }
+
+    const redirectIfLoggedIn = () => {
+      if(localStorage.user_id) {
+        history.replace(`/profile1/${localStorage.user_id}`)
+      }
     }
 
     const sendLoginRequest = (user) => {
@@ -127,6 +135,18 @@ const ContextState = (props) => {
         forceUpdate(1);
       }
 
+    }
+
+    const logout = () => {
+      
+      Axios.get('/auth/logout')
+        .then(result => {
+          console.log(result)
+          localStorage.removeItem('user_id')
+          dispatchProfile(ACTIONS.loginFailure())
+          history.replace('/login')
+        })
+        .catch(err => console.error(err))
     }
     
     const handleLogin = () => {
@@ -225,6 +245,8 @@ const ContextState = (props) => {
               handleBlurEmailField: (event) => handleSetEmail(event),
               handleBlurPasswordField: (event) => handleSetPassword(event),
               signUpSubmit: (event) => handleSignUpForm(event),
+              redirectIfLoggedIn:() => redirectIfLoggedIn(),
+              logout:() => logout(),
 
               //Form Reducer
               useContextChangeState: stateFormReducer.user_textChange,

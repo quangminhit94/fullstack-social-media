@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React, {useEffect, useContext} from 'react'
 import PropTypes from 'prop-types'
 
 import * as Reducer from '../store/hooks_state/user_input_hooks_reducer'
@@ -68,6 +68,10 @@ const SignUp = ({image, forgotText}) => {
   const validator = context.simpleValidator
 
   validator.purgeFields();
+
+  useEffect(() => {
+    context.redirectIfLoggedIn()
+  })
   
   return (
     <div>

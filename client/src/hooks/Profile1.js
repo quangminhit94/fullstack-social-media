@@ -5,9 +5,10 @@ import * as ACTIONS from '../store/actions/actions';
 
 const Profile1 = (props) => {
   
-  const { profileState, errorPage } = useSelector(state => ({
+  const { profileState, errorPage, isAuth } = useSelector(state => ({
     profileState: state.auth_reducer.profile,
-    errorPage: state.auth_reducer.form_submit_status
+    errorPage: state.auth_reducer.form_submit_status,
+    isAuth: state.auth_reducer.is_authenticated
   }), shallowEqual);
   const dispatchState = useDispatch();
 
@@ -32,6 +33,8 @@ const Profile1 = (props) => {
   return (
     <div>
       {profileState ? profileState.email : errorPage}
+      <br/>
+      {isAuth ? isAuth : 'no'}
     </div>
   )
 }

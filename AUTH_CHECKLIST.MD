@@ -33,14 +33,14 @@ View a Video Walkthrough of this checklist [here](https://www.youtube.com/watch?
 		* [x] user_id cookie must be set
 		* [x] send an unauthorized error message
 	* [x] redirect to login form
-* [ ] Logged in users can only see their page
-	* [ ] allowAccess middleware
-		* [ ] id in url must match user_id in cookie
- 		* [ ] send an unauthorized error message
-	* [ ] redirect to user page if they visit the homepage
-		* [ ] set user_id in localStorage after login/signup
-* [ ] Add GET /auth/logout to clear user_id cookie
-	* [ ] redirect to login page
+* [x] Logged in users can only see their page
+	* [x] allowAccess middleware
+		* [x] id in url must match user_id in cookie
+ 		* [x] send an unauthorized error message
+	* [x] redirect to user page if they visit the homepage
+		* [x] set user_id in localStorage after login/signup
+* [x] Add GET /auth/logout to clear user_id cookie
+	* [x] redirect to login page
 
 ## Admin Page:
 * [ ] Admin page that lists all users

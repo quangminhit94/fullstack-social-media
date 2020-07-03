@@ -66,7 +66,7 @@ const PrivateRoute = ({ component: Component, auth }) => {
 
 
 
-class Routes extends Component {
+class Routes1 extends Component {
   componentDidMount() {
     if (auth.isAuthenticated()) {
       this.props.login_success()
@@ -140,4 +140,4 @@ function mapDispatchToProps(dispatch) {
 }
 
 
-export default connect(null, mapDispatchToProps)(Routes);
+export default connect(null, mapDispatchToProps)(Routes1);

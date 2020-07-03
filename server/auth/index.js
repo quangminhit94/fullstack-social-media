@@ -104,4 +104,11 @@ router.post('/login', (req, res, next) => {
 
 })
 
+router.get('/logout', (req, res) => {
+  res.clearCookie('user_id')
+  res.json({
+    message: 'lock'
+  })
+})
+
 module.exports = router

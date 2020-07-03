@@ -5,11 +5,12 @@ import { connect } from 'react-redux';
 import Button from '@material-ui/core/Button'
 
 class Header extends Component {
-
   render() {
+    
+    console.log(this.props)
     return (
       <div>
-        <Link to='/' style={{ padding: '5px' }}>
+        <Link to='/home' style={{ padding: '5px' }}>
           Home
           </Link>
         <Link to='/profile' style={{ padding: '5px' }}>
