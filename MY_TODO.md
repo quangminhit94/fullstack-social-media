@@ -3,8 +3,8 @@
     * [x] React setup project
     * [x] Move module post React use redux
     * [x] Convert post module to hook concept using hook cheat sheet
-    * [ ] Move module login and register React
-    * [ ] Write authentication on React side with jwt
+    * [x] Move module login and register React
+    * [x] Write authentication on React side with jwt
     * [ ] Move module profile
     * [ ] Move module list post
   * [ ] Copy and refactor backend system of fullstack knex with jwt

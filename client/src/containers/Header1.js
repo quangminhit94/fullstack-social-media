@@ -31,10 +31,10 @@ const Header1 = () => {
       <Link to='/private_route' style={{ padding: '5px' }}>
         Private Route
         </Link>
-      {!this.props.is_authenticated
+      {/* {!this.props.is_authenticated
         ? <Button color='secondary' variant='outlined' onClick={() => this.props.auth.login()}>Login</Button>
         : <Button color='primary' variant='outlined' onClick={() => this.props.auth.logout()}>Logout</Button>
-      }
+      } */}
     </div>
   )
 }

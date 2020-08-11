@@ -1,6 +1,6 @@
 # Social Media Check List
 
-- [ ] Sign in, Sign up
+- [x] Sign in, Sign up
 - [ ] Chat room
 - [ ] Live streaming
 
@@ -23,3 +23,11 @@
 # Authentication Course
 
 [Authentication Course](https://www.youtube.com/watch?v=H7qkTzxk_0I&list=PLM_i0obccy3t3qe805JmyAz5Wnjy2OclO&index=1)
+
+# Learn strapi and build a Ecomerce website
+
+[Ecomerce website by Reed Barger](https://learning.oreilly.com/videos/build-an-online/9781839218446/9781839218446-video12_2)
+
+# Build React Node js ecomerce website by Basir
+
+[Ecomerce website by Basir](https://www.youtube.com/watch?v=Fy9SdZLBTOo&t=120s)

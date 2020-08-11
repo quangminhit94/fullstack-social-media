@@ -9,7 +9,7 @@ import * as AuthReducer from './store/reducers/auth_reducer';
 import * as FormReducer from './store/reducers/form_reducer';
 import * as PostsReducer from './store/reducers/posts_reducer';
 
-import Routes from './Routes';
+import Routes1 from './Routes1';
 
 import Auth from './utils/Auth';
 import Axios from 'axios';
@@ -264,7 +264,7 @@ const ContextState = (props) => {
               handleAuth: (props) => handleAuthentication(props),
               authObj: auth
             }}>
-            <Routes />
+            <Routes1 />
         </Context.Provider>
       </div>
     )
