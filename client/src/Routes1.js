@@ -117,7 +117,7 @@ class Routes1 extends Component {
               <PrivateRoute path="/private_route" auth={auth} component={PrivateComponent} />
               <PrivateRoute path="/profile" auth={auth} component={Profile} />
               <Route path="/profile1/:uid" component={Profile1} />
-              <Route path="/home" component={Home} />
+              <Route path="/home" render={(props) => <Home textHome='test' {...props}></Home>} />
 
             </Switch>
           </div>
