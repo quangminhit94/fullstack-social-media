@@ -8,6 +8,10 @@ import rootReducer from './store/reducers'
 import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
+import Axios from 'axios';
+
+Axios.defaults.baseURL = 'https://mickey-portfolio.herokuapp.com/';
+
 function saveToLocalStorage(state) {
   try {
     const serializedState = JSON.stringify(state)
