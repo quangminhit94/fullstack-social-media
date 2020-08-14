@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App'
+import AppHooks from './AppHooks'
 
 import { Provider } from 'react-redux'
 import rootReducer from './store/reducers'
@@ -29,13 +30,13 @@ function loadFromLocalStorage() {
 
 const persistedState = loadFromLocalStorage()
 
-const store = createStore(rootReducer, persistedState, composeWithDevTools(
+const store = createStore(rootReducer, composeWithDevTools(
   applyMiddleware()
 ));
 
-store.subscribe(() => saveToLocalStorage(store.getState()))
+// store.subscribe(() => saveToLocalStorage(store.getState()))
 
 ReactDOM.render(<Provider store={store}>
-  <App />
+  <AppHooks />
 </Provider>, document.getElementById('root'));
 

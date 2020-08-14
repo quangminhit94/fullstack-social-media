@@ -5,11 +5,12 @@ import { connect } from 'react-redux';
 import Button from '@material-ui/core/Button'
 
 class Header extends Component {
-
   render() {
+    
+    console.log(this.props)
     return (
       <div>
-        <Link to='/' style={{ padding: '5px' }}>
+        <Link to='/home' style={{ padding: '5px' }}>
           Home
           </Link>
         <Link to='/profile' style={{ padding: '5px' }}>
@@ -21,8 +22,14 @@ class Header extends Component {
         <Link to='/form1' style={{ padding: '5px' }}>
           Form 1
           </Link>
-        <Link to='/posts_hooks' style={{ padding: '5px' }}>
+        <Link to='/hooks' style={{ padding: '5px' }}>
           Hooks
+          </Link>
+          <Link to='/hooks_form' style={{ padding: '5px' }}>
+          Hooks Form
+          </Link>
+        <Link to='/posts_hooks' style={{ padding: '5px' }}>
+          Post Hooks
           </Link>
         <Link to='/posts' style={{ padding: '5px' }}>
           Forum

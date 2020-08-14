@@ -44,8 +44,6 @@ import history from './utils/history';
 import { Router, Route, Switch, Redirect } from 'react-router';
 
 
-
-
 export const auth = new Auth()
 
 const handleAuthentication = (props) => {
@@ -66,7 +64,7 @@ const PrivateRoute = ({ component: Component, auth }) => {
 
 
 
-class Routes extends Component {
+class Routes1 extends Component {
   componentDidMount() {
     if (auth.isAuthenticated()) {
       this.props.login_success()
@@ -119,7 +117,7 @@ class Routes extends Component {
               <PrivateRoute path="/private_route" auth={auth} component={PrivateComponent} />
               <PrivateRoute path="/profile" auth={auth} component={Profile} />
               <Route path="/profile1/:uid" component={Profile1} />
-              <Route path="/home" component={Home} />
+              <Route path="/home" render={(props) => <Home textHome='test' {...props}></Home>} />
 
             </Switch>
           </div>
@@ -140,4 +138,4 @@ function mapDispatchToProps(dispatch) {
 }
 
 
-export default connect(null, mapDispatchToProps)(Routes);
+export default connect(null, mapDispatchToProps)(Routes1);

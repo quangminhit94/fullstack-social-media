@@ -1,6 +1,6 @@
 # Social Media Check List
 
-- [ ] Sign in, Sign up
+- [x] Sign in, Sign up
 - [ ] Chat room
 - [ ] Live streaming
 
@@ -15,3 +15,19 @@
 [Auth Standard](https://gist.github.com/w3cj/bd3a541e1f09ddbb039079be575cf42e)
 
 [Auth checklist](https://gist.github.com/w3cj/4eb54dbf9f1c5ca4292e6299735144c5)
+
+# Hooks Front End
+
+[Hooks course](https://www.youtube.com/watch?v=l8ODM-KoDpA&list=PLMc67XEAt-ywplHhDpoj5vakceZNr8S0B&index=1)
+
+# Authentication Course
+
+[Authentication Course](https://www.youtube.com/watch?v=H7qkTzxk_0I&list=PLM_i0obccy3t3qe805JmyAz5Wnjy2OclO&index=1)
+
+# Learn strapi and build a Ecomerce website
+
+[Ecomerce website by Reed Barger](https://learning.oreilly.com/videos/build-an-online/9781839218446/9781839218446-video12_2)
+
+# Build React Node js ecomerce website by Basir
+
+[Ecomerce website by Basir](https://www.youtube.com/watch?v=Fy9SdZLBTOo&t=120s)

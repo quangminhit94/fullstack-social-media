@@ -1,6 +1,14 @@
 * [x] Backend modules
   * [x] Knex setup
   * [x] Express setup
+  * [ ] User
+    * [x] Login with jwt
+    * [ ] Login with google account
+  * [ ] Profile
+    * [ ] Create request profile
+    * [ ] 
 * [ ] Frontend modules
-  * [ ] Post
+  * [x] Post
+  * [ ] User
+    * [ ] send request Login with google account
   * [ ] Profile
