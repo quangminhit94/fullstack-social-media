@@ -1,6 +1,6 @@
 import * as ACTION_TYPES from '../actions/action_types'
 
-const initialState = {
+export const initialState = {
   user_text: 'test',
   other_user_db_profile: null,
   db_other_user_posts: [],

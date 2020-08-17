@@ -11,7 +11,7 @@ import Form1 from './containers/Form1';
 // import RenderList from './containers/renderlist';
 
 
-// import Component1 from './functional/component1';
+import Component1 from './functional/Component1';
 import Callback from './functional/Callback';
 import PrivateComponent from './functional/PrivateComponent';
 import UnAuthRedirect from './functional/UnAuthRedirect';
@@ -41,8 +41,8 @@ import Auth from './utils/Auth';
 import AuthCheck from './utils/AuthCheck';
 import history from './utils/history';
 
-import { Router, Route, Switch, Redirect } from 'react-router';
-
+import { Link, Route, Switch, Redirect } from 'react-router-dom';
+import { Router } from 'react-router';
 
 export const auth = new Auth()
 
@@ -52,13 +52,46 @@ const handleAuthentication = (props) => {
   }
 }
 
-const PrivateRoute = ({ component: Component, auth }) => {
+const PrivateRoute = ({ component: Component, auth, ...rest }) => {
   return (
-    <Route render={props => auth.isAuthenticated() === true
+    <Route {...rest} render={props => auth.isAuthenticated() === true
       ? <Component auth={auth} {...props} />
       : <Redirect to={{ pathname: '/signup' }} />
     }
     />
+  )
+}
+const ReactSample = ({match}) => {
+  
+  return (
+    <div>
+      <h1>React Sample</h1>
+      <ul>
+        <li>
+          <Link to={`${match.url}/component1`} style={{ padding: '5px' }}>
+          Component 1
+          </Link>
+        <Link to={`${match.url}/form1`} style={{ padding: '5px' }}>
+          Form 1
+          </Link>
+        <Link to={`${match.url}/hooks`} style={{ padding: '5px' }}>
+          Hooks
+          </Link>
+        <Link to={`${match.url}/hooks_form`} style={{ padding: '5px' }}>
+          Hooks Form
+          </Link>
+        </li>
+      </ul>
+      <Switch>
+        <Route exact path={match.path} >
+          select a path
+        </Route>
+        <Route path={`${match.path}/component1`} component={Component1}/>
+        <Route path={`${match.path}/form1`} component={Form1}/>
+        <Route path={`${match.path}/hooks`} component={HooksContainer}/>
+        <Route path={`${match.path}/hooks_form`} component={HooksForm}/>
+      </Switch>
+    </div>
   )
 }
 
@@ -80,20 +113,19 @@ class Routes1 extends Component {
   render() {
     return (
       <div>
-        <Router history={history} >
+        {/* <Router history={history} > */}
           <div>
             {/* <Header auth={auth} /> */}
             <Header1 auth={auth} />
             <Switch>
-              {/* <Route exact path='/' component={Home} /> */}
-              <Route exact path='/form1' component={Form1} />
+              {/* <Route path='/react_sample' component={ReactSample} /> */}
+              <Route path='/react_sample' component={ReactSample} />
+
+              {/* <Route exact path='/form1' component={Form1} /> */}
               <Route exact path='/container1' render={() => <Container1 auth={auth} />} />
               <Route path='/auth_check' render={() => <AuthCheck auth={auth} />} />
               <Route path='/redirect' component={UnAuthRedirect} />
               {/* <Route path='/render_list' component={RenderList} /> */}
-
-              <Route path='/hooks' component={HooksContainer} />
-              <Route path='/hooks_form' component={HooksForm} />
 
               <Route path="/user/:name" component={ShowUser} />
               <PrivateRoute path="/send_message" auth={auth} component={SendMessage} />
@@ -121,7 +153,7 @@ class Routes1 extends Component {
 
             </Switch>
           </div>
-        </Router>
+        {/* </Router> */}
       </div>
     )
   }
@@ -136,6 +168,9 @@ function mapDispatchToProps(dispatch) {
     remove_profile: () => dispatch(ACTIONS.removeProfile())
   }
 }
+
+
+
 
 
 export default connect(null, mapDispatchToProps)(Routes1);

@@ -1,7 +1,8 @@
 import React, { useEffect, useReducer, useState, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import history from './utils/history'
+import __history from './utils/history'
+import { useHistory } from 'react-router-dom'
 import Context from './utils/context';
 import * as ACTIONS from './store/actions/actions';
 
@@ -19,7 +20,7 @@ import SimpleReactValidator from 'simple-react-validator';
 const auth = new Auth()
 
 
-const ContextState = (props) => {
+const ContextState = () => {
     /*
       Auth Reducer
     */
@@ -29,6 +30,7 @@ const ContextState = (props) => {
 
     const [, forceUpdate] = useState();
     const simpleValidator = useRef(new SimpleReactValidator())
+    const history = useHistory();
     
     // useEffect(() => {
     //   // if all fields valid, send request to server
@@ -70,6 +72,7 @@ const ContextState = (props) => {
       // login success -> set user profile here
       const profileData = res.data
       localStorage.user_id = profileData.user_id
+      // dispatchAuthReducer(ACTIONS.loginSuccess())
       dispatchProfile(ACTIONS.loginSuccess())
       dispatchProfile(ACTIONS.addProfile({ ...stateAuthReducer.profile, ...profileData}))
       return profileData
@@ -77,7 +80,10 @@ const ContextState = (props) => {
 
     const redirectToPage = (profileData) => {
       // redirect to profile page
-      history.replace(`/profile1/${profileData.user_id}`)
+      // __history.replace({ pathname: `/profile1/${profileData.user_id}` })
+      history.replace({ pathname: `/home` })
+      // console.log("ContextState -> history", history)
+      // console.log("ContextState -> __history", __history)
     }
 
     const redirectIfLoggedIn = () => {
@@ -143,7 +149,10 @@ const ContextState = (props) => {
         .then(result => {
           console.log(result)
           localStorage.removeItem('user_id')
+          // dispatchAuthReducer(ACTIONS.loginFailure())
           dispatchProfile(ACTIONS.loginFailure())
+        })
+        .then(() => {
           history.replace('/login')
         })
         .catch(err => console.error(err))
@@ -229,6 +238,7 @@ const ContextState = (props) => {
               authState: stateAuthReducer.is_authenticated,
               dbProfileState: stateAuthReducer.db_profile,
               profileState:  stateAuthReducer.profile,
+              errorPage:  stateAuthReducer.form_submit_status,
 
               handleAddDBProfile: (profile) => handleDBProfile(profile),
               handleRemoveDBProfile: () => handleRemoveDBProfile(),
