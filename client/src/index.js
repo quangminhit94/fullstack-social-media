@@ -40,7 +40,9 @@ const store = createStore(rootReducer, composeWithDevTools(
 
 // store.subscribe(() => saveToLocalStorage(store.getState()))
 
-ReactDOM.render(<Provider store={store}>
+ReactDOM.render(
+<Provider store={store}>
   <AppHooks />
-</Provider>, document.getElementById('root'));
+</Provider>
+, document.getElementById('root'));
 

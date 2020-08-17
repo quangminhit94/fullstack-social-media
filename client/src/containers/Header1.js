@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './Header.scss'
 
 import Button from '@material-ui/core/Button'
-const Header1 = () => {
+const Header1 = (props) => {
 
 
   return (
@@ -11,17 +11,8 @@ const Header1 = () => {
       <Link to='/home' style={{ padding: '5px' }}>
         Home
         </Link>
-      <Link to='/profile1' style={{ padding: '5px' }}>
-        Profile
-      </Link>
-      <Link to='/form1' style={{ padding: '5px' }}>
-        Form 1
-        </Link>
-      <Link to='/hooks' style={{ padding: '5px' }}>
-        Hooks
-        </Link>
-        <Link to='/hooks_form' style={{ padding: '5px' }}>
-        Hooks Form
+      <Link to='/react_sample' style={{ padding: '5px' }}>
+        React Sample
         </Link>
       <Link to='/posts_hooks' style={{ padding: '5px' }}>
         Post Hooks
@@ -32,9 +23,9 @@ const Header1 = () => {
       <Link to='/private_route' style={{ padding: '5px' }}>
         Private Route
         </Link>
-      {/* {!this.props.is_authenticated
-        ? <Button color='secondary' variant='outlined' onClick={() => this.props.auth.login()}>Login</Button>
-        : <Button color='primary' variant='outlined' onClick={() => this.props.auth.logout()}>Logout</Button>
+      {/* {!props.is_authenticated
+        ? <Button color='secondary' variant='outlined' onClick={() => props.auth.login()}>Login</Button>
+        : <Button color='primary' variant='outlined' onClick={() => props.auth.logout()}>Logout</Button>
       } */}
     </div>
   )

@@ -16,15 +16,6 @@ class Header extends Component {
         <Link to='/profile' style={{ padding: '5px' }}>
           Profile
           </Link>
-        <Link to='/component1' style={{ padding: '5px' }}>
-          Component 1
-          </Link>
-        <Link to='/form1' style={{ padding: '5px' }}>
-          Form 1
-          </Link>
-        <Link to='/hooks' style={{ padding: '5px' }}>
-          Hooks
-          </Link>
           <Link to='/hooks_form' style={{ padding: '5px' }}>
           Hooks Form
           </Link>
