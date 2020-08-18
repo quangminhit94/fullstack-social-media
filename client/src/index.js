@@ -10,6 +10,8 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 import Axios from 'axios';
 
+import reduxThunk from 'redux-thunk';
+
 Axios.defaults.baseURL = 'https://mickey-portfolio.herokuapp.com/';
 
 function saveToLocalStorage(state) {
@@ -34,8 +36,19 @@ function loadFromLocalStorage() {
 
 const persistedState = loadFromLocalStorage()
 
+const logger = store => next => action => {
+  let result
+  console.groupCollapsed('dispatching', action.type)
+  console.log('prev state: ', store.getState())
+  console.log('action: ', action)
+  result = next(action)
+  console.log('next state: ', store.getState())
+  console.groupEnd()
+  return result
+}
+
 const store = createStore(rootReducer, composeWithDevTools(
-  applyMiddleware()
+  applyMiddleware(logger, reduxThunk)
 ));
 
 // store.subscribe(() => saveToLocalStorage(store.getState()))

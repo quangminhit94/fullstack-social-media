@@ -35,6 +35,8 @@ import * as ACTIONS from './store/actions/actions';
 
 import HooksContainer from './hooks/HooksContainer'
 import HooksForm from './hooks/HooksForm'
+import ThunkComponent from './hooks/ThunkComponent'
+import ThunkGit from './hooks/ThunkGit'
 import Login from './Users/Login'
 
 import Auth from './utils/Auth';
@@ -80,6 +82,12 @@ const ReactSample = ({match}) => {
         <Link to={`${match.url}/hooks_form`} style={{ padding: '5px' }}>
           Hooks Form
           </Link>
+          <Link to={`${match.url}/redux_thunk`} style={{ padding: '5px' }}>
+          Redux Thunk
+          </Link>
+          <Link to={`${match.url}/thunk_git`} style={{ padding: '5px' }}>
+          Redux Thunk Git
+          </Link>
         </li>
       </ul>
       <Switch>
@@ -90,6 +98,8 @@ const ReactSample = ({match}) => {
         <Route path={`${match.path}/form1`} component={Form1}/>
         <Route path={`${match.path}/hooks`} component={HooksContainer}/>
         <Route path={`${match.path}/hooks_form`} component={HooksForm}/>
+        <Route path={`${match.path}/redux_thunk`} component={ThunkComponent}/>
+        <Route path={`${match.path}/thunk_git`} component={ThunkGit}/>
       </Switch>
     </div>
   )
