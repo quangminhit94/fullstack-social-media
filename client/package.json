@@ -10,6 +10,7 @@
     "@testing-library/user-event": "^7.1.2",
     "auth0-js": "^9.12.2",
     "axios": "^0.19.1",
+    "bootstrap": "^4.5.2",
     "moment": "^2.24.0",
     "node-sass": "^4.14.1",
     "prop-types": "^15.7.2",
