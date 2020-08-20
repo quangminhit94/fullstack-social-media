@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { getRepos, clearRepos } from '../../store/actions/thunk_actions'
+import { getRepos, clearRepos } from '../../store/actions/thunk/thunk_actions'
 import SearchMenu from './SearchMenu'
 
 const mapStateToProps = (state, ownProps) => ({

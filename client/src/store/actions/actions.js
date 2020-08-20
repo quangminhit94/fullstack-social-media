@@ -12,10 +12,10 @@ export const failure = () => {
 	}
 }
 
-export const userInput = (payload) => {
+export const userInput = (data) => {
 	return {
 		type: ACTION_TYPES.USER_INPUT,
-		payload
+		payload: data
 	}
 }
 

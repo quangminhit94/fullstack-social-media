@@ -28,7 +28,7 @@ export const clearRepos = () => (
   }
 )
 
-export const fetchProfile = (data) => (
+export const fetchProfile = data => (
   {
     type: 'FETCH_PROFILES',
     payload: data
@@ -57,16 +57,4 @@ export const getRepos = username => {
       .then((repos) => dispatch(loadingSuccess(repos)))
       .catch(() => dispatch(loadingError(true)))
   }
-}
-
-export function fetchUsers() {
-  //const request = axios.get("https://jsonplaceholder.typicode.com/users");
-
-  return (dispatch, getState) => {
-    console.log(getState());
-    const request = axios.get("https://jsonplaceholder.typicode.com/users");
-    request.then(({ data }) => {
-      dispatch(fetchProfile(data));
-    });
-  };
 }

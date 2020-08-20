@@ -3,8 +3,13 @@ import { createStore, compose, applyMiddleware } from "redux";
 import reduxThunk from "redux-thunk";
 import rootReducer from './store/reducers'
 
+import createSagaMiddleware from "redux-saga";
+
+// import rootReducer from "./reducers/index";
+import rootSaga from "./store/actions/saga/saga"
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
+/** persistedState */
 function saveToLocalStorage(state) {
   try {
     const serializedState = JSON.stringify(state)
@@ -27,6 +32,7 @@ function loadFromLocalStorage() {
 
 const persistedState = loadFromLocalStorage()
 
+/** Logger */
 const logger = store => next => action => {
   let result
   console.groupCollapsed('dispatching', action.type)
@@ -37,12 +43,24 @@ const logger = store => next => action => {
   console.groupEnd()
   return result
 }
+/** Logger */
 
 // const configureStore = createStore(rootReducer, composeWithDevTools(
 //   applyMiddleware(logger, reduxThunk)
 // ));
 
-const configureStore = createStore(rootReducer, composeEnhancer(applyMiddleware(logger, reduxThunk)));
+/** Redux Saga */
+const reduxSaga = createSagaMiddleware();
+
+// const sagaStore = createStore(
+//   rootReducer,
+//   composeWithDevTools(applyMiddleware(saga))
+// );
+
+// const configureStore = createStore(rootReducer, composeEnhancer(applyMiddleware(logger, reduxThunk)));
+const configureStore = createStore(rootReducer, composeEnhancer(applyMiddleware(logger, reduxThunk, reduxSaga)));
+
+reduxSaga.run(rootSaga);
 
 // store.subscribe(() => saveToLocalStorage(store.getState()))
 

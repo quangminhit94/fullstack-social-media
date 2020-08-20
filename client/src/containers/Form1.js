@@ -46,6 +46,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
+  console.log(dispatch)
   return {
     input_action_creator: (text) => dispatch(ACTIONS.userInput(text))
   }
