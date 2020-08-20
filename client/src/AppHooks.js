@@ -8,13 +8,10 @@ const AppHooks = () => {
   
   return (
     <div>
-      React
       <BrowserRouter>
-      
-      <Router history={history} >
-
-        <ContextState />
-      </Router>
+        <Router history={history} >
+          <ContextState />
+        </Router>
       </BrowserRouter>
     </div>
   )
