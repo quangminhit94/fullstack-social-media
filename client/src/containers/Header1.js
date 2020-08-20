@@ -14,6 +14,9 @@ const Header1 = (props) => {
       <Link to='/react_sample' style={{ padding: '5px' }}>
         React Sample
         </Link>
+      <Link to='/landing' style={{ padding: '5px' }}>
+        Landing
+        </Link>
       <Link to='/posts_hooks' style={{ padding: '5px' }}>
         Post Hooks
         </Link>

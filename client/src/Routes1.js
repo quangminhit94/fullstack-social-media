@@ -35,14 +35,17 @@ import * as ACTIONS from './store/actions/actions';
 
 import HooksContainer from './hooks/HooksContainer'
 import HooksForm from './hooks/HooksForm'
+import ThunkGit from './hooks/ThunkGit'
+import SagaTodo from './hooks/SagaTodo'
 import Login from './Users/Login'
 
 import Auth from './utils/Auth';
 import AuthCheck from './utils/AuthCheck';
-import history from './utils/history';
 
 import { Link, Route, Switch, Redirect } from 'react-router-dom';
 import { Router } from 'react-router';
+
+import LandingLayout from './layout/Landing';
 
 export const auth = new Auth()
 
@@ -80,6 +83,12 @@ const ReactSample = ({match}) => {
         <Link to={`${match.url}/hooks_form`} style={{ padding: '5px' }}>
           Hooks Form
           </Link>
+          <Link to={`${match.url}/thunk_git`} style={{ padding: '5px' }}>
+          Thunk Git
+          </Link>
+          <Link to={`${match.url}/saga_todo`} style={{ padding: '5px' }}>
+          Saga Todo
+          </Link>
         </li>
       </ul>
       <Switch>
@@ -90,6 +99,8 @@ const ReactSample = ({match}) => {
         <Route path={`${match.path}/form1`} component={Form1}/>
         <Route path={`${match.path}/hooks`} component={HooksContainer}/>
         <Route path={`${match.path}/hooks_form`} component={HooksForm}/>
+        <Route path={`${match.path}/thunk_git`} component={ThunkGit}/>
+        <Route path={`${match.path}/saga_todo`} component={SagaTodo}/>
       </Switch>
     </div>
   )
@@ -113,19 +124,14 @@ class Routes1 extends Component {
   render() {
     return (
       <div>
-        {/* <Router history={history} > */}
           <div>
-            {/* <Header auth={auth} /> */}
             <Header1 auth={auth} />
             <Switch>
-              {/* <Route path='/react_sample' component={ReactSample} /> */}
               <Route path='/react_sample' component={ReactSample} />
 
-              {/* <Route exact path='/form1' component={Form1} /> */}
               <Route exact path='/container1' render={() => <Container1 auth={auth} />} />
               <Route path='/auth_check' render={() => <AuthCheck auth={auth} />} />
               <Route path='/redirect' component={UnAuthRedirect} />
-              {/* <Route path='/render_list' component={RenderList} /> */}
 
               <Route path="/user/:name" component={ShowUser} />
               <PrivateRoute path="/send_message" auth={auth} component={SendMessage} />
@@ -142,7 +148,6 @@ class Routes1 extends Component {
               <Route path="/signup" render={(props) => <SignUp image='/image_demo.png' {...props} />} />
 
               <Route path='/callback' render={(props) => { handleAuthentication(props); return <Callback /> }} />
-              {/* <Route path="/component1" render={(props) => <Component1 {...props} /> } /> */}
 
               <Route path="/list_item/:id" component={RenderListItem} />
 
@@ -151,9 +156,10 @@ class Routes1 extends Component {
               <Route path="/profile1/:uid" component={Profile1} />
               <Route path="/home" render={(props) => <Home textHome='test' {...props}></Home>} />
 
+              <Route path="/landing" render={props => <LandingLayout {...props} />} />
+              <Redirect from="/" to="/landing" />
             </Switch>
           </div>
-        {/* </Router> */}
       </div>
     )
   }
