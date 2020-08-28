@@ -8,15 +8,19 @@ import { Provider } from 'react-redux'
 // import "./assets/css/demo.css";
 // import "./assets/css/pe-icon-7-stroke.css";
 
+import "./assets/sass/material-dashboard-pro-react.css";
+
 import configureStore from "./store"
 import AppHooks from './AppHooks'
+import MyApp from './MyApp'
 
 import Axios from 'axios';
 Axios.defaults.baseURL = 'https://mickey-portfolio.herokuapp.com/';
 
 ReactDOM.render(
   <Provider store={configureStore}>
-    <AppHooks />
+    {/* <AppHooks /> */}
+    <MyApp />
   </Provider>
 , document.getElementById('root'));
 
