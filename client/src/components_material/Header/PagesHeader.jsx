@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import cx from "classnames";
 import PropTypes from "prop-types";
 import { NavLink, useLocation } from "react-router-dom";
@@ -31,10 +31,12 @@ const PagesHeader = (props) => {
   });
   
   const location = useLocation();
+  const [openState, setStateOpen] = useState({open: false})
+  const handleDrawerToggle = () => {
+    setStateOpen({ open: !openState.open })
+    console.log(openState);
+  };
   function activeRoute(routeName) {
-    console.log("activeRoute -> routeName", routeName)
-      
-    console.log("location", location)
 
     return location.pathname.indexOf(routeName) > -1 ? true : false;
   }
@@ -96,7 +98,7 @@ const PagesHeader = (props) => {
             className={classes.sidebarButton}
             color="inherit"
             aria-label="open drawer"
-            // onClick={this.handleDrawerToggle}
+            onClick={handleDrawerToggle}
           >
             <Menu />
           </IconButton>
@@ -106,11 +108,11 @@ const PagesHeader = (props) => {
             <Drawer
               variant="temporary"
               anchor={"right"}
-              // open={this.state.open}
+              open={openState.open}
               classes={{
                 paper: classes.drawerPaper
               }}
-              // onClose={this.handleDrawerToggle}
+              onClose={handleDrawerToggle}
               ModalProps={{
                 keepMounted: true // Better open performance on mobile.
               }}

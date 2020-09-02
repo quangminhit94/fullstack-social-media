@@ -10,7 +10,7 @@ import LockOpen from "material-ui-icons/LockOpen";
 
 const landingRoutes = [
   {
-    path: "/pages/login-page",
+    path: "/landing/login-page",
     name: "Login Page",
     short: "Login",
     mini: "LP",
@@ -18,7 +18,7 @@ const landingRoutes = [
     component: LoginPage
   },
   {
-    path: "/pages/register-page",
+    path: "/landing/register-page",
     name: "Register Page",
     short: "Register",
     mini: "RP",
