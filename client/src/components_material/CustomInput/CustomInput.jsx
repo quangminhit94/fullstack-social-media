@@ -34,7 +34,7 @@ function CustomInput({ ...props }) {
     [" " + classes.labelRootSuccess]: success && !error
   });
 
-  const inkbarClasses = cx({
+  const inkbarClasses  = cx({
     [classes.inkbarError]: error,
     [classes.inkbarSuccess]: success && !error,
     [classes.inkbar]: !success && !error

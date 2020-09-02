@@ -4,7 +4,7 @@
 
 import { container } from "assets/jss/material-dashboard-pro-react.jsx";
 
-import customCheckboxRadioSwitch from "assets/jss/material-dashboard-pro-react/customCheckboxRadioSwitch.jsx";
+// import customCheckboxRadioSwitch from "assets/jss/material-dashboard-pro-react/customCheckboxRadioSwitch.jsx";
 
 const registerPageStyle = {
   container: {
@@ -53,7 +53,7 @@ const registerPageStyle = {
     marginLeft: "6px",
     color: "rgba(0, 0, 0, 0.26)"
   },
-  ...customCheckboxRadioSwitch,
+  // ...customCheckboxRadioSwitch,
   cardTitle: {
     fontSize: "2.6em"
   },
