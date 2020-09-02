@@ -6,11 +6,23 @@ module.exports = {
 
   development: {
     client: 'pg',
-    connection: 'postgres://localhost/my_social_app'
+    connection: process.env.DATABASE_URL,
+    // migrations: {
+    //   directory: __dirname + '/db/migrations'
+    // },
+    // seeds: {
+    //   directory: __dirname + '/db/seeds'
+    // }
   },
   production: {
     client: 'pg',
-    connection: process.env.DATABASE_URL + '?ssl=true'
+    connection: process.env.DATABASE_URL + '?ssl=true',
+    // migrations: {
+    //   directory: __dirname + '/db/migrations'
+    // },
+    // seeds: {
+    //   directory: __dirname + '/db/seeds'
+    // }
   }
 
 };

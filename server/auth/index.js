@@ -76,7 +76,7 @@ router.post('/login', (req, res, next) => {
               // set-cookie header
               const isSecure = req.app.get('env') !== 'development';
               res.cookie('user_id', user.uid, {
-                httpOnly: true,
+                // httpOnly: true,
                 signed: true,
                 secure: isSecure, // when production
               })

@@ -12,7 +12,8 @@ const MenuBar = (props) => {
     <div>
       <ul className="nav">
         {/* {this.state.width <= 991 ? <AdminNavbarLinks /> : null} */}
-        {props.routes.map((prop, key) => {
+        {React.Children.toArray(
+          props.routes.map((prop) => {
           if (!prop.redirect)
             return (
               <li
@@ -21,7 +22,6 @@ const MenuBar = (props) => {
                     ? "active active-pro"
                     : activeRoute(prop.layout + prop.path)
                 }
-                key={key}
               >
                 <NavLink
                   to={prop.layout + prop.path}
@@ -34,7 +34,8 @@ const MenuBar = (props) => {
               </li>
             );
           return null;
-        })}
+        })
+        )}
       </ul>
     </div>
   )

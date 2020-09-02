@@ -25,6 +25,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser(process.env.COOKIE_SECRET));
 app.use(express.static(path.join(__dirname, 'public')));
+console.log(path.resolve(__dirname, 'build', 'index.html'))
 app.use(cors({
   origin: '*',
   credentials: true

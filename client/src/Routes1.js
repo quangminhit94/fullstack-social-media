@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import Container1 from './containers/Container1'
-import Header from './containers/Header';
-import Header1 from './containers/Header1';
+import LandingAppBar from './components_material/AppBar/LandingAppBar'
 import Profile from './containers/Profile';
 import Profile1 from './hooks/Profile1';
 import Home from './hooks/Home';
@@ -43,7 +42,6 @@ import Auth from './utils/Auth';
 import AuthCheck from './utils/AuthCheck';
 
 import { Link, Route, Switch, Redirect } from 'react-router-dom';
-import { Router } from 'react-router';
 
 import LandingLayout from './layout/Landing';
 
@@ -125,7 +123,7 @@ class Routes1 extends Component {
     return (
       <div>
           <div>
-            <Header1 auth={auth} />
+            <LandingAppBar />
             <Switch>
               <Route path='/react_sample' component={ReactSample} />
 
