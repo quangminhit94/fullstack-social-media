@@ -17,7 +17,7 @@ import DialogTitle from '@material-ui/core/DialogTitle'
 import Button from '@material-ui/core/Button'
 
 
-import 'App.css'
+// import 'App.css'
 
 
 export class Profile extends Component {

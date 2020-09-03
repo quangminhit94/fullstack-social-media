@@ -14,7 +14,9 @@ import landingRoutes from 'routes/landing.jsx'
 
 import bgImage from 'assets/img/lock.jpeg'
 
-const Pages = (props) => {
+import Footer from "components_material/Footer/Footer.jsx";
+
+const Landing = (props) => {
   const { classes, ...rest } = props;
   return (
     <div>
@@ -32,6 +34,7 @@ const Pages = (props) => {
               )
             })}
           </Switch>
+          <Footer white />
           <div 
             className={classes.fullPageBackground}
             style={{ backgroundImage: `url(${bgImage})` }}>
@@ -42,4 +45,4 @@ const Pages = (props) => {
   )
 }
 
-export default withStyles(pagesStyle)(Pages);
+export default withStyles(pagesStyle)(Landing);

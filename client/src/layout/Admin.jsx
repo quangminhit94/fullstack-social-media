@@ -7,39 +7,28 @@ import MenuBar from 'components_bootstrap/MenuBar/MenuBar'
 
 import adminRoutes from "routes/admin.jsx";
 
-const getRoutes = routes => {
-  return routes.map((prop, key) => {
-    if (prop.layout === "/admin") {
-      return (
-        <Route
-          path={prop.layout + prop.path}
-          render={props => (
-            <prop.component
-              {...props}
-              // handleClick={this.handleNotificationClick}
-            />
-          )}
-          key={key}
-        />
-      );
-    } else {
-      return null;
-    }
-  });
-};
-
-export const Landing = (props) => {
+export const Admin = (props) => {
   return (
     <div>
       <MenuBar routes={adminRoutes}/>
       <div>
-        <Switch>{getRoutes(adminRoutes)}</Switch>
+        <Switch>
+            {adminRoutes.map( (prop, key) => {
+              console.log(prop);
+              return (
+                <Route
+                 path={prop.path}
+                 component={prop.component}
+                 key={key}/>
+              )
+            })}
+          </Switch>
       </div>
     </div>
   )
 }
 
-// Landing.propTypes = {
+// Admin.propTypes = {
 //   prop: PropTypes
 // }
 
@@ -51,4 +40,4 @@ const mapDispatchToProps = {
   
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Landing)
+export default connect(mapStateToProps, mapDispatchToProps)(Admin)

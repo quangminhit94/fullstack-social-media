@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import history from './history'
+import history from '../history/history'
 import * as ACTIONS from 'store/actions/actions'
 import { connect } from 'react-redux'
 import Axios from 'axios'
