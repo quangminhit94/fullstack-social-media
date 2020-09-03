@@ -1,6 +1,6 @@
 
-import LoginPage from "../views/Pages/LoginPage.jsx";
-import RegisterPage from "../views/Pages/RegisterPage.jsx";
+import LoginPage from "views/Pages/LoginPage.jsx";
+import RegisterPage from "views/Pages/RegisterPage.jsx";
 
 // material-ui-icons
 import PersonAdd from "material-ui-icons/PersonAdd";

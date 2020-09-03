@@ -1,18 +1,16 @@
 import React, { useEffect, useReducer, useState, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import __history from './utils/history'
+import __history from './utils/history/history'
 import { useHistory } from 'react-router-dom'
-import Context from './utils/context';
+import Context from './utils/context/context';
 import * as ACTIONS from './store/actions/actions';
 
 import * as AuthReducer from './store/reducers/auth_reducer';
 import * as FormReducer from './store/reducers/form_reducer';
 import * as PostsReducer from './store/reducers/posts_reducer';
 
-import Routes1 from './Routes1';
-
-import Auth from './utils/Auth';
+import Auth from './utils/auth/Auth';
 import Axios from 'axios';
 
 import SimpleReactValidator from 'simple-react-validator';
@@ -20,7 +18,7 @@ import SimpleReactValidator from 'simple-react-validator';
 const auth = new Auth()
 
 
-const ContextState = () => {
+const ContextState = (props) => {
     /*
       Auth Reducer
     */
@@ -274,7 +272,7 @@ const ContextState = () => {
               handleAuth: (props) => handleAuthentication(props),
               authObj: auth
             }}>
-            <Routes1 />
+            {props.children}
         </Context.Provider>
       </div>
     )

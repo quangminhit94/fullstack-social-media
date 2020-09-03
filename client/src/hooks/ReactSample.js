@@ -6,10 +6,10 @@ import { Router,Route,
   Switch, 
   Redirect} from 'react-router'
 
-import Form1 from '../containers/Form1';
-import Component1 from '../functional/Component1';
-import HooksContainer from '../hooks/HooksContainer'
-import HooksForm from '../hooks/HooksForm'
+import Form1 from 'containers/Form1';
+import Component1 from 'functional/Component1';
+import HooksContainer from 'hooks/HooksContainer'
+import HooksForm from 'hooks/HooksForm'
 
 const ReactSample = ({match}) => {
   

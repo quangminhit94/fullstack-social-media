@@ -37,9 +37,9 @@ import HooksContainer from './hooks/HooksContainer'
 import HooksForm from './hooks/HooksForm'
 import Login from './Users/Login'
 
-import Auth from './utils/Auth';
-import AuthCheck from './utils/AuthCheck';
-import history from './utils/history';
+import Auth from './utils/auth/Auth';
+import AuthCheck from './utils/auth/AuthCheck';
+import history from './utils/history/history';
 
 import { Router, Route, Switch, Redirect } from 'react-router';
 

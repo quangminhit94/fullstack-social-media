@@ -2,9 +2,9 @@ import React, { useContext, useState } from 'react'
 import Axios from 'axios'
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types'
-import Context from '../utils/context'
-import ThemeContext from '../utils/ThemeContext'
-import LoaderHOC from '../HOC/LoaderHOC'
+import Context from 'utils/context/context'
+import ThemeContext from 'utils/ThemeContext'
+import LoaderHOC from 'HOC/LoaderHOC'
 import Button from '@material-ui/core/Button'
 
 const Slider = () => {

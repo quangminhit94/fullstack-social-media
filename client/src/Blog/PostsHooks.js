@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { Link } from 'react-router-dom';
 
-import Context from '../utils/context';
+import Context from 'utils/context/context';
 
 import Axios from 'axios'
 import moment from 'moment';
@@ -15,8 +15,8 @@ import CardHeader from "@material-ui/core/CardHeader";
 
 import Pagination from "react-js-pagination";
 
-import '../App.css';
-import '../styles/pagination.css';
+import 'App.css';
+import 'styles/pagination.css';
 
 export default function PostsHooks() {
   const initialState = {

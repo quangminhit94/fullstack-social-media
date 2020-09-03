@@ -43,12 +43,12 @@ const PagesHeader = (props) => {
   var list = (
     <List className={classes.list}>
       <ListItem className={classes.listItem}>
-        <NavLink to={"/dashboard"} className={classes.navLink}>
+        <NavLink to={"/admin"} className={classes.navLink}>
           <ListItemIcon className={classes.listItemIcon}>
             <Dashboard />
           </ListItemIcon>
           <ListItemText
-            primary={"Dashboard"}
+            primary={"Admin"}
             disableTypography={true}
             className={classes.listItemText}
           />

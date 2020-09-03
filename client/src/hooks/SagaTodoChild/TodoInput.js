@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import v4 from "uuid/dist/v4";
 
-import actions from "../../store/actions/saga/index";
+import actions from "store/actions/saga/index";
 import ErrorBoundary from "./ErrorBoundary";
 
 class TodoInput extends React.Component {

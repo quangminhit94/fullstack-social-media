@@ -12,7 +12,7 @@ import pagesStyle from "assets/jss/layouts/pagesStyle.jsx";
 
 import landingRoutes from 'routes/landing.jsx'
 
-import bgImage from 'assets/img/register.jpeg'
+import bgImage from 'assets/img/lock.jpeg'
 
 const Pages = (props) => {
   const { classes, ...rest } = props;

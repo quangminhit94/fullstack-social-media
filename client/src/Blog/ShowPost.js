@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-import * as ACTIONS from '../store/actions/actions'
+import * as ACTIONS from 'store/actions/actions'
 import Axios from 'axios'
-import history from '../utils/history'
+import history from 'utils/history/history'
 
 import { Link } from 'react-router-dom'
 import TextField from '@material-ui/core/TextField'
