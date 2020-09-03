@@ -40,7 +40,7 @@
     "start-js": "react-scripts start",
     "start": "npm-run-all -p watch-css start-js",
     "build-js": "react-scripts build",
-    "build": "NODE_PATH=./src build-js",
+    "build": "NODE_PATH=./src npm run build-js",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "dev": "NODE_PATH=./src"
