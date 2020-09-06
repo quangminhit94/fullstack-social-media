@@ -11,7 +11,6 @@ import { Provider } from 'react-redux'
 import "assets/sass/material-dashboard-pro-react.css";
 
 import configureStore from "./store"
-import AppHooks from './AppHooks'
 import MyApp from './MyApp'
 
 import Axios from 'axios';
