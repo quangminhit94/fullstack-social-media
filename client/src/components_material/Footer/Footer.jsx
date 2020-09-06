@@ -59,7 +59,7 @@ function Footer({ ...props }) {
           </a>
           {rtlActive
             ? ", مصنوعة مع الحب لشبكة الإنترنت أفضل"
-            : ", I love make beautiful website"}
+            : ". "}
         </p>
       </div>
     </footer>
