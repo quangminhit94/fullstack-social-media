@@ -87,7 +87,7 @@ const PagesHeader = (props) => {
       <Toolbar className={classes.container}>
         <div className={classes.flex}>
           <Button href="#" className={classes.title}>
-            App Creator
+            Javscript Developer
           </Button>
         </div>
         <Hidden smDown implementation="css">
