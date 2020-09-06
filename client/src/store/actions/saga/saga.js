@@ -18,4 +18,25 @@ function* handleAddTodoWithNotification(action) {
   yield put(actions.doHideNotification(id));
 }
 
+// function* getCurrentUser() {
+//   const response = yield call(requestGetCurrentUser)
+//   const {data, status} = response
+//   if(status === STATUS_CODE.SUCCESS) {
+//     yield put({
+//       type: 'GET_CURRENT_USER_SUCCESS',
+//       payload: {
+//         data
+//       }
+//     })
+//   }
+//   else {
+//     yield put({
+//       type: 'GET_CURRENT_USER_FAIL',
+//       payload: {
+//         error: data
+//       }
+//     })
+//   }
+// }
+
 export default watchAddTodoWithNotification;

@@ -38,8 +38,8 @@ import ThunkGit from './hooks/ThunkGit'
 import SagaTodo from './hooks/SagaTodo'
 import Login from './Users/Login'
 
-import Auth from './utils/Auth';
-import AuthCheck from './utils/AuthCheck';
+import Auth from './utils/auth/Auth';
+import AuthCheck from './utils/auth/AuthCheck';
 
 import { Link, Route, Switch, Redirect } from 'react-router-dom';
 

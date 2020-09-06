@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
 import Button from '@material-ui/core/Button'
-import './Header.scss'
+// import './Header.scss'
 
 const Header1 = (props) => {
 

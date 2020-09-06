@@ -46,14 +46,13 @@ class LoginPage extends React.Component {
               <form>
                 <LoginCard
                   customCardClass={classes[this.state.cardAnimaton]}
-                  headerColor="blue"
-                  plainCard={true}
+                  headerColor="rose"
                   cardTitle="Login"
                   cardSubtitle="Or Be Classical"
                   footerAlign="center"
                   footer={
                     <Button color="roseNoBackground" wd size="lg">
-                      Let's Go
+                      Login
                     </Button>
                   }
                   socials={[
@@ -87,7 +86,6 @@ class LoginPage extends React.Component {
                             </InputAdornment>
                           )
                         }}
-                        rtlActive={true}
                       />
                       <CustomInput
                         labelText="Email..."

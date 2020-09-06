@@ -1,4 +1,4 @@
-import history from './history'
+import history from '../history/history'
 import auth0 from 'auth0-js'
 
 // let instance = null

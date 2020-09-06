@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useReducer, useContext } from 'react'
-import * as Reducer from '../store/hooks_reducer/hooks_reducer'
-import * as ACTIONS from '../store/actions/actions'
+import * as Reducer from 'store/hooks_reducer/hooks_reducer'
+import * as ACTIONS from 'store/actions/actions'
 
-import Context from '../utils/context'
+import Context from 'utils/context/context'
 
 const HooksContainer = () => {
 

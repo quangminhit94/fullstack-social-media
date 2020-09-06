@@ -3,27 +3,31 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { Switch, Route } from 'react-router-dom'
-import { withStyles } from '@material-ui/core'
+
+import withStyles from "material-ui/styles/withStyles";
 
 // core components
 import PagesHeader from 'components_material/Header/PagesHeader.jsx'
 
-import pagesStyle from "assets/jss/layouts/pagesStyle.jsx";
+import landingStyle from "assets/jss/layouts/pagesStyle.jsx";
 
 import landingRoutes from 'routes/landing.jsx'
 
-import bgImage from 'assets/img/register.jpeg'
+import bgImage from 'assets/img/lock.jpeg'
 
-const Pages = (props) => {
+import Footer from "components_material/Footer/Footer.jsx";
+
+const Landing = (props) => {
   const { classes, ...rest } = props;
+  console.log("wrapper", classes.wrapper);
   return (
     <div>
-      <PagesHeader { ...rest } />
+      <PagesHeader {...rest} />
       <div className={classes.wrapper}>
         <div className={classes.fullPage}>
           <Switch>
             {landingRoutes.map( (prop, key) => {
-              console.log(prop);
+              console.log(prop.component);
               return (
                 <Route
                  path={prop.path}
@@ -32,6 +36,7 @@ const Pages = (props) => {
               )
             })}
           </Switch>
+          <Footer white />
           <div 
             className={classes.fullPageBackground}
             style={{ backgroundImage: `url(${bgImage})` }}>
@@ -42,4 +47,4 @@ const Pages = (props) => {
   )
 }
 
-export default withStyles(pagesStyle)(Pages);
+export default withStyles(landingStyle)(Landing);

@@ -1,20 +1,28 @@
 
-import Home from "../views/Home.jsx";
-import HooksForm from "../views/HooksForm.jsx";
+import Landing from 'layout/Landing.jsx'
+import HooksForm from "views/HooksForm.jsx";
+import SignUp from "Users/SignUp";
 
 const adminRoutes = [
   {
-    path: "/home",
-    name: "Home",
+    path: "/login_page",
+    name: "Landing",
     icon: "pe-7s-graph",
-    component: Home,
-    layout: "/admin"
+    component: Landing,
+    layout: "/landing"
   },
   {
     path: "/hooks_form",
     name: "Hooks Form",
     icon: "pe-7s-user",
     component: HooksForm,
+    layout: "/admin"
+  },
+  {
+    path: "/sign_in",
+    name: "Sign In",
+    icon: "pe-7s-user",
+    component: SignUp,
     layout: "/admin"
   },
   

@@ -1,8 +1,8 @@
 import React, { useState, useReducer, useContext } from 'react'
 
-import * as Reducer from '../store/hooks_reducer/user_input_hooks_reducer'
-import * as ACTIONS from '../store/actions/actions'
-import Context from '../utils/context'
+import * as Reducer from 'store/hooks_reducer/user_input_hooks_reducer'
+import * as ACTIONS from 'store/actions/actions'
+import Context from 'utils/context/context'
 
 const HooksForm = () => {
   const [valueChange, setValueChange] = useState('')

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import * as ACTIONS from '../store/actions/actions'
+import * as ACTIONS from 'store/actions/actions'
 import Axios from 'axios'
 import moment from 'moment'
 

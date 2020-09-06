@@ -1,9 +1,9 @@
 import React, { useEffect, useContext, useReducer } from 'react'
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 import Axios from 'axios';
-import * as ACTIONS from '../store/actions/actions';
-import Context from '../utils/context'
-import * as AuthReducer from '../store/reducers/auth_reducer';
+import * as ACTIONS from 'store/actions/actions';
+import Context from 'utils/context/context'
+import * as AuthReducer from 'store/reducers/auth_reducer';
 
 const Profile1 = (props) => {
   

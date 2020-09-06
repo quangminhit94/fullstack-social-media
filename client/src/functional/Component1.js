@@ -1,6 +1,6 @@
 import React, { useReducer, useState } from 'react'
-import * as FormReducer from '../store/reducers/user_reducer';
-import * as ACTIONS from '../store/actions/actions';
+import * as FormReducer from 'store/reducers/user_reducer';
+import * as ACTIONS from 'store/actions/actions';
 import { connect } from 'react-redux'
 
 const Component1 = (props) => {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import history from '../utils/history'
+import history from 'utils/history/history'
 
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'

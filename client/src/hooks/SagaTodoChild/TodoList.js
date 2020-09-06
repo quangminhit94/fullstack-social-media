@@ -3,8 +3,8 @@ import { connect } from "react-redux";
 
 import TodoItem from "./TodoItem";
 import Notification from "./Notification";
-import actions from "../../store/actions/saga/index";
-import { getTodosAsIds, getFilter } from "../../store/selectors/index";
+import actions from "store/actions/saga/index";
+import { getTodosAsIds, getFilter } from "store/selectors/index";
 
 const TodoList = ({ filter, todosAsIds, onSetFilter }) => {
   const filterStyle = type =>

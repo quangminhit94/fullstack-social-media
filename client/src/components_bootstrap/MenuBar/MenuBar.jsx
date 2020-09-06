@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 
 const MenuBar = (props) => {
   function activeRoute(routeName) {
+    console.log(props.routes, routeName)
     console.log(props.routes.indexOf(routeName));
     return props.routes.indexOf(routeName) > -1 ? "active" : "";
   }

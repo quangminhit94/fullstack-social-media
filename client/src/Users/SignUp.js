@@ -1,9 +1,9 @@
 import React, {useEffect, useContext} from 'react'
 import PropTypes from 'prop-types'
 
-import * as Reducer from '../store/hooks_reducer/user_input_hooks_reducer'
-import * as ACTIONS from '../store/actions/actions'
-import Context from '../utils/context'
+import * as Reducer from 'store/hooks_reducer/user_input_hooks_reducer'
+import * as ACTIONS from 'store/actions/actions'
+import Context from 'utils/context/context'
 
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
@@ -24,6 +24,7 @@ import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 
 import Button from '@material-ui/core/Button';
+import registerImage from 'assets/img/register.jpeg';
 
 
 const SignUp = ({image, forgotText}) => {
@@ -141,12 +142,13 @@ const SignUp = ({image, forgotText}) => {
         {context.userState.email ? <p>{context.userState.email}</p> : ""}
         {context.userState.password ? <p>{context.userState.password}</p> : ""}
       </form>
+          <a href="">{forgotText}</a>
     </div>
   )
 }
 
 SignUp.defaultProps = {
-  image: '/image.jpg',
+  image: registerImage,
   forgotText: 'Forgot your password?',
 }
 

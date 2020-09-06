@@ -1,8 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import actions from "../../store/actions/saga/index";
-import { getTodo } from "../../store/selectors/index";
+import actions from "store/actions/saga/index";
+import { getTodo } from "store/selectors/index";
 
 const TodoItem = ({ todo, onToggleTodo, onDeleteTodo }) => (
   <div style={{ padding: 12, width: "50%" }}>

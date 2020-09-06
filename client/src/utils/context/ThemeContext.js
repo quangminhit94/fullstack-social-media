@@ -1,5 +1,5 @@
 import { createContext } from 'react';
-import "./theme.css";
+// import "./theme.css";
 
 const value = {
   theme: 'night'

@@ -20,7 +20,7 @@ import ListItemText from "material-ui/List/ListItemText";
 import Dashboard from "material-ui-icons/Dashboard";
 import Menu from "material-ui-icons/Menu";
 
-import pagesRoutes from "routes/landing.jsx";
+import landingRoutes from "routes/landing.jsx";
 
 import pagesHeaderStyle from "assets/jss/components/pagesHeaderStyle.jsx";
 
@@ -43,18 +43,18 @@ const PagesHeader = (props) => {
   var list = (
     <List className={classes.list}>
       <ListItem className={classes.listItem}>
-        <NavLink to={"/dashboard"} className={classes.navLink}>
+        <NavLink to={"/admin"} className={classes.navLink}>
           <ListItemIcon className={classes.listItemIcon}>
             <Dashboard />
           </ListItemIcon>
           <ListItemText
-            primary={"Dashboard"}
+            primary={"Admin"}
             disableTypography={true}
             className={classes.listItemText}
           />
         </NavLink>
       </ListItem>
-      {pagesRoutes.map((prop, key) => {
+      {landingRoutes.map((prop, key) => {
         if (prop.redirect) {
           return null;
         }
@@ -87,7 +87,7 @@ const PagesHeader = (props) => {
       <Toolbar className={classes.container}>
         <div className={classes.flex}>
           <Button href="#" className={classes.title}>
-            Material Dashboard Pro React
+            App Creator
           </Button>
         </div>
         <Hidden smDown implementation="css">

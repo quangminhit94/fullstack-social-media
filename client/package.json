@@ -39,10 +39,11 @@
     "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
     "start-js": "react-scripts start",
     "start": "npm-run-all -p watch-css start-js",
-    "build": "react-scripts build",
+    "build-js": "npm run build-css && react-scripts build",
+    "build": "NODE_PATH=./src npm run build-js",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "dev": "cross-env NODE_PATH=./src"
+    "dev": "NODE_PATH=./src"
   },
   "eslintConfig": {
     "extends": "react-app"
