@@ -20,7 +20,7 @@ import ListItemText from "material-ui/List/ListItemText";
 import Dashboard from "material-ui-icons/Dashboard";
 import Menu from "material-ui-icons/Menu";
 
-import pagesRoutes from "routes/landing.jsx";
+import landingRoutes from "routes/landing.jsx";
 
 import pagesHeaderStyle from "assets/jss/components/pagesHeaderStyle.jsx";
 
@@ -54,7 +54,7 @@ const PagesHeader = (props) => {
           />
         </NavLink>
       </ListItem>
-      {pagesRoutes.map((prop, key) => {
+      {landingRoutes.map((prop, key) => {
         if (prop.redirect) {
           return null;
         }

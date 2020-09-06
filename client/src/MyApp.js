@@ -11,7 +11,6 @@ const MyApp = () => {
   
   return (
     <Router history={history} >
-      
       <ContextState>
         <PostContextState>
           <Switch>
