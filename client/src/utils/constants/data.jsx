@@ -6,6 +6,8 @@ import Extension from "material-ui-icons/Extension";
 import Fingerprint from "material-ui-icons/Fingerprint";
 import FlightLand from "material-ui-icons/FlightLand";
 import Build from "material-ui-icons/Build";
+import History from "material-ui-icons/History";
+import Favorite from "material-ui-icons/Favorite";
 
 // core component
 import Info from "components_material/Typography/Info"
@@ -42,7 +44,7 @@ const widgetStories = [
     // Second story
     inverted: true,
     badgeColor: "info",
-    badgeIcon: Extension,
+    badgeIcon: History,
     title: "Education",
     titleColor: "info",
     body: (
@@ -60,21 +62,17 @@ const widgetStories = [
     // Third story
     inverted: true,
     badgeColor: "info",
-    badgeIcon: Fingerprint,
+    badgeIcon: Favorite,
     hideBargeLine: true,
-    title: "Another Title",
+    title: "Hobbies",
     titleColor: "info",
     body: (
       <div>
         <p>
-          Called I Miss the Old Kanye That’s all it was Kanye And I love you
-          like Kanye loves Kanye Famous viewing @ Figueroa and 12th in downtown
-          LA 11:10PM
+          Read books, make website
         </p>
         <p>
-          What if Kanye made a song about Kanye Royère doesn't make a Polar bear
-          bed but the Polar bear couch is my favorite piece of furniture we own
-          It wasn’t any Kanyes Set on his goals Kanye
+          Feed my cat, eat and watch action movies
         </p>
       </div>
     )

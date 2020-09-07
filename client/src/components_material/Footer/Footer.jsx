@@ -41,13 +41,13 @@ function Footer({ ...props }) {
               </a>
             </ListItem>
             <ListItem className={classes.inlineBlock}>
-              <a href="#portfolio" className={block}>
-                {rtlActive ? "بعدسة" : "Portfolio"}
+              <a href="#blog" className={block}>
+                {rtlActive ? "مدونة" : "Blog"}
               </a>
             </ListItem>
             <ListItem className={classes.inlineBlock}>
-              <a href="#blog" className={block}>
-                {rtlActive ? "مدونة" : "Blog"}
+              <a href="#contact" className={block}>
+                {rtlActive ? "بعدسة" : "Contact"}
               </a>
             </ListItem>
           </List>
@@ -57,9 +57,9 @@ function Footer({ ...props }) {
           <a href="#" className={anchor}>
             {rtlActive ? "Copyright reserved" : "Copyright reserved"}
           </a>
-          {rtlActive
+          {/* {rtlActive
             ? ", مصنوعة مع الحب لشبكة الإنترنت أفضل"
-            : ". "}
+            : " "} */}
         </p>
       </div>
     </footer>

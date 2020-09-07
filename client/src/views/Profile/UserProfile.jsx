@@ -27,23 +27,25 @@ const UserProfile = (props) => {
             title="Nguyen Quang Minh"
             description="I love make beautiful website"
             content={
-              <GridContainer justify="center">
-                <ItemGrid xs={12} sm={1} md={1}>
-                  <Button justIcon color="linkedin" href="https://www.linkedin.com/in/nguy%E1%BB%85n-quang-minh-364701145/">
-                    <i className={"fab fa-linkedin"} />
-                  </Button>
-                </ItemGrid>
-                <ItemGrid xs={12} sm={1} md={1}>
-                  <Button justIcon color="github" href="https://github.com/quangminhit94/my-profile">
-                    <i className={"fab fa-github"} />
-                  </Button>
-                </ItemGrid>
-                <ItemGrid xs={12} sm={1} md={1}>
-                  <Button justIcon color="facebook" href="https://www.facebook.com/minhcolor9999">
-                    <i className={"fab fa-facebook"} />
-                  </Button>
-                </ItemGrid>
-              </GridContainer>
+              <div>
+                <Button 
+                  justIcon color="linkedin" 
+                  target="_blank" 
+                  href="https://www.linkedin.com/in/nguy%E1%BB%85n-quang-minh-364701145/">
+                  <i className={"fab fa-linkedin"} />
+                </Button>
+                <Button 
+                  justIcon color="github" 
+                  target="_blank" 
+                  href="https://github.com/quangminhit94/my-profile">
+                  <i className={"fab fa-github"} />
+                </Button>
+                <Button justIcon color="facebook" 
+                  target="_blank" 
+                  href="https://www.facebook.com/minhcolor9999">
+                  <i className={"fab fa-facebook"} />
+                </Button>
+              </div>
             }
           />
         </ItemGrid>

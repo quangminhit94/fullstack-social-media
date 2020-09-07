@@ -46,12 +46,12 @@ class LoginPage extends React.Component {
               <form>
                 <LoginCard
                   customCardClass={classes[this.state.cardAnimaton]}
-                  headerColor="rose"
+                  headerColor="blue"
                   cardTitle="Login"
                   cardSubtitle="Or Be Classical"
                   footerAlign="center"
                   footer={
-                    <Button color="roseNoBackground" wd size="lg">
+                    <Button color="infoNoBackground" wd size="lg">
                       Login
                     </Button>
                   }
