@@ -175,3 +175,13 @@ export const formSubmitStatus = (text) => {
 		payload: text
 	}
 }
+
+export const showLoading = () => ({
+	type: ACTION_TYPES.SHOW_LOADING,
+	payload: true
+})
+
+export const hideLoading = () => ({
+	type: ACTION_TYPES.HIDE_LOADING,
+	payload: false
+})

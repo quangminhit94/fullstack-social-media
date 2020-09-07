@@ -1,6 +1,7 @@
 
 import LoginPage from "views/Pages/LoginPage.jsx";
 import RegisterPage from "views/Pages/RegisterPage.jsx";
+import UserProfile from "views/Profile/UserProfile.jsx";
 import BlogPage from "views/Blog/BlogPage.jsx";
 
 // material-ui-icons
@@ -28,12 +29,12 @@ const landingRoutes = [
     component: RegisterPage
   },
   {
-    path: "/landing/blog",
-    name: "Blog",
-    short: "Blog",
-    mini: "RP",
+    path: "/",
+    name: "Portfolio",
+    short: "Portfolio",
+    mini: "PF",
     icon: Book,
-    component: BlogPage
+    component: UserProfile
   },
 ];
 

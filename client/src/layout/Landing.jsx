@@ -27,7 +27,6 @@ const Landing = (props) => {
         <div className={classes.fullPage}>
           <Switch>
             {landingRoutes.map( (prop, key) => {
-              console.log(prop.component);
               return (
                 <Route
                  path={prop.path}

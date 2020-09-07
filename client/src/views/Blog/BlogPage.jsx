@@ -1,13 +1,23 @@
 import React, { useContext, useEffect, useState} from 'react'
 import Axios from 'axios'
+import { connect } from 'react-redux'
+import { compose } from 'redux'
+
+// context
 import { PostContext } from 'utils/context/PostContextState'
 
+// material-ui components
+import withStyles from "material-ui/styles/withStyles";
+
+// core components
 import GridContainer from "components_material/Grid/GridContainer.jsx";
 import ItemGrid from "components_material/Grid/ItemGrid.jsx";
-
 // import PostCard from 'component_material/Cards/PostCard.jsx'
 
+import loginPageStyle from "assets/jss/views/loginPageStyle.jsx";
+
 const BlogPage = (props) => {
+  const { classes, showLoading } = props
 
   const initialState = {
     posts: [],
@@ -65,4 +75,11 @@ const BlogPage = (props) => {
   )
 }
 
-export default BlogPage
+const mapStateToProps = (state) => ({
+  showLoading: state.loading_reducer.showLoading
+})
+
+export default compose(
+  withStyles(loginPageStyle),
+  connect(mapStateToProps, null)
+)(BlogPage)

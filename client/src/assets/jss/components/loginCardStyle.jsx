@@ -30,7 +30,7 @@ const loginCardStyle = {
     ...cardHeader,
     ...defaultFont,
     textAlign: "center",
-    marginTop: "-80px",
+    marginTop: "-40px",
     marginBottom: "20px"
   },
   cardPlainHeader: {

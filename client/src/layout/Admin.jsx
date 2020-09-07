@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { Switch, Route, Link } from 'react-router-dom'
+import { Switch, Route, Link, Redirect } from 'react-router-dom'
 
 import MenuBar from 'components_bootstrap/MenuBar/MenuBar'
 
@@ -16,7 +16,7 @@ export const Admin = (props) => {
           return (
             <li>
               <Link
-                to={prop.layout + prop.path}
+                to={prop.path}
                 className="nav-link"
                 activeClassName="active"
               >
@@ -31,6 +31,11 @@ export const Admin = (props) => {
         <Switch>
           {adminRoutes.map( (prop, key) => {
             console.log(prop.path);
+            if (prop.redirect) {
+              return (
+                <Redirect from={prop.path} to={prop.pathTo} key={key} />
+              );
+            }
             return (
               <Route
                 path={prop.layout + prop.path}
