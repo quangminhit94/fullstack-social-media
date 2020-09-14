@@ -21,7 +21,7 @@ const rootReducer = combineReducers({
   posts_reducer: PostsReducer,
   hooks_reducer: HooksReducer,
   // Loading
-  // loading_reducer: LoadingReducer,
+  loading_reducer: LoadingReducer,
   // Thunk,
   repos, loadingInProgress, loadingError,
   // Saga

@@ -20,6 +20,7 @@ export const LoadingReducer = (state = initialState, { type, payload }) => {
         showLoading: false
       }
     default:
-      throw new Error();
+      return state
+      // throw new Error();
   }
 }
