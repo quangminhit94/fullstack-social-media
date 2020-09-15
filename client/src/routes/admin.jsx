@@ -11,18 +11,16 @@ const adminRoutes = [
     name: "Landing"
   },
   {
-    path: "/user_profile",
+    path: "/admin/user_profile",
     name: "User Profile",
     icon: "pe-7s-user",
-    component: UserProfile,
-    layout: "/admin"
+    component: UserProfile
   },
   {
-    path: "/sign_in",
+    path: "/admin/sign_in",
     name: "Sign In",
     icon: "pe-7s-user",
-    component: SignUp,
-    layout: "/admin"
+    component: SignUp
   },
   
 ];

@@ -30,7 +30,6 @@ export const Admin = (props) => {
       <div>
         <Switch>
           {adminRoutes.map( (prop, key) => {
-            console.log(prop.path);
             if (prop.redirect) {
               return (
                 <Redirect from={prop.path} to={prop.pathTo} key={key} />
@@ -38,7 +37,7 @@ export const Admin = (props) => {
             }
             return (
               <Route
-                path={prop.layout + prop.path}
+                path={prop.path}
                 component={prop.component}
                 key={key}/>
             )
