@@ -57,6 +57,10 @@ const registerPageStyle = {
   cardTitle: {
     fontSize: "2.6em"
   },
+  cardHidden: {
+    opacity: "0",
+    transform: "translate3d(0, -60px, 0)"
+  }
 };
 
 export default registerPageStyle;

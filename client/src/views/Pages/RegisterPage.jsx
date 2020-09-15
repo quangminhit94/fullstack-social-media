@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import PropTypes from "prop-types";
 
 // material-ui components
@@ -32,8 +32,20 @@ import registerPageStyle from "assets/jss/views/registerPageStyle";
 
 const RegisterPage = (props) => {
   const { classes } = props;
-  const [state, setState] = useState({checked: []});
+  const [state, setState] = useState({
+    checked: [],
+    cardAnimaton: "cardHidden"
+  });
   const { checked } = state;
+
+  useEffect(() => {
+    // we add a hidden class to the card and after 700 ms we delete it and the transition appears
+    setTimeout(
+      function() {
+        setState({ cardAnimaton: "" });
+      }, 100
+    );
+  }, [])
 
   function handleToggle (value) {
     const currentIndex = checked.indexOf(value);
@@ -57,7 +69,7 @@ const RegisterPage = (props) => {
             cardTitle="Register"
             titleAlign="center"
             customCardTitleClasses={classes.cardTitle}
-            customCardClasses={classes.cardClasses}
+            customCardClasses={classes[state.cardAnimaton]}
             content={
               <GridContainer justify="center">
                 <ItemGrid xs={12} sm={12} md={5}>
