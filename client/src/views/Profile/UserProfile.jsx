@@ -8,6 +8,7 @@ import Button from "components_material/CustomButtons/Button.jsx";
 
 import ProfileCard from "components_material/Cards/ProfileCard.jsx";
 import Timeline from "components_material/Timeline/Timeline.jsx";
+import ApexChart from "components_material/Charts/ApexChart.jsx";
 
 import { widgetStories } from "utils/constants/data.jsx";
 
@@ -53,6 +54,11 @@ const UserProfile = (props) => {
       <GridContainer justify="center">
         <ItemGrid xs={12} sm={8} md={6}>
           <Timeline simple stories={widgetStories} />
+        </ItemGrid>
+      </GridContainer>
+      <GridContainer justify="center">
+        <ItemGrid xs={12} sm={8} md={6}>
+          <ApexChart></ApexChart>
         </ItemGrid>
       </GridContainer>
     </div>
