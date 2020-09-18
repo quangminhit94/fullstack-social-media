@@ -145,7 +145,6 @@ const ContextState = (props) => {
       
       Axios.get('/auth/logout')
         .then(result => {
-          console.log(result)
           localStorage.removeItem('user_id')
           // dispatchAuthReducer(ACTIONS.loginFailure())
           dispatchProfile(ACTIONS.loginFailure())

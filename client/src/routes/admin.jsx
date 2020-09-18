@@ -1,6 +1,6 @@
 
 import Landing from 'layout/Landing.jsx'
-import UserProfile from "views/Profile/UserProfile.jsx";
+import BlogPage from "views/Blog/BlogPage.jsx";
 import SignUp from "Users/SignUp";
 
 const adminRoutes = [
@@ -11,17 +11,16 @@ const adminRoutes = [
     name: "Landing"
   },
   {
-    path: "/admin/user_profile",
-    name: "User Profile",
-    icon: "pe-7s-user",
-    component: UserProfile
+    path: "/admin/blog_page",
+    name: "Blog Page",
+    component: BlogPage
   },
-  {
-    path: "/admin/sign_in",
-    name: "Sign In",
-    icon: "pe-7s-user",
-    component: SignUp
-  },
+  // {
+  //   path: "/admin/sign_in",
+  //   name: "Sign In",
+  //   icon: "pe-7s-user",
+  //   component: SignUp
+  // },
   
 ];
 

@@ -1,0 +1,12 @@
+Fullstack social media:
+  - [ ] React Blog system
+    - [ ] Frontend
+      - [x] Loading
+      - [ ] Blog module
+    - [ ] Backend
+      - [ ] User module with JWT
+  - [ ] Chat
+    - [ ] Frontend
+      - [ ] Build UI
+    - [ ] Backend
+      - [ ] Build chat Api
