@@ -53,20 +53,20 @@ const mapStateToProps = state => {
   };
   const getTodosAsIdsSelector = state =>{
     
-    return state.todosAsIds
-      .map(id => {
-        console.log('id', id);
-        return state.todos[id]
-      })
-      .filter(_ => {
-        console.log('VISIBILITY_FILTER[state.visibility]', VISIBILITY_FILTER[state.visibility])
-        return VISIBILITY_FILTER[state.visibility]
-      })
-      .map(t => t.id);
     // return state.todosAsIds
-    //   .map(id => state.todos[id])
-    //   .filter(VISIBILITY_FILTER[state.visibility])
+    //   .map(id => {
+    //     console.log('id', id);
+    //     return state.todos[id]
+    //   })
+    //   .filter(_ => {
+    //     console.log('VISIBILITY_FILTER[state.visibility]', VISIBILITY_FILTER[state.visibility])
+    //     return VISIBILITY_FILTER[state.visibility]
+    //   })
     //   .map(t => t.id);
+    return state.todosAsIds
+      .map(id => state.todos[id])
+      .filter(VISIBILITY_FILTER[state.visibility])
+      .map(t => t.id);
   }
   const getTodosAsIds = createSelector(getTodosAsIdsSelector, t => t);
 
