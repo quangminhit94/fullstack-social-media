@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { Switch, Route, Link, Redirect } from 'react-router-dom'
+import { Switch, Route, NavLink, Redirect } from 'react-router-dom'
 
 import MenuBar from 'components_bootstrap/MenuBar/MenuBar'
 
@@ -12,17 +12,16 @@ export const Admin = (props) => {
     <div>
       <ul>
         {adminRoutes.map( (prop, key) => {
-          console.log(prop.component);
           return (
-            <li>
-              <Link
+            <li key={key}>
+              <NavLink
                 to={prop.path}
                 className="nav-link"
                 activeClassName="active"
               >
                 <i className={prop.icon} />
                 <p>{prop.name}</p>
-              </Link>
+              </NavLink>
             </li>
           )
         })}

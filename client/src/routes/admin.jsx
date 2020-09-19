@@ -1,7 +1,8 @@
 
 import Landing from 'layout/Landing.jsx'
 import BlogPage from "views/Blog/BlogPage.jsx";
-import SignUp from "Users/SignUp";
+import SagaTodo from "hooks/SagaTodo.jsx";
+import ThunkGit from "hooks/ThunkGit.jsx";
 
 const adminRoutes = [
   {
@@ -14,6 +15,16 @@ const adminRoutes = [
     path: "/admin/blog_page",
     name: "Blog Page",
     component: BlogPage
+  },
+  {
+    path: "/admin/todo",
+    name: "Saga Todo",
+    component: SagaTodo
+  },
+  {
+    path: "/admin/git_repo",
+    name: "Thunk Git",
+    component: ThunkGit
   },
   // {
   //   path: "/admin/sign_in",

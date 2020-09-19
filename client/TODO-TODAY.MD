@@ -10,3 +10,9 @@ Fullstack social media:
       - [ ] Build UI
     - [ ] Backend
       - [ ] Build chat Api
+
+Trusting service for freelancer
+- I use codesandbox platform to provide freelancer service
+
+--fonts:
+-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif

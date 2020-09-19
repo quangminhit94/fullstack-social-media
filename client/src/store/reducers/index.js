@@ -9,9 +9,7 @@ import {LoadingReducer} from './loading_reducer'
 import { repos, loadingInProgress, loadingError } from '../thunk_reducer/thunk_reducer'
 
 // Saga
-import todosReducer from "../saga_reducers/todosReducer";
-import visibilityReducer from "../saga_reducers/visibilityReducer";
-import notificationReducer from "../saga_reducers/notificationReducer";
+import SagaTodoReducer from "./saga_todo_reducer";
 
 import { combineReducers } from 'redux';
 
@@ -25,7 +23,7 @@ const rootReducer = combineReducers({
   // Thunk,
   repos, loadingInProgress, loadingError,
   // Saga
-  todosReducer, visibilityReducer, notificationReducer
+  saga_todo_reducer: SagaTodoReducer
 })
 
 export default rootReducer
