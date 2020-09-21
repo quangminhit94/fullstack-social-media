@@ -10,13 +10,11 @@
 }
 
 footer {
-  line-height: 34px;
-  height: 34px;
   display: block;
   text-align: right;
   padding: 1rem;
-  position: fixed;
-  bottom: 50px;
+  position: absolute;
+  bottom: 0;
   right: 0px;
   width: 100%;
 }
@@ -25,7 +23,6 @@ footer > label:first-child {
   display: inline-block;
   position: relative;
   top: -0.6rem;
-  color: red;
   font-weight: bold;
 }
 
@@ -40,7 +37,7 @@ footer > label:first-child {
   display: none;
 }
 
-.slider {
+.switcher {
   position: absolute;
   cursor: pointer;
   top: 0;
@@ -52,7 +49,7 @@ footer > label:first-child {
   transition: 0.4s;
 }
 
-.slider:before {
+.switcher:before {
   position: absolute;
   content: "";
   height: 26px;
@@ -64,33 +61,30 @@ footer > label:first-child {
   transition: 0.4s;
 }
 
-input:checked + .slider {
+input:checked + .switcher {
   background-color: #2196f3;
 }
 
-input:focus + .slider {
+input:focus + .switcher {
   box-shadow: 0 0 1px #2196f3;
 }
 
-input:checked + .slider:before {
+input:checked + .switcher:before {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
   transform: translateX(26px);
 }
 
-.slider.round {
+.switcher.round {
   border-radius: 34px;
 }
 
-.slider.round:before {
+.switcher.round:before {
   border-radius: 50%;
 }
 
 .night,
 .day {
-  position: fixed;
-  top: 100px;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  position: relative;
+  min-height: 300px
 }

@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@craco/craco": "^5.6.4",
     "@material-ui/core": "latest",
     "@material-ui/icons": "^4.9.1",
     "@testing-library/jest-dom": "^4.2.4",
@@ -12,6 +13,7 @@
     "auth0-js": "^9.12.2",
     "axios": "^0.19.1",
     "bootstrap": "^4.5.2",
+    "craco-plugin-scoped-css": "^1.1.0",
     "material-ui": "1.0.0-beta.34",
     "material-ui-icons": "^1.0.0-beta.36",
     "moment": "^2.24.0",
@@ -39,11 +41,11 @@
   "scripts": {
     "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
-    "start-js": "react-scripts start",
+    "start-js": "craco start",
     "start": "npm-run-all -p watch-css start-js",
-    "build-js": "npm run build-css && react-scripts build",
+    "build-js": "npm run build-css && craco build",
     "build": "NODE_PATH=./src npm run build-js",
-    "test": "react-scripts test",
+    "test": "craco test",
     "eject": "react-scripts eject",
     "dev": "NODE_PATH=./src"
   },

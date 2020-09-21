@@ -3,10 +3,11 @@ import Axios from 'axios'
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types'
 import Context from 'utils/context/context'
-import ThemeContext from 'utils/ThemeContext'
-import LoaderHOC from 'HOC/LoaderHOC'
+import ThemeContext from 'utils/context/ThemeContext'
+
 import Button from '@material-ui/core/Button'
 
+import "assets/css_custom/views/theme.scoped.css";
 const Slider = () => {
   const { themeState, toggleTheme } = useContext(ThemeContext)
 
@@ -18,7 +19,7 @@ const Slider = () => {
         type="checkbox"
         checked={themeState.theme === "night"}
       />
-      <span className="slider round" />
+      <span className="switcher round" />
     </label>
   )
 }
@@ -31,7 +32,7 @@ const Footer = () => {
   )
 };
 
-const Home = ({textHome}) => {
+const DarkTheme = ({textHome}) => {
   const context = useContext(Context)
   // const initialThemeState = themeContext
   const [themeState, setThemeState] = useState({theme: 'night'})
@@ -45,7 +46,6 @@ const Home = ({textHome}) => {
   
   return (
     <div>
-      {/* Home: {textHome} */}
       
       <ThemeContext.Provider value={{themeState, toggleTheme}}>
         <div className={themeState.theme}>
@@ -70,12 +70,12 @@ const Home = ({textHome}) => {
   )
 }
 
-Home.defaultProps = {
+DarkTheme.defaultProps = {
   textHome: 'Home',
 }
 
-Home.propTypes = {
+DarkTheme.propTypes = {
   textHome: PropTypes.string.isRequired
 }
 
-export default LoaderHOC(Home)
+export default DarkTheme

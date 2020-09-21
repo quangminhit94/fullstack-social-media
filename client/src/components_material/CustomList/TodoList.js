@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { createSelector } from "reselect";
 
 import TodoItem from "./TodoItem";
-import Notification from "./Notification";
+import Notification from "components_material/Notifications/Notification";
 import actions from "store/actions/saga/index";
 
 const TodoList = ({ filter, todosAsIds, onSetFilter }) => {

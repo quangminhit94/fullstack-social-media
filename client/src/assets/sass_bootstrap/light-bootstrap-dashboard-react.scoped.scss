@@ -15,25 +15,25 @@
 
  */
 
-@import "lbd/variables";
-@import "lbd/mixins";
+@import "light-bootstrap/variables";
+@import "light-bootstrap/mixins";
 
 // Core CSS
-@import "lbd/typography";
-@import "lbd/misc";
-@import "lbd/sidebar-and-main-panel";
-@import "lbd/buttons";
-@import "lbd/inputs";
+@import "light-bootstrap/typography";
+@import "light-bootstrap/misc";
+@import "light-bootstrap/sidebar-and-main-panel";
+@import "light-bootstrap/buttons";
+@import "light-bootstrap/inputs";
 
-@import "lbd/alerts";
-@import "lbd/tables";
+@import "light-bootstrap/alerts";
+@import "light-bootstrap/tables";
 
-@import "lbd/checkbox-radio-switch";
-@import "lbd/navbars";
-@import "lbd/footers";
+@import "light-bootstrap/checkbox-radio-switch";
+@import "light-bootstrap/navbars";
+@import "light-bootstrap/footers";
 
 // Fancy Stuff
-@import "lbd/dropdown";
-@import "lbd/cards";
-@import "lbd/chartist";
-@import "lbd/responsive";
+@import "light-bootstrap/dropdown";
+@import "light-bootstrap/cards";
+@import "light-bootstrap/chartist";
+@import "light-bootstrap/responsive";

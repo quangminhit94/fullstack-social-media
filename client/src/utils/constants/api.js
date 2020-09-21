@@ -1,7 +1,11 @@
+import AxiosService from '../AxiosService'
+
 // server endpoint
 const HEROKU_ENDPOINT = `https://mickey-portfolio.herokuapp.com/`
 
-
+export function getList() {
+  return AxiosService.get('https://jsonplaceholder.typicode.com/hello')
+}
 /** EXPLAIN REDUX FLOW
 
 // Component

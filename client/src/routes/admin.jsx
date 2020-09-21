@@ -1,8 +1,10 @@
 
 import Landing from 'layout/Landing.jsx'
 import BlogPage from "views/Blog/BlogPage.jsx";
-import SagaTodo from "hooks/SagaTodo.jsx";
-import ThunkGit from "hooks/ThunkGit.jsx";
+import SagaTodo from "views/ReactExamples/SagaTodo.jsx";
+import ThunkGit from "views/ReactExamples/ThunkGit.jsx";
+import DarkTheme from "views/ReactExamples/DarkTheme.jsx";
+import HooksForm from "views/ReactExamples/HooksForm.jsx";
 
 const adminRoutes = [
   {
@@ -26,12 +28,19 @@ const adminRoutes = [
     name: "Thunk Git",
     component: ThunkGit
   },
-  // {
-  //   path: "/admin/sign_in",
-  //   name: "Sign In",
-  //   icon: "pe-7s-user",
-  //   component: SignUp
-  // },
+  {
+    path: "/admin/dark_theme",
+    name: "Dark Theme",
+    icon: "pe-7s-user",
+    component: DarkTheme,
+    theme: "dark"
+  },
+  {
+    path: "/admin/hooks_form",
+    name: "Hooks Form",
+    icon: "pe-7s-user",
+    component: HooksForm
+  },
   
 ];
 

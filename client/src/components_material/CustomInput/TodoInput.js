@@ -3,7 +3,8 @@ import { connect } from "react-redux";
 import v4 from "uuid/dist/v4";
 
 import actions from "store/actions/saga/index";
-import ErrorBoundary from "./ErrorBoundary";
+
+import ErrorBoundary from "components_material/ErrorBoundary/ErrorBoundary.jsx";
 
 class TodoInput extends React.Component {
   state = {

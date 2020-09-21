@@ -1,5 +1,7 @@
-import { delay } from "redux-saga/effects";
-import { put, takeEvery } from "redux-saga/effects";
+import { delay, call } from "redux-saga/effects";
+import { put, takeEvery, take } from "redux-saga/effects";
+
+import { getList } from "utils/constants/api.js"
 
 import actions from "./index";
 import types from "./types";
@@ -18,6 +20,15 @@ function* handleAddTodoWithNotification(action) {
   yield put(actions.doHideNotification(id));
 }
 
+
+function* watchFetchDemo() {
+  while(true) {
+    yield take(types.FETCH_TASK);
+    const res = yield call(getList)
+
+  }
+}
+ 
 // function* getCurrentUser() {
 //   const response = yield call(requestGetCurrentUser)
 //   const {data, status} = response
