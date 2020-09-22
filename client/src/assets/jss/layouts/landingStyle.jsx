@@ -6,7 +6,7 @@
 //
 // } from "assets/jss/material-dashboard-pro-react.jsx";
 
-const pagesStyle = {
+const landingStyle = {
   wrapper: {
     height: "auto",
     minHeight: "100vh",
@@ -42,4 +42,4 @@ const pagesStyle = {
   }
 };
 
-export default pagesStyle;
+export default landingStyle;

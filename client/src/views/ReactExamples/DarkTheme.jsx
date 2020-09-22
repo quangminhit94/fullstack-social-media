@@ -7,7 +7,10 @@ import ThemeContext from 'utils/context/ThemeContext'
 
 import Button from '@material-ui/core/Button'
 
-import "assets/css_custom/views/theme.scoped.css";
+import BootstrapWrapper from 'HOC/BootstrapWrapper'
+
+import "assets/css_custom/views/theme.css";
+
 const Slider = () => {
   const { themeState, toggleTheme } = useContext(ThemeContext)
 
@@ -78,4 +81,4 @@ DarkTheme.propTypes = {
   textHome: PropTypes.string.isRequired
 }
 
-export default DarkTheme
+export default BootstrapWrapper(DarkTheme)

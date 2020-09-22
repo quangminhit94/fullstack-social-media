@@ -24,7 +24,7 @@ import landingRoutes from "routes/landing.jsx";
 
 import pagesHeaderStyle from "assets/jss/components/pagesHeaderStyle.jsx";
 
-const PagesHeader = (props) => {
+const LandingHeader = (props) => {
   const { classes, color } = props;
   const appBarClasses = cx({
     [" " + classes[color]]: color
@@ -126,4 +126,4 @@ const PagesHeader = (props) => {
   )
 }
 
-export default withStyles(pagesHeaderStyle)(PagesHeader);
+export default withStyles(pagesHeaderStyle)(LandingHeader);

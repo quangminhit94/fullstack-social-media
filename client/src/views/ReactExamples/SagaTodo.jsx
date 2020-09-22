@@ -4,6 +4,7 @@ import React, { Fragment } from "react";
 import TodoInput from "components_material/CustomInput/TodoInput";
 // import TodoList from "./SagaTodoChild/TodoList";
 import TodoList from "components_material/CustomList/TodoList";
+import BootstrapWrapper from 'HOC/BootstrapWrapper'
 
 const SagaTodo = ({ todos }) => (
   <Fragment>
@@ -13,4 +14,4 @@ const SagaTodo = ({ todos }) => (
   </Fragment>
 );
 
-export default SagaTodo;
+export default BootstrapWrapper(SagaTodo);

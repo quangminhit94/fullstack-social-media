@@ -7,9 +7,9 @@ import { Switch, Route } from 'react-router-dom'
 import withStyles from "material-ui/styles/withStyles";
 
 // core components
-import PagesHeader from 'components_material/Header/PagesHeader.jsx'
+import LandingHeader from 'components_material/Header/LandingHeader.jsx'
 
-import landingStyle from "assets/jss/layouts/pagesStyle.jsx";
+import landingStyle from "assets/jss/layouts/landingStyle.jsx";
 
 import landingRoutes from 'routes/landing.jsx'
 
@@ -19,10 +19,10 @@ import Footer from "components_material/Footer/Footer.jsx";
 
 const Landing = (props) => {
   const { classes, ...rest } = props;
-  console.log("wrapper", classes.wrapper);
+  console.log("...rest", {...rest});
   return (
     <div>
-      <PagesHeader {...rest} />
+      <LandingHeader {...rest} />
       <div className={classes.wrapper}>
         <div className={classes.fullPage}>
           <Switch>
