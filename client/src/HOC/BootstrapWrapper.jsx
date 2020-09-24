@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 
 import root from "react-shadow/styled-components";
 
+
+import bootstrap from "!!raw-loader!bootstrap/dist/css/bootstrap.min.css";
 // Add Bootstrap style was built from sass
 /* eslint import/no-webpack-loader-syntax: off */
 import bootstrapStyles from "!!raw-loader!assets/sass_bootstrap/light-bootstrap-dashboard-react.css"
@@ -21,6 +23,7 @@ const BootStrapWrapper = (WrappedComponent) => {
           <WrappedComponent {...this.props} >
           </WrappedComponent>
           <style type="text/css">
+            {bootstrap.toString()}
             {bootstrapStyles.toString()}
             {demoStyle.toString()}
           </style>

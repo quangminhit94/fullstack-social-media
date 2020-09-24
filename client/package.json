@@ -11,7 +11,7 @@
     "apexcharts": "^3.20.2",
     "auth0-js": "^9.12.2",
     "axios": "^0.19.1",
-    "bootstrap": "^4.5.2",
+    "bootstrap": "3.3.7",
     "material-ui": "1.0.0-beta.34",
     "material-ui-icons": "^1.0.0-beta.36",
     "moment": "^2.24.0",
@@ -22,6 +22,7 @@
     "prop-types": "^15.7.2",
     "react": "^16.13.0",
     "react-apexcharts": "^1.3.7",
+    "react-bootstrap": "0.32.4",
     "react-dom": "^16.12.0",
     "react-js-pagination": "^3.0.2",
     "react-redux": "^7.1.3",
@@ -47,7 +48,11 @@
     "build": "NODE_PATH=./src npm run build-js",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "dev": "NODE_PATH=./src"
+    "dev": "NODE_PATH=./src",
+    "bootstrap-install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && yarn && yarn start",
+    "bootstrap-compile-sass": "node-sass src/assets/sass/light-bootstrap-dashboard-react.scss src/assets/css/light-bootstrap-dashboard-react.css",
+    "bootstrap-minify-sass": "node-sass src/assets/sass/light-bootstrap-dashboard-react.scss src/assets/css/light-bootstrap-dashboard-react.min.css --output-style compressed",
+    "bootstrap-map-sass": "node-sass src/assets/sass/light-bootstrap-dashboard-react.scss src/assets/css/light-bootstrap-dashboard-react.css --source-map true"
   },
   "eslintConfig": {
     "extends": "react-app"
