@@ -21,11 +21,11 @@ const MenuBar = (props) => {
                 className={
                   prop.upgrade
                     ? "active active-pro"
-                    : activeRoute(prop.layout + prop.path)
+                    : activeRoute(prop.path)
                 }
               >
                 <NavLink
-                  to={prop.layout + prop.path}
+                  to={prop.path}
                   className="nav-link"
                   activeClassName="active"
                 >

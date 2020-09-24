@@ -7,9 +7,9 @@ import ThemeContext from 'utils/context/ThemeContext'
 
 import Button from '@material-ui/core/Button'
 
-import BootstrapWrapper from 'HOC/BootstrapWrapper'
-
-import "assets/css_custom/views/theme.css";
+import root from "react-shadow/styled-components";
+/* eslint import/no-webpack-loader-syntax: off */
+import themeStyles from "!!raw-loader!assets/css_custom/views/theme.css"
 
 const Slider = () => {
   const { themeState, toggleTheme } = useContext(ThemeContext)
@@ -49,25 +49,30 @@ const DarkTheme = ({textHome}) => {
   
   return (
     <div>
-      
-      <ThemeContext.Provider value={{themeState, toggleTheme}}>
-        <div className={themeState.theme}>
-          {!localStorage.user_id
-            ? <Link style={{ paddingLeft: '5px', textDecoration: 'none' }}
-                to={{ pathname: "/login"}}>
-                <Button color='secondary' variant='outlined'>Login</Button>
-              </Link>
-            : <div>
-                <Link style={{ paddingLeft: '5px', textDecoration: 'none' }}
-                    to={{ pathname: "/profile1/" + localStorage.user_id }}>
-                    Hello {localStorage.user_id} </Link> 
-                <Button color='secondary' variant='outlined' onClick={() => context.logout()}>Logout</Button>
-              </div>
-          }
-          
-          <Footer />
-        </div>
-      </ThemeContext.Provider>
+      <root.div>
+
+        <ThemeContext.Provider value={{themeState, toggleTheme}}>
+          <div className={themeState.theme}>
+            {/* {!localStorage.user_id
+              ? <Link style={{ paddingLeft: '5px', textDecoration: 'none' }}
+                  to={{ pathname: "/login"}}>
+                  <Button color='secondary' variant='outlined'>Login</Button>
+                </Link>
+              : <div>
+                  <Link style={{ paddingLeft: '5px', textDecoration: 'none' }}
+                      to={{ pathname: "/profile1/" + localStorage.user_id }}>
+                      Hello {localStorage.user_id} </Link> 
+                  <Button color='secondary' variant='outlined' onClick={() => context.logout()}>Logout</Button>
+                </div>
+            } */}
+            
+            <Footer />
+          </div>
+        </ThemeContext.Provider>
+        <style type="text/css">
+            {themeStyles.toString()}  
+          </style>
+      </root.div>
       
     </div>
   )
@@ -81,4 +86,4 @@ DarkTheme.propTypes = {
   textHome: PropTypes.string.isRequired
 }
 
-export default BootstrapWrapper(DarkTheme)
+export default DarkTheme

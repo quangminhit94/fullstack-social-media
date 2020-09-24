@@ -1,16 +1,18 @@
 import React from 'react'
 // import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import { compose } from 'redux'
 import { Switch, Route, NavLink, Redirect } from 'react-router-dom'
 
 import MenuBar from 'components_bootstrap/MenuBar/MenuBar'
+import BootstrapWrapper from 'HOC/BootstrapWrapper'
 
 import adminRoutes from "routes/admin.jsx";
 
 export const Admin = (props) => {
   return (
     <div>
-      <ul>
+      {/* <ul>
         {adminRoutes.map( (prop, key) => {
           return (
             <li key={key}>
@@ -25,7 +27,8 @@ export const Admin = (props) => {
             </li>
           )
         })}
-      </ul>
+      </ul> */}
+      <MenuBar {...props} routes={adminRoutes}/>
       <div>
         <Switch>
           {adminRoutes.map( (prop, key) => {
@@ -59,4 +62,9 @@ const mapDispatchToProps = {
   
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Admin)
+export default BootstrapWrapper(connect(mapStateToProps, mapDispatchToProps)(Admin))
+  
+// export default compose(
+//   BootstrapWrapper(Admin),
+//   connect(mapStateToProps, mapDispatchToProps)
+// )(Admin)
