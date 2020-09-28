@@ -29,13 +29,27 @@ const landingRoutes = [
     component: RegisterPage
   },
   {
-    path: "/",
+    path: "/landing/portfolio",
     name: "Portfolio",
     short: "Portfolio",
     mini: "PF",
     icon: Book,
     component: UserProfile
   },
+  {
+    collapse: true,
+    path: "blog",
+    name: "Blog",
+    state: "openPages",
+    views: [
+      {
+        path: "/blog/blog_page",
+        name: "Blog Page",
+        component: BlogPage
+      },
+    ]
+  },
+  { redirect: true, path: "/", pathTo: "/landing/portfolio", name: "Portfolio" }
 ];
 
 export default landingRoutes;

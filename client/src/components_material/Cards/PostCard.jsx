@@ -1,5 +1,16 @@
 import React from 'react'
-export default function PostCard ({ ...props }) {
+import PropTypes from 'prop-types'
+
+// material-ui components
+import withStyles from "material-ui/styles/withStyles";
+import Card from "material-ui/Card";
+import CardContent from "material-ui/Card/CardContent";
+import CardHeader from "material-ui/Card/CardHeader";
+import CardActions from "material-ui/Card/CardActions";
+
+import postCardStyle from "assets/jss/components/postCardStyle.jsx";
+
+function PostCard ({ ...props }) {
   const {
     classes,
     headerColor,
@@ -22,7 +33,7 @@ export default function PostCard ({ ...props }) {
           subheader: classes.cardSubtitle
         }}
         title={cardTitle}
-        subheader={socials}
+        // subheader={socials}
       />
       <p className={classes.cardSubtitle}>{cardSubtitle}</p>
       <CardContent className={classes.cardContent}>{content}</CardContent>
@@ -37,11 +48,11 @@ export default function PostCard ({ ...props }) {
   );
 }
 
-LoginCard.defaultProps = {
+PostCard.defaultProps = {
   headerColor: "purple"
 };
 
-LoginCard.propTypes = {
+PostCard.propTypes = {
   plainCard: PropTypes.bool,
   classes: PropTypes.object.isRequired,
   headerColor: PropTypes.oneOf([
@@ -60,3 +71,5 @@ LoginCard.propTypes = {
   footerAlign: PropTypes.oneOf(["left", "right", "center"]),
   customCardClass: PropTypes.string
 };
+
+export default withStyles(postCardStyle)(PostCard);

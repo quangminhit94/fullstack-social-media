@@ -10,7 +10,7 @@ const adminRoutes = [
   {
     redirect: true,
     path: "/landing",
-    pathTo: "/landing/register",
+    pathTo: "/landing/portfolio",
     name: "Landing"
   },
   {

@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import cx from "classnames";
+import { NavLink } from "react-router-dom";
 
 // material-ui components
 import withStyles from "material-ui/styles/withStyles";
@@ -10,7 +11,7 @@ import ListItem from "material-ui/List/ListItem";
 import footerStyle from "assets/jss/components/footerStyle";
 
 function Footer({ ...props }) {
-  const { classes, fluid, white, rtlActive } = props;
+  const { classes, fluid, white, rtlActive, routes } = props;
   var container = cx({
     [classes.container]: !fluid,
     [classes.containerFluid]: fluid,
@@ -40,16 +41,28 @@ function Footer({ ...props }) {
                 {rtlActive ? "شركة" : "Company"}
               </a>
             </ListItem>
-            <ListItem className={classes.inlineBlock}>
-              <a href="#blog" className={block}>
-                {rtlActive ? "مدونة" : "Blog"}
-              </a>
-            </ListItem>
+            {routes.map((prop, key) => {
+              if(prop.collapse) {
+                return prop.views.map((prop, key) => {
+                    return (
+                      <ListItem key={key} className={classes.inlineBlock}>
+                        <NavLink to={prop.path}>
+                          {prop.name}
+                        </NavLink>
+                      </ListItem>
+                    )
+                  }
+                )
+              }
+            })}
+            
             <ListItem className={classes.inlineBlock}>
               <a href="#contact" className={block}>
                 {rtlActive ? "بعدسة" : "Contact"}
               </a>
             </ListItem>
+            
+            
           </List>
         </div>
         <p className={classes.right}>

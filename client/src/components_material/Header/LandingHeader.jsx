@@ -20,12 +20,12 @@ import ListItemText from "material-ui/List/ListItemText";
 import Dashboard from "material-ui-icons/Dashboard";
 import Menu from "material-ui-icons/Menu";
 
-import landingRoutes from "routes/landing.jsx";
+// import landingRoutes from "routes/landing.jsx";
 
 import pagesHeaderStyle from "assets/jss/components/pagesHeaderStyle.jsx";
 
 const LandingHeader = (props) => {
-  const { classes, color } = props;
+  const { classes, color, routes } = props;
   const appBarClasses = cx({
     [" " + classes[color]]: color
   });
@@ -54,8 +54,11 @@ const LandingHeader = (props) => {
           />
         </NavLink>
       </ListItem>
-      {landingRoutes.map((prop, key) => {
+      {routes.map((prop, key) => {
         if (prop.redirect) {
+          return null;
+        }
+        if (prop.collapse) {
           return null;
         }
         const navLink =

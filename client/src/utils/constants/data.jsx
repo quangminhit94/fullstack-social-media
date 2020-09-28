@@ -34,7 +34,7 @@ const widgetStories = [
           2019 - 2020: Javscript Developer at Tairapromote
         </p>
         <p>
-          2018 - 2019: Javscript Developer at Sutrix Media
+          2017 - 2018: Javscript Developer at Sutrix Media
         </p>
       </div>
     ),
@@ -50,7 +50,7 @@ const widgetStories = [
     body: (
       <div>
         <p>
-          2016: Graduated from FPT and get Higher Diploma degree
+          2016: Graduated from FPT
         </p>
         <Success>
           GPA: 8.3
@@ -69,10 +69,7 @@ const widgetStories = [
     body: (
       <div>
         <p>
-          Read books, make website
-        </p>
-        <p>
-          Feed my cat, eat and watch action movies
+          Read books
         </p>
       </div>
     )

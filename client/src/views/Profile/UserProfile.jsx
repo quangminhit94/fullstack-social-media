@@ -24,9 +24,9 @@ const UserProfile = (props) => {
         <ItemGrid xs={12} sm={8} md={6}>
           <ProfileCard
             avatar={avatar}
-            subtitle="Middle Javscript Developer"
+            subtitle="Senior Javscript Developer"
             title="Nguyen Quang Minh"
-            description="I love make beautiful website"
+            description="Teamwork is the key of success"
             content={
               <div>
                 <Button 
