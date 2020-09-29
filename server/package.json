@@ -16,7 +16,7 @@
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
     "knex": "^0.12.6",
-    "morgan": "~1.7.0",
+    "morgan": "~1.9.1",
     "nodemon": "^2.0.4",
     "pg": "^6.1.2",
     "serve-favicon": "~2.3.0",
