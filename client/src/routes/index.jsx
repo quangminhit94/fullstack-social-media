@@ -4,7 +4,7 @@ import Landing from 'layout/Landing.jsx'
 
 const indexRoutes = [
   // { path: '/admin', name: 'Admin', component: Admin },
-  { path: '/admin', name: 'Admin', component: AdminBT },
+  // { path: '/admin', name: 'Admin', component: AdminBT },
   { path: '/', name: 'Landing', component: Landing }
 ];
 

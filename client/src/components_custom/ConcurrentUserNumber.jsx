@@ -17,11 +17,11 @@ class ConcurrentUserNumber extends Component {
   }
 
   componentWillMount() {
-    this.openWebSocketConnection()
+    
   }
 
   componentDidMount() {
-    
+    this.openWebSocketConnection()
   }
   componentWillReceiveProps(nextProps) {
 
