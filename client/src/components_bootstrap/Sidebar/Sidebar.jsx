@@ -13,7 +13,6 @@ class Sidebar extends Component {
     };
   }
   activeRoute(routeName) {
-    console.log(this.props.location.pathname,routeName);
     return this.props.location.pathname.indexOf(routeName) > -1 ? "active" : "";
   }
   updateDimensions() {

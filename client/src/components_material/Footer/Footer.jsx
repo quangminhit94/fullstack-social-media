@@ -8,6 +8,10 @@ import withStyles from "material-ui/styles/withStyles";
 import List from "material-ui/List";
 import ListItem from "material-ui/List/ListItem";
 
+// custom component
+import ConcurrentUserNumber from "components_custom/ConcurrentUserNumber.jsx";
+
+
 import footerStyle from "assets/jss/components/footerStyle";
 
 function Footer({ ...props }) {
@@ -73,6 +77,7 @@ function Footer({ ...props }) {
           {/* {rtlActive
             ? ", مصنوعة مع الحب لشبكة الإنترنت أفضل"
             : " "} */}
+          <ConcurrentUserNumber />
         </p>
       </div>
     </footer>

@@ -14,10 +14,13 @@ import GridContainer from "components_material/Grid/GridContainer.jsx";
 import ItemGrid from "components_material/Grid/ItemGrid.jsx";
 import PostCard from 'components_material/Cards/PostCard.jsx'
 
+// custom components
+import ConcurrentUserNumber from 'components_custom/ConcurrentUserNumber.jsx'
+
 import registerPageStyle from "assets/jss/views/registerPageStyle.jsx";
 
 const BlogPage = (props) => {
-  const { classes, showLoading } = props
+  const { classes, showLoading, ...rest } = props
 
   // const initialState = {
   //   posts: [],
@@ -79,6 +82,7 @@ const BlogPage = (props) => {
           <ItemGrid xs={12} sm={6} md={4}>
             <h1>ABC</h1>
             <PostCard />
+            <ConcurrentUserNumber { ...rest }/>
           </ItemGrid>
         </GridContainer>
       {/* </div> */}

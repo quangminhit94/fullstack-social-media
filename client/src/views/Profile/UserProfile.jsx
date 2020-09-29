@@ -2,10 +2,10 @@ import React from 'react'
 
 import withStyles from "material-ui/styles/withStyles";
 
+// core component
 import GridContainer from "components_material/Grid/GridContainer.jsx";
 import ItemGrid from "components_material/Grid/ItemGrid.jsx";
 import Button from "components_material/CustomButtons/Button.jsx";
-
 import ProfileCard from "components_material/Cards/ProfileCard.jsx";
 import Timeline from "components_material/Timeline/Timeline.jsx";
 import ApexChart from "components_material/Charts/ApexChart.jsx";
