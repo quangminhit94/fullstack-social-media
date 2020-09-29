@@ -4,15 +4,18 @@ import socketIOClient from "socket.io-client";
 import Axios from 'axios'
 
 import UserIcon from "material-ui-icons/People";
-
+let socket = null
 class ConcurrentUserNumber extends Component {
   constructor(props) {
     super(props)
     this.state = { userNumber: 0 };
+    // if(!socket) {
+      socket = socketIOClient(Axios.defaults.baseURL)
+    // }
+    // this.socket = socketIOClient(Axios.defaults.baseURL);
   }
 
   openWebSocketConnection() {
-    const socket = socketIOClient(Axios.defaults.baseURL);
     socket.on("countCurrentUser", ({ count }) => this.setState({ userNumber: count }));
   }
 
@@ -40,7 +43,7 @@ class ConcurrentUserNumber extends Component {
   }
 
   componentWillUnmount() {
-
+    socket.disconnect()
   }
 
   render() {
