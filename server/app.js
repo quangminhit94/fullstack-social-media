@@ -86,14 +86,14 @@ var io = require('socket.io')(server);
 let currentConnections = {};
 let numberOfConnections = () => Object.keys(currentConnections).length;
 io.on('connection', (socket) => {
-  console.log('a user connected');
+  console.log('a user connected', socket.id);
   currentConnections[socket.id] = { socket: socket };
   io.emit('countCurrentUser',  { count: numberOfConnections() });
 
   // socket.emit("countCurrentUser", count);
 
   socket.on("disconnect", () => {
-    console.log("Client disconnected");
+    console.log("Client disconnected", socket.id);
     delete currentConnections[socket.id];
     io.emit('countCurrentUser',  { count: numberOfConnections() });
   });
