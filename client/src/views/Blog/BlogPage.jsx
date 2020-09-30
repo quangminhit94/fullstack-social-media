@@ -8,13 +8,17 @@ import { PostContext } from 'utils/context/PostContextState'
 
 // material-ui components
 import withStyles from "material-ui/styles/withStyles";
+import Button from "@material-ui/core/Button"
+import IconButton from "@material-ui/core/IconButton"
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import ShareIcon from '@material-ui/icons/Share';
 
 // core components
 import GridContainer from "components_material/Grid/GridContainer.jsx";
 import ItemGrid from "components_material/Grid/ItemGrid.jsx";
 import PostCard from 'components_material/Cards/PostCard.jsx'
 
-import registerPageStyle from "assets/jss/views/registerPageStyle.jsx";
+import blogPageStyle from "./blogPageStyle.jsx";
 
 const BlogPage = (props) => {
   const { classes, showLoading, ...rest } = props
@@ -74,14 +78,56 @@ const BlogPage = (props) => {
 
   return (
     <div>
-      {/* <div className={classes.container}> */}
+      <div className={classes.container}>
         <GridContainer justify="center">
-          <ItemGrid xs={12} sm={6} md={4}>
-            <h1>ABC</h1>
-            <PostCard />
+          <ItemGrid xs={12} sm={6} md={6}>
+            <PostCard
+              // headerColor="blue"
+              cardTitle={
+                <p>Post 1</p>
+              }
+              cardSubtitle={
+                <p>cardSubtitle</p>
+              }
+              content={
+                <span>This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like.</span>
+              }
+              footer={
+                <>
+                  <IconButton aria-label="add to favorites">
+                    <FavoriteIcon />
+                  </IconButton>
+                  <IconButton aria-label="share">
+                    <ShareIcon />
+                  </IconButton>
+                </>
+              } />
+          </ItemGrid>
+          <ItemGrid xs={12} sm={6} md={6}>
+            <PostCard
+              // headerColor="blue"
+              cardTitle={
+                <p>Post 2</p>
+              }
+              cardSubtitle={
+                <p>cardSubtitle</p>
+              }
+              content={
+                <span>This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like.</span>
+              }
+              footer={
+                <>
+                  <IconButton aria-label="add to favorites">
+                    <FavoriteIcon />
+                  </IconButton>
+                  <IconButton aria-label="share">
+                    <ShareIcon />
+                  </IconButton>
+                </>
+              } />
           </ItemGrid>
         </GridContainer>
-      {/* </div> */}
+      </div>
     </div>
   )
 }
@@ -91,6 +137,6 @@ const mapStateToProps = (state) => ({
 })
 
 export default compose(
-  withStyles(registerPageStyle),
+  withStyles(blogPageStyle),
   connect(mapStateToProps, null)
 )(BlogPage)

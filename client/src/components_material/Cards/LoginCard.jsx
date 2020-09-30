@@ -9,7 +9,7 @@ import CardContent from "material-ui/Card/CardContent";
 import CardHeader from "material-ui/Card/CardHeader";
 import CardActions from "material-ui/Card/CardActions";
 
-import loginCardStyle from "assets/jss/components/loginCardStyle.jsx";
+import loginCardStyle from "./loginCardStyle.jsx";
 
 function LoginCard({ ...props }) {
   const {
