@@ -3,20 +3,12 @@ import PropTypes from 'prop-types'
 import cx from "classnames";
 
 // material-ui components
-// import withStyles from "material-ui/styles/withStyles";
-// import Card from "material-ui/Card";
-// import CardContent from "material-ui/Card/CardContent";
-// import CardHeader from "material-ui/Card/CardHeader";
-// import CardActions from "material-ui/Card/CardActions";
-import { withStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardHeader from "@material-ui/core/CardHeader";
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
+import withStyles from "material-ui/styles/withStyles";
+import Card from "material-ui/Card";
+import CardContent from "material-ui/Card/CardContent";
+import CardHeader from "material-ui/Card/CardHeader";
+import CardActions from "material-ui/Card/CardActions";
+import CardMedia from 'material-ui/Card/CardMedia';
 
 import postCardStyle from "./postCardStyle.jsx";
 
@@ -54,7 +46,6 @@ function PostCard ({ ...props }) {
         title={cardTitle}
       />
       {/* <p className={classes.cardSubtitle}>{cardSubtitle}</p> */}
-      <CardActionArea>
         <CardMedia
             className={classes.cardMedia}
             image="https://picsum.photos/400/800"
@@ -63,7 +54,6 @@ function PostCard ({ ...props }) {
         <CardContent className={classes.cardContent}>
           {content}
         </CardContent>
-      </CardActionArea>
         {footer !== undefined ? (
             <CardActions disableSpacing
               className={classes.cardActions + " " + classes[footerAlign]}

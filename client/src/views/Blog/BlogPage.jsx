@@ -7,11 +7,16 @@ import { compose } from 'redux'
 import { PostContext } from 'utils/context/PostContextState'
 
 // material-ui components
-import { withStyles } from '@material-ui/core/styles';
-import Button from "@material-ui/core/Button"
-import IconButton from "@material-ui/core/IconButton"
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import ShareIcon from '@material-ui/icons/Share';
+// import { withStyles } from '@material-ui/core/styles';
+// import Button from "@material-ui/core/Button"
+// import IconButton from "@material-ui/core/IconButton"
+// import FavoriteIcon from '@material-ui/icons/Favorite';
+// import ShareIcon from '@material-ui/icons/Share';
+import withStyles from "material-ui/styles/withStyles";
+import Button from "material-ui/Button"
+import IconButton from "material-ui/IconButton"
+import FavoriteIcon from 'material-ui-icons/Favorite';
+import ShareIcon from 'material-ui-icons/Share';
 
 // core components
 import GridContainer from "components_material/Grid/GridContainer.jsx";
