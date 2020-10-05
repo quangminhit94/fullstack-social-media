@@ -8,8 +8,12 @@ import configureStore from "./store"
 import MyApp from './MyApp'
 
 import Axios from 'axios';
-// Axios.defaults.baseURL = 'https://mickey-portfolio.herokuapp.com/'; // server
-Axios.defaults.baseURL = 'http://localhost:5000/'; // test Local
+
+let baseURL;
+
+// if (process.env.NODE_ENV === 'test') config = configuration.test;
+if (process.env.NODE_ENV === 'development') Axios.defaults.baseURL = 'http://localhost:5000/';
+if (process.env.NODE_ENV === 'production') Axios.defaults.baseURL = 'https://mickey-portfolio.herokuapp.com/'; // server
 
 ReactDOM.render(
   <React.StrictMode>
