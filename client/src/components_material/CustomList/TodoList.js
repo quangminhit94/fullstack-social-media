@@ -44,34 +44,24 @@ const TodoList = ({ filter, todosAsIds, onSetFilter }) => {
 
 const mapStateToProps = state => {
   const { saga_todo_reducer } = state
-  const { visibility, todosAsIds} = saga_todo_reducer
+  const { visibility, todosAsIds, todos} = saga_todo_reducer
 
   const VISIBILITY_FILTER = {
     completed: t => t.completed,
     active: t => !t.completed,
     all: () => true
   };
-  const getTodosAsIdsSelector = state =>{
-    
-    // return state.todosAsIds
-    //   .map(id => {
-    //     console.log('id', id);
-    //     return state.todos[id]
-    //   })
-    //   .filter(_ => {
-    //     console.log('VISIBILITY_FILTER[state.visibility]', VISIBILITY_FILTER[state.visibility])
-    //     return VISIBILITY_FILTER[state.visibility]
-    //   })
-    //   .map(t => t.id);
-    return state.todosAsIds
-      .map(id => state.todos[id])
-      .filter(VISIBILITY_FILTER[state.visibility])
-      .map(t => t.id);
-  }
-  const getTodosAsIds = createSelector(getTodosAsIdsSelector, t => t);
+
+  const getTodosAsIds = () => todosAsIds
+  
+  const getTodoIds = createSelector(getTodosAsIds, ids => ids.map(id => todos[id]))
+
+  const getVisibleTodo = createSelector(getTodoIds, todoIds => todoIds.filter(VISIBILITY_FILTER[visibility]))
+
+  const getMyTodo = createSelector(getVisibleTodo, visibleTodo => visibleTodo.map(t => t.id))
 
   return {
-    todosAsIds: getTodosAsIds(saga_todo_reducer),
+    todosAsIds: getMyTodo(),
     filter: visibility
   }
 };
