@@ -13,7 +13,7 @@ import InputLabel from "material-ui/Input/InputLabel";
 import Clear from "material-ui-icons/Clear";
 import Check from "material-ui-icons/Check";
 
-import customInputStyle from "assets/jss/components/customInputStyle";
+import customInputStyle from "./customInputStyle";
 
 function CustomInput({ ...props }) {
   const {

@@ -12,7 +12,7 @@ import ListItem from "material-ui/List/ListItem";
 import ConcurrentUserNumber from "components_custom/ConcurrentUserNumber.jsx";
 
 
-import footerStyle from "assets/jss/components/footerStyle";
+import footerStyle from "./footerStyle";
 
 function Footer({ ...props }) {
   const { classes, fluid, white, rtlActive, routes } = props;

@@ -1,7 +1,7 @@
 import React, {useEffect, useContext} from 'react'
 import PropTypes from 'prop-types'
 
-import * as Reducer from 'store/hooks_reducer/user_input_hooks_reducer'
+import * as Reducer from 'store/reducers/user_input_hooks_reducer'
 import * as ACTIONS from 'store/actions/actions'
 import Context from 'utils/context/context'
 

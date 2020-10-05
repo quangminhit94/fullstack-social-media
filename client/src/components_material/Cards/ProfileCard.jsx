@@ -9,7 +9,7 @@ import CardContent from "material-ui/Card/CardContent";
 import CardHeader from "material-ui/Card/CardHeader";
 import Typography from "material-ui/Typography";
 
-import profileCardStyle from "assets/jss/components/profileCardStyle";
+import profileCardStyle from "./profileCardStyle";
 
 function ProfileCard({ ...props }) {
   const {

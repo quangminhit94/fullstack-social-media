@@ -8,8 +8,8 @@ import configureStore from "./store"
 import MyApp from './MyApp'
 
 import Axios from 'axios';
-Axios.defaults.baseURL = 'https://mickey-portfolio.herokuapp.com/'; // server
-// Axios.defaults.baseURL = 'http://localhost:5000/'; // test Local
+// Axios.defaults.baseURL = 'https://mickey-portfolio.herokuapp.com/'; // server
+Axios.defaults.baseURL = 'http://localhost:5000/'; // test Local
 
 ReactDOM.render(
   <Provider store={configureStore}>

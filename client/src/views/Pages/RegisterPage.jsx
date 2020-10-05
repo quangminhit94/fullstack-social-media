@@ -25,7 +25,7 @@ import IconButton from "components_material/CustomButtons/IconButton.jsx";
 import CustomInput from "components_material/CustomInput/CustomInput.jsx";
 import InfoArea from "components_material/InfoArea/InfoArea.jsx";
 
-import registerPageStyle from "assets/jss/views/registerPageStyle";
+import registerPageStyle from "./registerPageStyle";
 
 
 

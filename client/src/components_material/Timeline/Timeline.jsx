@@ -8,7 +8,7 @@ import withStyles from "material-ui/styles/withStyles";
 // core components
 import Badge from "components_material/Badge/Badge.jsx";
 
-import timelineStyle from "assets/jss/components/timelineStyle.jsx";
+import timelineStyle from "./timelineStyle.jsx";
 
 function Timeline({ ...props }) {
   const { classes, stories, simple } = props;

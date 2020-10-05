@@ -22,7 +22,7 @@ import Menu from "material-ui-icons/Menu";
 
 // import landingRoutes from "routes/landing.jsx";
 
-import pagesHeaderStyle from "assets/jss/components/pagesHeaderStyle.jsx";
+import pagesHeaderStyle from "./pagesHeaderStyle.jsx";
 
 const LandingHeader = (props) => {
   const { classes, color, routes } = props;

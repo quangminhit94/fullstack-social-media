@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 // material-ui components
 import withStyles from "material-ui/styles/withStyles";
 
-import typographyStyle from "assets/jss/components/typographyStyle.jsx";
+import typographyStyle from "./typographyStyle.jsx";
 
 function Danger({ ...props }) {
   const { classes, children } = props;

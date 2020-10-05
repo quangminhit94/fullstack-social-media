@@ -17,7 +17,7 @@ import LoginCard from "components_material/Cards/LoginCard.jsx";
 import CustomInput from "components_material/CustomInput/CustomInput.jsx";
 import Button from "components_material/CustomButtons/Button.jsx";
 
-import loginPageStyle from "assets/jss/views/loginPageStyle.jsx";
+import loginPageStyle from "./loginPageStyle.jsx";
 
 class LoginPage extends React.Component {
   constructor(props) {

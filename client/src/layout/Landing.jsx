@@ -9,7 +9,7 @@ import withStyles from "material-ui/styles/withStyles";
 // core components
 import LandingHeader from 'components_material/Header/LandingHeader.jsx'
 
-import landingStyle from "assets/jss/layouts/landingStyle.jsx";
+import landingStyle from "./landingStyle.jsx";
 
 import landingRoutes from 'routes/landing.jsx'
 

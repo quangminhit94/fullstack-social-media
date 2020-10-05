@@ -6,7 +6,7 @@ import cx from "classnames";
 import withStyles from "material-ui/styles/withStyles";
 import IconButton from "material-ui/IconButton";
 
-import iconButtonStyle from "assets/jss/components/iconButtonStyle";
+import iconButtonStyle from "./iconButtonStyle";
 
 function IconCustomButton({ ...props }) {
   const { classes, color, children, customClass, noBg, ...rest } = props;

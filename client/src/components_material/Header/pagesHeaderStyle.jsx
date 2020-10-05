@@ -14,7 +14,7 @@ import {
   boxShadow,
   drawerWidth,
   transition
-} from "../material-dashboard-pro-react.jsx";
+} from "assets/jss/material-dashboard-pro-react.jsx";
 
 const pagesHeaderStyle = theme => ({
   appBar: {

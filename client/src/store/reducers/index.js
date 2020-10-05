@@ -2,7 +2,7 @@
 import {AuthReducer} from './auth_reducer';
 import {UserReducer} from './user_reducer';
 import {PostsReducer} from './posts_reducer';
-import {HooksReducer} from '../hooks_reducer/hooks_reducer'
+import {HooksReducer} from './hooks_reducer'
 import {LoadingReducer} from './loading_reducer'
 
 // Thunk

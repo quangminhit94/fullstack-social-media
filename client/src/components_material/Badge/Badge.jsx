@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 // material-ui components
 import withStyles from "material-ui/styles/withStyles";
 
-import badgeStyle from "assets/jss/components/badgeStyle.jsx";
+import badgeStyle from "./badgeStyle.jsx";
 
 function Badge({ ...props }) {
   const { classes, color, children } = props;

@@ -14,7 +14,7 @@ import { widgetStories } from "utils/constants/data.jsx";
 
 import avatar from "assets/img/faces/avatar-card.jpg";
 
-import userProfileStyle from "assets/jss/views/userProfileStyle.jsx";
+import userProfileStyle from "./userProfileStyle.jsx";
 
 const UserProfile = (props) => {
   const { classes } = props;

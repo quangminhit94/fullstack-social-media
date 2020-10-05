@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 // material-ui components
 import withStyles from "material-ui/styles/withStyles";
 
-import infoStyle from "assets/jss/components/infoStyle";
+import infoStyle from "./infoStyle";
 
 function InfoArea({ ...props }) {
   const { classes, title, description, iconColor } = props;
