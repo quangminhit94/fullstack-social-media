@@ -232,54 +232,52 @@ const ContextState = (props) => {
 
 
     return(
-      <div>
-        <Context.Provider
-            value={{
+      <Context.Provider
+          value={{
 
-              //Auth Reducer
-              //keep for global state
-              authState: stateAuthReducer.is_authenticated,
-              dbProfileState: stateAuthReducer.db_profile,
-              profileState:  stateAuthReducer.profile,
-              errorPage:  stateAuthReducer.form_submit_status,
+            //Auth Reducer
+            //keep for global state
+            authState: stateAuthReducer.is_authenticated,
+            dbProfileState: stateAuthReducer.db_profile,
+            profileState:  stateAuthReducer.profile,
+            errorPage:  stateAuthReducer.form_submit_status,
 
-              handleAddDBProfile: (profile) => handleDBProfile(profile),
-              handleRemoveDBProfile: () => handleRemoveDBProfile(),
-              handleUserAddProfile: (profile) => handleAddProfile(profile),
-              handleUserRemoveProfile: () => handleRemoveProfile(),
-              handleUserLogin: () => handleLogin(),
-              handleUserLogout: () => handleLogout(),
+            handleAddDBProfile: (profile) => handleDBProfile(profile),
+            handleRemoveDBProfile: () => handleRemoveDBProfile(),
+            handleUserAddProfile: (profile) => handleAddProfile(profile),
+            handleUserRemoveProfile: () => handleRemoveProfile(),
+            handleUserLogin: () => handleLogin(),
+            handleUserLogout: () => handleLogout(),
 
-              // user login
-              userState: stateAuthReducer.user,
-              formSubmitStatus: stateAuthReducer.form_submit_status,
-              loginSubmit: (event) => handleLoginForm(event),
-              simpleValidator: simpleValidator.current,
-              handleBlurEmailField: (event) => handleSetEmail(event),
-              handleBlurPasswordField: (event) => handleSetPassword(event),
-              signUpSubmit: (event) => handleSignUpForm(event),
-              redirectIfLoggedIn:() => redirectIfLoggedIn(),
-              logout:() => logout(),
+            // user login
+            userState: stateAuthReducer.user,
+            formSubmitStatus: stateAuthReducer.form_submit_status,
+            loginSubmit: (event) => handleLoginForm(event),
+            simpleValidator: simpleValidator.current,
+            handleBlurEmailField: (event) => handleSetEmail(event),
+            handleBlurPasswordField: (event) => handleSetPassword(event),
+            signUpSubmit: (event) => handleSignUpForm(event),
+            redirectIfLoggedIn:() => redirectIfLoggedIn(),
+            logout:() => logout(),
 
-              //Form Reducer
-              useContextChangeState: stateFormReducer.user_textChange,
-              useContextSubmitState: stateFormReducer.user_textSubmit,
-              useContextSubmit: (event) => handleFormSubmit(event),
-              useContextChange: (event) => handleFormChange(event),
+            //Form Reducer
+            useContextChangeState: stateFormReducer.user_textChange,
+            useContextSubmitState: stateFormReducer.user_textSubmit,
+            useContextSubmit: (event) => handleFormSubmit(event),
+            useContextChange: (event) => handleFormChange(event),
 
-              //Posts State
-              postsState: statePostsReducer.posts,
-              handleAddPosts: (posts) => handleSetPosts(posts),
-              handleRemovePosts: () => handleRemovePosts(),
+            //Posts State
+            postsState: statePostsReducer.posts,
+            handleAddPosts: (posts) => handleSetPosts(posts),
+            handleRemovePosts: () => handleRemovePosts(),
 
-              //Handle auth
-              //keep for global state
-              handleAuth: (props) => handleAuthentication(props),
-              authObj: auth
-            }}>
-            {props.children}
-        </Context.Provider>
-      </div>
+            //Handle auth
+            //keep for global state
+            handleAuth: (props) => handleAuthentication(props),
+            authObj: auth
+          }}>
+          {props.children}
+      </Context.Provider>
     )
 }
 

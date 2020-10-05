@@ -7,8 +7,8 @@ import BlogPage from "views/Blog/BlogPage.jsx";
 // material-ui-icons
 import PersonAdd from "material-ui-icons/PersonAdd";
 import Fingerprint from "material-ui-icons/Fingerprint";
-import MonetizationOn from "material-ui-icons/MonetizationOn";
-import LockOpen from "material-ui-icons/LockOpen";
+// import MonetizationOn from "material-ui-icons/MonetizationOn";
+// import LockOpen from "material-ui-icons/LockOpen";
 import Book from "material-ui-icons/Book";
 
 const landingRoutes = [

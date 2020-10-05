@@ -19,10 +19,6 @@ class ConcurrentUserNumber extends Component {
     socket.on("countCurrentUser", ({ count }) => this.setState({ userNumber: count }));
   }
 
-  componentWillMount() {
-    
-  }
-
   componentDidMount() {
     this.openWebSocketConnection()
   }

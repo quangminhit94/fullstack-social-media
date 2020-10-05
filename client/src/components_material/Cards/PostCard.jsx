@@ -55,7 +55,7 @@ function PostCard ({ ...props }) {
           {content}
         </CardContent>
         {footer !== undefined ? (
-            <CardActions disableSpacing
+            <CardActions disablespacing="true"
               className={classes.cardActions + " " + classes[footerAlign]}
             >
               {footer}

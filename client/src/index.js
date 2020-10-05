@@ -12,9 +12,11 @@ import Axios from 'axios';
 Axios.defaults.baseURL = 'http://localhost:5000/'; // test Local
 
 ReactDOM.render(
-  <Provider store={configureStore}>
-    {/* <AppHooks /> */}
-    <MyApp />
-  </Provider>
+  <React.StrictMode>
+    <Provider store={configureStore}>
+      {/* <AppHooks /> */}
+      <MyApp />
+    </Provider>
+  </React.StrictMode>
 , document.getElementById('root'));
 
