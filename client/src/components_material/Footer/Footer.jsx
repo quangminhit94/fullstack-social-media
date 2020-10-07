@@ -11,7 +11,6 @@ import ListItem from "material-ui/List/ListItem";
 // custom component
 import ConcurrentUserNumber from "components_custom/ConcurrentUserNumber.jsx";
 
-
 import footerStyle from "./footerStyle";
 
 function Footer({ ...props }) {
@@ -19,17 +18,17 @@ function Footer({ ...props }) {
   var container = cx({
     [classes.container]: !fluid,
     [classes.containerFluid]: fluid,
-    [classes.whiteColor]: white
+    [classes.whiteColor]: white,
   });
   var anchor =
     classes.a +
     cx({
-      [" " + classes.whiteColor]: white
+      [" " + classes.whiteColor]: white,
     });
   var block = cx({
     [classes.block]: true,
-    [classes.whiteColor]: white
-  })
+    [classes.whiteColor]: white,
+  });
   return (
     <footer className={classes.footer}>
       <div className={container}>
@@ -46,27 +45,22 @@ function Footer({ ...props }) {
               </a>
             </ListItem>
             {routes.map((prop, key) => {
-              if(prop.collapse) {
+              if (prop.collapse) {
                 return prop.views.map((prop, key) => {
-                    return (
-                      <ListItem key={key} className={classes.inlineBlock}>
-                        <NavLink to={prop.path}>
-                          {prop.name}
-                        </NavLink>
-                      </ListItem>
-                    )
-                  }
-                )
+                  return (
+                    <ListItem key={key} className={classes.inlineBlock}>
+                      <NavLink to={prop.path}>{prop.name}</NavLink>
+                    </ListItem>
+                  );
+                });
               }
             })}
-            
+
             <ListItem className={classes.inlineBlock}>
               <a href="#contact" className={block}>
                 {rtlActive ? "بعدسة" : "Contact"}
               </a>
             </ListItem>
-            
-            
           </List>
         </div>
         <p className={classes.right}>
@@ -88,7 +82,7 @@ Footer.propTypes = {
   classes: PropTypes.object.isRequired,
   fluid: PropTypes.bool,
   white: PropTypes.bool,
-  rtlActive: PropTypes.bool
+  rtlActive: PropTypes.bool,
 };
 
 export default withStyles(footerStyle)(Footer);
