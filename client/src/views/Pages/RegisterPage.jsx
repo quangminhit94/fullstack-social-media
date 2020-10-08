@@ -1,20 +1,20 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
 // material-ui components
-import withStyles from "material-ui/styles/withStyles";
-import InputAdornment from "material-ui/Input/InputAdornment";
-import Checkbox from "material-ui/Checkbox";
-import FormControlLabel from "material-ui/Form/FormControlLabel";
+import { withStyles } from "@material-ui/core/styles";
+import InputAdornment from "@material-ui/core/InputAdornment";
+import Checkbox from "@material-ui/core/Checkbox";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
 
 // material-ui-icons
-import Timeline from "material-ui-icons/Timeline";
-import Code from "material-ui-icons/Code";
-import Group from "material-ui-icons/Group";
-import Face from "material-ui-icons/Face";
-import Email from "material-ui-icons/Email";
-import LockOutline from "material-ui-icons/LockOutline";
-import Check from "material-ui-icons/Check";
+import Timeline from "@material-ui/icons/Timeline";
+import Code from "@material-ui/icons/Code";
+import Group from "@material-ui/icons/Group";
+import Face from "@material-ui/icons/Face";
+import Email from "@material-ui/icons/Email";
+import LockOutlined from "@material-ui/icons/LockOutlined";
+import Check from "@material-ui/icons/Check";
 
 // core components
 import GridContainer from "components_material/Grid/GridContainer.jsx";
@@ -27,27 +27,22 @@ import InfoArea from "components_material/InfoArea/InfoArea.jsx";
 
 import registerPageStyle from "./registerPageStyle";
 
-
-
-
 const RegisterPage = (props) => {
   const { classes } = props;
   const [state, setState] = useState({
     checked: [],
-    cardAnimaton: "cardHidden"
+    cardAnimaton: "cardHidden",
   });
   const { checked } = state;
 
   useEffect(() => {
     // we add a hidden class to the card and after 700 ms we delete it and the transition appears
-    setTimeout(
-      function() {
-        setState({ cardAnimaton: "" });
-      }, 100
-    );
-  }, [])
+    setTimeout(function () {
+      setState({ cardAnimaton: "" });
+    }, 100);
+  }, []);
 
-  function handleToggle (value) {
+  function handleToggle(value) {
     const currentIndex = checked.indexOf(value);
     const newChecked = [...checked];
 
@@ -58,7 +53,7 @@ const RegisterPage = (props) => {
     }
 
     setState({
-      checked: newChecked
+      checked: newChecked,
     });
   }
   return (
@@ -112,7 +107,7 @@ const RegisterPage = (props) => {
                     <CustomInput
                       formControlProps={{
                         fullWidth: true,
-                        className: classes.customFormControlClasses
+                        className: classes.customFormControlClasses,
                       }}
                       inputProps={{
                         startAdornment: (
@@ -123,13 +118,13 @@ const RegisterPage = (props) => {
                             <Face className={classes.inputAdornmentIcon} />
                           </InputAdornment>
                         ),
-                        placeholder: "First Name..."
+                        placeholder: "First Name...",
                       }}
                     />
                     <CustomInput
                       formControlProps={{
                         fullWidth: true,
-                        className: classes.customFormControlClasses
+                        className: classes.customFormControlClasses,
                       }}
                       inputProps={{
                         startAdornment: (
@@ -140,13 +135,13 @@ const RegisterPage = (props) => {
                             <Email className={classes.inputAdornmentIcon} />
                           </InputAdornment>
                         ),
-                        placeholder: "Email..."
+                        placeholder: "Email...",
                       }}
                     />
                     <CustomInput
                       formControlProps={{
                         fullWidth: true,
-                        className: classes.customFormControlClasses
+                        className: classes.customFormControlClasses,
                       }}
                       inputProps={{
                         startAdornment: (
@@ -154,18 +149,18 @@ const RegisterPage = (props) => {
                             position="start"
                             className={classes.inputAdornment}
                           >
-                            <LockOutline
+                            <LockOutlined
                               className={classes.inputAdornmentIcon}
                             />
                           </InputAdornment>
                         ),
-                        placeholder: "Password..."
+                        placeholder: "Password...",
                       }}
                     />
                     <FormControlLabel
                       classes={{
                         root: classes.checkboxLabelControl,
-                        label: classes.checkboxLabel
+                        label: classes.checkboxLabel,
                       }}
                       control={
                         <Checkbox
@@ -176,7 +171,7 @@ const RegisterPage = (props) => {
                           }
                           icon={<Check className={classes.uncheckedIcon} />}
                           classes={{
-                            checked: classes.checked
+                            checked: classes.checked,
                           }}
                         />
                       }
@@ -201,10 +196,10 @@ const RegisterPage = (props) => {
       </GridContainer>
     </div>
   );
-}
+};
 
 RegisterPage.propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
 };
 
 export default withStyles(registerPageStyle)(RegisterPage);

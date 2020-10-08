@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 // material-ui components
-import withStyles from "material-ui/styles/withStyles";
+import { withStyles } from "@material-ui/core/styles";
 
 import typographyStyle from "./typographyStyle.jsx";
 
@@ -16,7 +16,7 @@ function Info({ ...props }) {
 }
 
 Info.propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
 };
 
 export default withStyles(typographyStyle)(Info);

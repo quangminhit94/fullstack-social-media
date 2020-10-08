@@ -6,7 +6,7 @@ import {
   primaryColor,
   dangerColor,
   successColor,
-  defaultFont
+  defaultFont,
 } from "assets/jss/material-dashboard-pro-react.jsx";
 
 const customInputStyle = {
@@ -17,50 +17,59 @@ const customInputStyle = {
       backgroundImage:
         "linear-gradient(to right, rgba(0, 0, 0, 0.23) 33%, transparent 0%) !important",
       backgroundRepeat: "repeat-x !important",
-      backgroundPosition: "left top !important"
-    }
+      backgroundPosition: "left top !important",
+    },
   },
   underline: {
     "&:before": {
-      backgroundColor: "#D2D2D2 !important",
-      height: "1px !important"
-    }
-  },
-  inkbar: {
-    "&:after": {
-      backgroundColor: primaryColor,
-      transition: "0.3s ease all"
-    }
-  },
-  inkbarError: {
-    "&:after": {
-      backgroundColor: dangerColor,
-      transition: "0.3s ease all"
+      borderBottom: "1px solid #D2D2D2",
     },
-    "&:before": {
-      backgroundColor: dangerColor + "!important",
-      height: "2px !important"
-    }
-  },
-  inkbarSuccess: {
+    "&:hover:not($disabled):before": {
+      borderBottom: "1px solid " + primaryColor,
+    },
     "&:after": {
-      backgroundColor: successColor,
-      transition: "0.3s ease all"
-    }
+      borderBottom: "1px solid " + primaryColor,
+      transition: "0.3s ease all",
+    },
   },
+  // inkbar: {
+  //   "&:after": {
+  //     backgroundColor: primaryColor,
+  //     transition: "0.3s ease all"
+  //   }
+  // },
+  // inkbarError: {
+  //   "&:after": {
+  //     backgroundColor: dangerColor,
+  //     transition: "0.3s ease all"
+  //   },
+  //   "&:before": {
+  //     backgroundColor: dangerColor + "!important",
+  //     height: "2px !important"
+  //   }
+  // },
+  // inkbarSuccess: {
+  //   "&:after": {
+  //     backgroundColor: successColor,
+  //     transition: "0.3s ease all"
+  //   }
+  // },
   labelRoot: {
     ...defaultFont,
     color: "#AAAAAA",
     fontWeight: "400",
     fontSize: "14px",
     lineHeight: "1.42857",
-    transition: "0.3s ease all"
+    transition: "0.3s ease all",
+    "&.Mui-focused": {
+      color: primaryColor,
+    },
   },
   labelRootError: {
-    color: dangerColor
+    color: dangerColor,
   },
   labelRootSuccess: {
-    color: successColor
+    color: successColor,
   },
   feedback: {
     position: "absolute",
@@ -71,7 +80,7 @@ const customInputStyle = {
     width: "24px",
     height: "24px",
     textAlign: "center",
-    pointerEvents: "none"
+    pointerEvents: "none",
   },
   feedbackNoLabel: {
     // top: "8px"
@@ -84,28 +93,28 @@ const customInputStyle = {
     lineHeight: "1.428571429",
     color: "#555",
     "&[rows]": {
-      height: "auto"
-    }
+      height: "auto",
+    },
   },
   inputNoLabel: {
-    paddingTop: "18px"
+    paddingTop: "18px",
   },
   inputRTL: {
-    textAlign: "right"
+    textAlign: "right",
   },
   inputWithAdornment: {
-    paddingTop: "21px"
+    paddingTop: "21px",
   },
   formControl: {
     paddingBottom: "10px",
-    position: "relative"
+    position: "relative",
   },
   labelWithAdornment: {
-    top: "3px"
+    top: "3px",
   },
   feedbackAdorment: {
-    right: "22px"
-  }
+    right: "22px",
+  },
 };
 
 export default customInputStyle;

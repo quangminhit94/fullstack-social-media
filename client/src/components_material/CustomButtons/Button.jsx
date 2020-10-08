@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 import cx from "classnames";
 
 // material-ui components
-import withStyles from "material-ui/styles/withStyles";
-import Button from "material-ui/Button";
+import { withStyles } from "@material-ui/core/styles";
+import Button from "@material-ui/core/Button";
 
 import buttonStyle from "./buttonStyle";
 
@@ -32,7 +32,7 @@ function RegularButton({ ...props }) {
     [classes.right]: right,
     [classes.justIcon]: justIcon,
     [classes.wd]: wd,
-    [classes[size]]: size
+    [classes[size]]: size,
   });
   return (
     <Button {...rest} className={classes.button + " " + btnClasses}>
@@ -81,7 +81,7 @@ RegularButton.propTypes = {
     "redditNoBackground",
     "white",
     "simple",
-    "transparent"
+    "transparent",
   ]),
   round: PropTypes.bool,
   fullWidth: PropTypes.bool,
@@ -93,7 +93,7 @@ RegularButton.propTypes = {
   justIcon: PropTypes.bool,
   // button will float right
   right: PropTypes.bool,
-  size: PropTypes.oneOf(["sm", "lg", "xs"])
+  size: PropTypes.oneOf(["sm", "lg", "xs"]),
 };
 
 export default withStyles(buttonStyle)(RegularButton);

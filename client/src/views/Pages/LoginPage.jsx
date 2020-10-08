@@ -2,13 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 
 // material-ui components
-import withStyles from "material-ui/styles/withStyles";
-import InputAdornment from "material-ui/Input/InputAdornment";
+import { withStyles } from "@material-ui/core/styles";
+import InputAdornment from "@material-ui/core/InputAdornment";
 
 // material-ui-icons
-import Face from "material-ui-icons/Face";
-import Email from "material-ui-icons/Email";
-import LockOutline from "material-ui-icons/LockOutline";
+import Face from "@material-ui/icons/Face";
+import Email from "@material-ui/icons/Email";
+import LockOutlined from "@material-ui/icons/LockOutlined";
 
 // core components
 import GridContainer from "components_material/Grid/GridContainer.jsx";
@@ -24,13 +24,13 @@ class LoginPage extends React.Component {
     super(props);
     // we use this to make the card to appear after the page has been rendered
     this.state = {
-      cardAnimaton: "cardHidden"
+      cardAnimaton: "cardHidden",
     };
   }
   componentDidMount() {
     // we add a hidden class to the card and after 700 ms we delete it and the transition appears
     setTimeout(
-      function() {
+      function () {
         this.setState({ cardAnimaton: "" });
       }.bind(this),
       100
@@ -58,7 +58,7 @@ class LoginPage extends React.Component {
                   socials={[
                     "fab fa-facebook-square",
                     "fab fa-twitter",
-                    "fab fa-google-plus"
+                    "fab fa-google-plus",
                   ].map((prop, key) => {
                     return (
                       <Button
@@ -77,44 +77,44 @@ class LoginPage extends React.Component {
                         labelText="First Name.."
                         id="firstname"
                         formControlProps={{
-                          fullWidth: true
+                          fullWidth: true,
                         }}
                         inputProps={{
                           endAdornment: (
                             <InputAdornment position="end">
                               <Face className={classes.inputAdornmentIcon} />
                             </InputAdornment>
-                          )
+                          ),
                         }}
                       />
                       <CustomInput
                         labelText="Email..."
                         id="email"
                         formControlProps={{
-                          fullWidth: true
+                          fullWidth: true,
                         }}
                         inputProps={{
                           endAdornment: (
                             <InputAdornment position="end">
                               <Email className={classes.inputAdornmentIcon} />
                             </InputAdornment>
-                          )
+                          ),
                         }}
                       />
                       <CustomInput
                         labelText="Password"
                         id="password"
                         formControlProps={{
-                          fullWidth: true
+                          fullWidth: true,
                         }}
                         inputProps={{
                           endAdornment: (
                             <InputAdornment position="end">
-                              <LockOutline
+                              <LockOutlined
                                 className={classes.inputAdornmentIcon}
                               />
                             </InputAdornment>
-                          )
+                          ),
                         }}
                       />
                     </div>
@@ -130,7 +130,7 @@ class LoginPage extends React.Component {
 }
 
 LoginPage.propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
 };
 
 export default withStyles(loginPageStyle)(LoginPage);

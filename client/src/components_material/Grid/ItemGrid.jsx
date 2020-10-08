@@ -1,13 +1,13 @@
 import React from "react";
 
 // material-ui components
-import withStyles from "material-ui/styles/withStyles";
-import Grid from "material-ui/Grid";
+import { withStyles } from "@material-ui/core/styles";
+import Grid from "@material-ui/core/Grid";
 
 const style = {
   grid: {
-    padding: "0 15px !important"
-  }
+    padding: "0 15px !important",
+  },
 };
 
 function ItemGrid({ ...props }) {

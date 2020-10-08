@@ -11,7 +11,7 @@ import {
   redCardHeader,
   blueCardHeader,
   purpleCardHeader,
-  roseCardHeader
+  roseCardHeader,
 } from "assets/jss/material-dashboard-pro-react.jsx";
 
 const loginCardStyle = {
@@ -20,22 +20,22 @@ const loginCardStyle = {
     boxShadow: "0 1px 4px 0 rgba(0, 0, 0, 0.14)",
     paddingBottom: "20px",
     transform: "translate3d(0, 0, 0)",
-    transition: "all 300ms linear"
+    transition: "all 300ms linear",
   },
   cardPlain: {
     background: "transparent",
-    boxShadow: "none"
+    boxShadow: "none",
   },
   cardHeader: {
     ...cardHeader,
     ...defaultFont,
     textAlign: "center",
     marginTop: "-40px",
-    marginBottom: "20px"
+    marginBottom: "20px",
   },
   cardPlainHeader: {
     marginLeft: 0,
-    marginRight: 0
+    marginRight: 0,
   },
   orangeCardHeader,
   greenCardHeader,
@@ -49,34 +49,34 @@ const loginCardStyle = {
     marginTop: "10px",
     marginBottom: "10px",
     fontWeight: "700",
-    fontSize: "1.3em"
+    fontSize: "1.3em",
   },
   cardSubtitle: {
     ...defaultFont,
     textAlign: "center",
-    fontSize: "14px"
+    fontSize: "14px",
   },
   cardActions: {
     padding: "0",
     display: "block",
-    height: "auto"
+    height: "auto",
   },
   cardContent: {
     padding: "0px 30px",
-    position: "relative"
+    position: "relative",
   },
   inputAdornmentIcon: {
-    color: "#555"
+    color: "#555",
   },
   left: {
-    textAlign: "left"
+    textAlign: "left",
   },
   right: {
-    textAlign: "right"
+    textAlign: "right",
   },
   center: {
-    textAlign: "center"
-  }
+    textAlign: "center",
+  },
 };
 
 export default loginCardStyle;

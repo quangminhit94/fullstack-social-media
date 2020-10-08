@@ -13,10 +13,10 @@ import {
   dangerColor,
   boxShadow,
   drawerWidth,
-  transition
+  transition,
 } from "assets/jss/material-dashboard-pro-react.jsx";
 
-const pagesHeaderStyle = theme => ({
+const pagesHeaderStyle = (theme) => ({
   appBar: {
     backgroundColor: "transparent",
     boxShadow: "none",
@@ -32,14 +32,14 @@ const pagesHeaderStyle = theme => ({
     padding: "10px 0",
     transition: "all 150ms ease 0s",
     minHeight: "50px",
-    display: "block"
+    display: "block",
   },
   container: {
     ...container,
-    minHeight: "50px"
+    minHeight: "50px",
   },
   flex: {
-    flex: 1
+    flex: 1,
   },
   title: {
     ...defaultFont,
@@ -50,36 +50,36 @@ const pagesHeaderStyle = theme => ({
     color: "#FFFFFF",
     "&:hover,&:focus": {
       background: "transparent",
-      color: "#FFFFFF"
-    }
+      color: "#FFFFFF",
+    },
   },
   appResponsive: {
-    top: "8px"
+    top: "8px",
   },
   primary: {
     backgroundColor: primaryColor,
     color: "#FFFFFF",
-    ...defaultBoxShadow
+    ...defaultBoxShadow,
   },
   info: {
     backgroundColor: infoColor,
     color: "#FFFFFF",
-    ...defaultBoxShadow
+    ...defaultBoxShadow,
   },
   success: {
     backgroundColor: successColor,
     color: "#FFFFFF",
-    ...defaultBoxShadow
+    ...defaultBoxShadow,
   },
   warning: {
     backgroundColor: warningColor,
     color: "#FFFFFF",
-    ...defaultBoxShadow
+    ...defaultBoxShadow,
   },
   danger: {
     backgroundColor: dangerColor,
     color: "#FFFFFF",
-    ...defaultBoxShadow
+    ...defaultBoxShadow,
   },
   list: {
     ...defaultFont,
@@ -90,7 +90,7 @@ const pagesHeaderStyle = theme => ({
     listStyle: "none",
     color: "#FFFFFF",
     paddingTop: "0",
-    paddingBottom: "0"
+    paddingBottom: "0",
   },
   listItem: {
     float: "left",
@@ -102,8 +102,8 @@ const pagesHeaderStyle = theme => ({
     [theme.breakpoints.down("sm")]: {
       zIndex: "999",
       width: "100%",
-      paddingRight: "15px"
-    }
+      paddingRight: "15px",
+    },
   },
   navLink: {
     color: "#FFFFFF",
@@ -121,8 +121,8 @@ const pagesHeaderStyle = theme => ({
     textDecoration: "none",
     "&:hover,&:focus": {
       color: "#FFFFFF",
-      background: "rgba(200, 200, 200, 0.2)"
-    }
+      background: "rgba(200, 200, 200, 0.2)",
+    },
   },
   listItemIcon: {
     marginTop: "-3px",
@@ -133,7 +133,7 @@ const pagesHeaderStyle = theme => ({
     height: "20px",
     verticalAlign: "middle",
     color: "inherit",
-    display: "inline-block"
+    display: "inline-block",
   },
   listItemText: {
     flex: "none",
@@ -142,10 +142,10 @@ const pagesHeaderStyle = theme => ({
     margin: 0,
     display: "inline-block",
     position: "relative",
-    whiteSpace: "nowrap"
+    whiteSpace: "nowrap",
   },
   navLinkActive: {
-    backgroundColor: "rgba(255, 255, 255, 0.1)"
+    backgroundColor: "rgba(255, 255, 255, 0.1)",
   },
   drawerPaper: {
     border: "none",
@@ -176,17 +176,17 @@ const pagesHeaderStyle = theme => ({
       height: "100%",
       content: '""',
       display: "block",
-      top: "0"
+      top: "0",
     },
     "&:after": {
       background: "#000",
-      opacity: ".8"
-    }
+      opacity: ".8",
+    },
   },
   sidebarButton: {
     color: "#FFFFFF",
-    top: "8px"
-  }
+    top: "8px",
+  },
 });
 
 export default pagesHeaderStyle;

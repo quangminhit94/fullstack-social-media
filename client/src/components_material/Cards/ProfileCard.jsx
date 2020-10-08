@@ -3,11 +3,11 @@ import cx from "classnames";
 import PropTypes from "prop-types";
 
 // material-ui components
-import withStyles from "material-ui/styles/withStyles";
-import Card from "material-ui/Card";
-import CardContent from "material-ui/Card/CardContent";
-import CardHeader from "material-ui/Card/CardHeader";
-import Typography from "material-ui/Typography";
+import { withStyles } from "@material-ui/core/styles";
+import Card from "@material-ui/core/Card";
+import CardContent from "@material-ui/core/CardContent";
+import CardHeader from "@material-ui/core/CardHeader";
+import Typography from "@material-ui/core/Typography";
 
 import profileCardStyle from "./profileCardStyle";
 
@@ -22,32 +22,32 @@ function ProfileCard({ ...props }) {
     footer,
     customCardClass,
     customCardAvatarClass,
-    customCardFooterClass
+    customCardFooterClass,
   } = props;
   const cardClasses =
     classes.card +
     " " +
     cx({
-      [customCardClass]: customCardClass !== undefined
+      [customCardClass]: customCardClass !== undefined,
     });
   const cardAvatarClass =
     classes.cardAvatar +
     " " +
     cx({
-      [customCardAvatarClass]: customCardAvatarClass !== undefined
+      [customCardAvatarClass]: customCardAvatarClass !== undefined,
     });
   const cardFooterClass =
     classes.cardFooter +
     " " +
     cx({
-      [customCardFooterClass]: customCardFooterClass !== undefined
+      [customCardFooterClass]: customCardFooterClass !== undefined,
     });
   return (
     <Card className={cardClasses}>
       <CardHeader
         classes={{
           root: classes.cardHeader,
-          avatar: cardAvatarClass
+          avatar: cardAvatarClass,
         }}
         avatar={<img src={avatar} alt="..." className={classes.img} />}
       />
@@ -85,7 +85,7 @@ ProfileCard.propTypes = {
   footer: PropTypes.node,
   avatar: PropTypes.string,
   customCardClass: PropTypes.string,
-  customCardAvatarClass: PropTypes.string
+  customCardAvatarClass: PropTypes.string,
 };
 
 export default withStyles(profileCardStyle)(ProfileCard);

@@ -4,9 +4,9 @@ import cx from "classnames";
 import { NavLink } from "react-router-dom";
 
 // material-ui components
-import withStyles from "material-ui/styles/withStyles";
-import List from "material-ui/List";
-import ListItem from "material-ui/List/ListItem";
+import { withStyles } from "@material-ui/core/styles";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
 
 // custom component
 import ConcurrentUserNumber from "components_custom/ConcurrentUserNumber.jsx";

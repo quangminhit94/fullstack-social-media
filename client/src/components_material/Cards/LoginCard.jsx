@@ -3,11 +3,11 @@ import PropTypes from "prop-types";
 import cx from "classnames";
 
 // material-ui components
-import withStyles from "material-ui/styles/withStyles";
-import Card from "material-ui/Card";
-import CardContent from "material-ui/Card/CardContent";
-import CardHeader from "material-ui/Card/CardHeader";
-import CardActions from "material-ui/Card/CardActions";
+import { withStyles } from "@material-ui/core/styles";
+import Card from "@material-ui/core/Card";
+import CardContent from "@material-ui/core/CardContent";
+import CardHeader from "@material-ui/core/CardHeader";
+import CardActions from "@material-ui/core/CardActions";
 
 import loginCardStyle from "./loginCardStyle.jsx";
 
@@ -22,21 +22,21 @@ function LoginCard({ ...props }) {
     footer,
     socials,
     footerAlign,
-    customCardClass
+    customCardClass,
   } = props;
   const plainCardClasses = cx({
     [" " + classes.cardPlain]: plainCard, // plainCard true turn to transparent
-    [" " + customCardClass]: customCardClass !== undefined // if has cardHidden
-  }); // cx will join the object to text with space between them example 
+    [" " + customCardClass]: customCardClass !== undefined, // if has cardHidden
+  }); // cx will join the object to text with space between them example
   const testCx = cx({
     ["a"]: true,
-    [" " + customCardClass]: customCardClass
-  })
-  console.log("LoginCard -> testCx:", testCx)
-  const cardPlainHeaderClasses = cx({
-    [" " + classes.cardPlainHeader]: plainCard
+    [" " + customCardClass]: customCardClass,
   });
-  
+  console.log("LoginCard -> testCx:", testCx);
+  const cardPlainHeaderClasses = cx({
+    [" " + classes.cardPlainHeader]: plainCard,
+  });
+
   return (
     <Card className={classes.card + plainCardClasses}>
       <CardHeader
@@ -47,7 +47,7 @@ function LoginCard({ ...props }) {
             classes[headerColor + "CardHeader"] +
             cardPlainHeaderClasses,
           title: classes.cardTitle,
-          subheader: classes.cardSubtitle
+          subheader: classes.cardSubtitle,
         }}
         title={cardTitle}
         subheader={socials}
@@ -66,7 +66,7 @@ function LoginCard({ ...props }) {
 }
 
 LoginCard.defaultProps = {
-  headerColor: "purple"
+  headerColor: "purple",
 };
 
 LoginCard.propTypes = {
@@ -78,7 +78,7 @@ LoginCard.propTypes = {
     "red",
     "blue",
     "purple",
-    "rose"
+    "rose",
   ]),
   cardTitle: PropTypes.node,
   cardSubtitle: PropTypes.node,
@@ -86,7 +86,7 @@ LoginCard.propTypes = {
   footer: PropTypes.node,
   socials: PropTypes.node,
   footerAlign: PropTypes.oneOf(["left", "right", "center"]),
-  customCardClass: PropTypes.string
+  customCardClass: PropTypes.string,
 };
 
 export default withStyles(loginCardStyle)(LoginCard);

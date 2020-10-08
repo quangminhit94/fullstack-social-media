@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 import cx from "classnames";
 
 // material-ui components
-import withStyles from "material-ui/styles/withStyles";
-import IconButton from "material-ui/IconButton";
+import { withStyles } from "@material-ui/core/styles";
+import IconButton from "@material-ui/core/IconButton";
 
 import iconButtonStyle from "./iconButtonStyle";
 
@@ -14,7 +14,7 @@ function IconCustomButton({ ...props }) {
     classes.button +
     cx({
       [" " + classes[color]]: color,
-      [" " + customClass]: customClass
+      [" " + customClass]: customClass,
     });
   return (
     <IconButton {...rest} className={buttonClasses}>
@@ -62,10 +62,10 @@ IconCustomButton.propTypes = {
     "dribbble",
     "dribbbleNoBackground",
     "reddit",
-    "redditNoBackground"
+    "redditNoBackground",
   ]),
   customClass: PropTypes.string,
-  disabled: PropTypes.bool
+  disabled: PropTypes.bool,
 };
 
 export default withStyles(iconButtonStyle)(IconCustomButton);

@@ -3,15 +3,15 @@ import PropTypes from "prop-types";
 import cx from "classnames";
 
 // material-ui components
-import withStyles from "material-ui/styles/withStyles";
-import FormControl from "material-ui/Form/FormControl";
-import FormHelperText from "material-ui/Form/FormHelperText";
-import Input from "material-ui/Input";
-import InputLabel from "material-ui/Input/InputLabel";
+import { withStyles } from "@material-ui/core/styles";
+import FormControl from "@material-ui/core/FormControl";
+import FormHelperText from "@material-ui/core/FormHelperText";
+import Input from "@material-ui/core/Input";
+import InputLabel from "@material-ui/core/InputLabel";
 
 // material-ui-icons
-import Clear from "material-ui-icons/Clear";
-import Check from "material-ui-icons/Check";
+import Clear from "@material-ui/icons/Clear";
+import Check from "@material-ui/icons/Check";
 
 import customInputStyle from "./customInputStyle";
 
@@ -26,19 +26,19 @@ function CustomInput({ ...props }) {
     error,
     success,
     helpText,
-    rtlActive
+    rtlActive,
   } = props;
 
   var labelClasses = cx({
     [" " + classes.labelRootError]: error,
-    [" " + classes.labelRootSuccess]: success && !error
+    [" " + classes.labelRootSuccess]: success && !error,
   });
 
-  const inkbarClasses  = cx({
-    [classes.inkbarError]: error,
-    [classes.inkbarSuccess]: success && !error,
-    [classes.inkbar]: !success && !error
-  });
+  // const inkbarClasses = cx({
+  //   [classes.inkbarError]: error,
+  //   [classes.inkbarSuccess]: success && !error,
+  //   [classes.inkbar]: !success && !error,
+  // });
   var formControlClasses = classes.formControl;
   if (formControlProps !== undefined) {
     formControlClasses += " " + formControlProps.className;
@@ -52,10 +52,10 @@ function CustomInput({ ...props }) {
         [classes.inputWithAdornment]:
           (inputProps.startAdornment !== undefined ||
             inputProps.endAdornment !== undefined) &&
-          labelText === undefined
+          labelText === undefined,
       });
     underlineClasses = cx({
-      [classes.underline]: inputProps.disabled !== true
+      [classes.underline]: inputProps.disabled !== true,
     });
   }
   if (inputProps !== undefined) {
@@ -63,7 +63,7 @@ function CustomInput({ ...props }) {
       labelClasses +
       " " +
       cx({
-        [classes.labelWithAdornment]: inputProps.endAdornment !== undefined
+        [classes.labelWithAdornment]: inputProps.endAdornment !== undefined,
       });
   }
   const successClasses =
@@ -74,7 +74,7 @@ function CustomInput({ ...props }) {
     cx({
       [classes.feedbackNoLabel]: labelText === undefined,
       [classes.feedbackAdorment]:
-        inputProps !== undefined && inputProps.endAdornment !== undefined
+        inputProps !== undefined && inputProps.endAdornment !== undefined,
     });
   const errorClasses =
     classes.feedback +
@@ -84,14 +84,14 @@ function CustomInput({ ...props }) {
     cx({
       [classes.feedbackNoLabel]: labelText === undefined,
       [classes.feedbackAdorment]:
-        inputProps !== undefined && inputProps.endAdornment !== undefined
+        inputProps !== undefined && inputProps.endAdornment !== undefined,
     });
   const input =
     classes.input +
     " " +
     cx({
       [classes.inputRTL]: rtlActive,
-      [classes.inputNoLabel]: labelText === undefined
+      [classes.inputNoLabel]: labelText === undefined,
     });
   return (
     <FormControl
@@ -113,7 +113,7 @@ function CustomInput({ ...props }) {
           input: input,
           disabled: classes.disabled,
           underline: underlineClasses,
-          inkbar: inkbarClasses
+          // inkbar: inkbarClasses,
         }}
         id={id}
         {...inputProps}
@@ -140,7 +140,7 @@ CustomInput.propTypes = {
   error: PropTypes.bool,
   success: PropTypes.bool,
   helpText: PropTypes.string,
-  rtlActive: PropTypes.bool
+  rtlActive: PropTypes.bool,
 };
 
 export default withStyles(customInputStyle)(CustomInput);

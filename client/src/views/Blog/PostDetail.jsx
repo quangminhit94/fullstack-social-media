@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import { connect } from "react-redux";
 import { compose } from "redux";
 
-import withStyles from "material-ui/styles/withStyles";
+import { withStyles } from "@material-ui/core/styles";
 
 // core components
 import GridContainer from "components_material/Grid/GridContainer.jsx";

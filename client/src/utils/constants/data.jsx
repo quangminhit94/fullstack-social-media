@@ -1,20 +1,20 @@
 import React from "react";
 
 // material-ui-icons
-import CardTravel from "material-ui-icons/CardTravel";
-import Extension from "material-ui-icons/Extension";
-import Fingerprint from "material-ui-icons/Fingerprint";
-import FlightLand from "material-ui-icons/FlightLand";
-import Build from "material-ui-icons/Build";
-import History from "material-ui-icons/History";
-import Favorite from "material-ui-icons/Favorite";
+import CardTravel from "@material-ui/icons/CardTravel";
+import Extension from "@material-ui/icons/Extension";
+import Fingerprint from "@material-ui/icons/Fingerprint";
+import FlightLand from "@material-ui/icons/FlightLand";
+import Build from "@material-ui/icons/Build";
+import History from "@material-ui/icons/History";
+import Favorite from "@material-ui/icons/Favorite";
 
 // core component
-import Info from "components_material/Typography/Info"
-import Primary from "components_material/Typography/Primary"
-import Muted from "components_material/Typography/Muted"
-import Danger from "components_material/Typography/Danger"
-import Success from "components_material/Typography/Success"
+import Info from "components_material/Typography/Info";
+import Primary from "components_material/Typography/Primary";
+import Muted from "components_material/Typography/Muted";
+import Danger from "components_material/Typography/Danger";
+import Success from "components_material/Typography/Success";
 
 // ##############################
 // // // stories for Widgets view
@@ -30,15 +30,11 @@ const widgetStories = [
     titleColor: "info",
     body: (
       <div>
-        <p>
-          2019 - 2020: Javscript Developer at Tairapromote
-        </p>
-        <p>
-          2017 - 2018: Javscript Developer at Sutrix Media
-        </p>
+        <p>2019 - 2020: Javscript Developer at Tairapromote</p>
+        <p>2017 - 2018: Javscript Developer at Sutrix Media</p>
       </div>
     ),
-    footerTitle: null
+    footerTitle: null,
   },
   {
     // Second story
@@ -49,14 +45,10 @@ const widgetStories = [
     titleColor: "info",
     body: (
       <div>
-        <p>
-          2016: Graduated from FPT
-        </p>
-        <Success>
-          GPA: 8.3
-        </Success>
+        <p>2016: Graduated from FPT</p>
+        <Success>GPA: 8.3</Success>
       </div>
-    )
+    ),
   },
   {
     // Third story
@@ -68,14 +60,10 @@ const widgetStories = [
     titleColor: "info",
     body: (
       <div>
-        <p>
-          Read books
-        </p>
+        <p>Read books</p>
       </div>
-    )
-  }
+    ),
+  },
 ];
 
-export {
-  widgetStories
-}
+export { widgetStories };

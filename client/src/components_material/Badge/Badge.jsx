@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 // material-ui components
-import withStyles from "material-ui/styles/withStyles";
+import { withStyles } from "@material-ui/core/styles";
 
 import badgeStyle from "./badgeStyle.jsx";
 
@@ -22,8 +22,8 @@ Badge.propTypes = {
     "success",
     "info",
     "rose",
-    "gray"
-  ])
+    "gray",
+  ]),
 };
 
 export default withStyles(badgeStyle)(Badge);

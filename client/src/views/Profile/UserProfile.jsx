@@ -1,6 +1,6 @@
-import React from 'react'
+import React from "react";
 
-import withStyles from "material-ui/styles/withStyles";
+import { withStyles } from "@material-ui/core/styles";
 
 // core component
 import GridContainer from "components_material/Grid/GridContainer.jsx";
@@ -29,21 +29,28 @@ const UserProfile = (props) => {
             description="Teamwork is the key of success"
             content={
               <div>
-                <Button 
-                  justIcon color="linkedin" 
-                  target="_blank" 
-                  href="https://www.linkedin.com/in/nguy%E1%BB%85n-quang-minh-364701145/">
+                <Button
+                  justIcon
+                  color="linkedin"
+                  target="_blank"
+                  href="https://www.linkedin.com/in/nguy%E1%BB%85n-quang-minh-364701145/"
+                >
                   <i className={"fab fa-linkedin"} />
                 </Button>
-                <Button 
-                  justIcon color="github" 
-                  target="_blank" 
-                  href="https://github.com/quangminhit94/my-profile">
+                <Button
+                  justIcon
+                  color="github"
+                  target="_blank"
+                  href="https://github.com/quangminhit94/my-profile"
+                >
                   <i className={"fab fa-github"} />
                 </Button>
-                <Button justIcon color="facebook" 
-                  target="_blank" 
-                  href="https://www.facebook.com/minhcolor9999">
+                <Button
+                  justIcon
+                  color="facebook"
+                  target="_blank"
+                  href="https://www.facebook.com/minhcolor9999"
+                >
                   <i className={"fab fa-facebook"} />
                 </Button>
               </div>
@@ -62,8 +69,7 @@ const UserProfile = (props) => {
         </ItemGrid>
       </GridContainer>
     </div>
-      
-  )
-}
+  );
+};
 
 export default withStyles(userProfileStyle)(UserProfile);

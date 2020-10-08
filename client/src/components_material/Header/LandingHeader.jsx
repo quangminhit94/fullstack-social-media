@@ -1,52 +1,51 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 import cx from "classnames";
 import PropTypes from "prop-types";
 import { NavLink, useLocation } from "react-router-dom";
 
 // material-ui components
-import withStyles from "material-ui/styles/withStyles";
-import AppBar from "material-ui/AppBar";
-import Toolbar from "material-ui/Toolbar";
-import IconButton from "material-ui/IconButton";
-import Button from "material-ui/Button";
-import Hidden from "material-ui/Hidden";
-import Drawer from "material-ui/Drawer";
-import List from "material-ui/List";
-import ListItem from "material-ui/List/ListItem";
-import ListItemIcon from "material-ui/List/ListItemIcon";
-import ListItemText from "material-ui/List/ListItemText";
+import { withStyles } from "@material-ui/core/styles";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import IconButton from "@material-ui/core/IconButton";
+import Button from "@material-ui/core/Button";
+import Hidden from "@material-ui/core/Hidden";
+import Drawer from "@material-ui/core/Drawer";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+// import ListItemIcon from "@material-ui/core/ListItemIcon";
+import ListItemText from "@material-ui/core/ListItemText";
 
 // material-ui-icons
-import Dashboard from "material-ui-icons/Dashboard";
-import Menu from "material-ui-icons/Menu";
+import Dashboard from "@material-ui/icons/Dashboard";
+import Menu from "@material-ui/icons/Menu";
 
 // import landingRoutes from "routes/landing.jsx";
 
 import pagesHeaderStyle from "./pagesHeaderStyle.jsx";
 
-const LandingHeader = (props) => {
+function LandingHeader(props) {
   const { classes, color, routes } = props;
   const appBarClasses = cx({
-    [" " + classes[color]]: color
+    [" " + classes[color]]: color,
   });
-  
+
   const location = useLocation();
-  const [openState, setStateOpen] = useState({open: false})
+  const [openState, setStateOpen] = useState({ open: false });
   const handleDrawerToggle = () => {
-    setStateOpen({ open: !openState.open })
+    setStateOpen({ open: !openState.open });
     console.log(openState);
   };
   function activeRoute(routeName) {
-
     return location.pathname.indexOf(routeName) > -1 ? true : false;
   }
   var list = (
     <List className={classes.list}>
       <ListItem className={classes.listItem}>
         <NavLink to={"/admin"} className={classes.navLink}>
-          <ListItemIcon className={classes.listItemIcon}>
-            <Dashboard />
-          </ListItemIcon>
+          {/* <ListItemIcon > */}
+          <Dashboard className={classes.listItemIcon} />
+          {/* </ListItemIcon> */}
           <ListItemText
             primary={"Admin"}
             disableTypography={true}
@@ -64,14 +63,14 @@ const LandingHeader = (props) => {
         const navLink =
           classes.navLink +
           cx({
-            [" " + classes.navLinkActive]: activeRoute(prop.path)
+            [" " + classes.navLinkActive]: activeRoute(prop.path),
           });
         return (
           <ListItem key={key} className={classes.listItem}>
             <NavLink to={prop.path} className={navLink}>
-              <ListItemIcon className={classes.listItemIcon}>
-                <prop.icon />
-              </ListItemIcon>
+              {/* <ListItemIcon className={classes.listItemIcon}> */}
+              <prop.icon className={classes.listItemIcon} />
+              {/* </ListItemIcon> */}
               <ListItemText
                 primary={prop.short}
                 disableTypography={true}
@@ -83,7 +82,6 @@ const LandingHeader = (props) => {
       })}
     </List>
   );
-  
 
   return (
     <AppBar position="static" className={classes.appBar + appBarClasses}>
@@ -113,11 +111,11 @@ const LandingHeader = (props) => {
               anchor={"right"}
               open={openState.open}
               classes={{
-                paper: classes.drawerPaper
+                paper: classes.drawerPaper,
               }}
               onClose={handleDrawerToggle}
               ModalProps={{
-                keepMounted: true // Better open performance on mobile.
+                keepMounted: true, // Better open performance on mobile.
               }}
             >
               {list}
@@ -126,7 +124,7 @@ const LandingHeader = (props) => {
         </Hidden>
       </Toolbar>
     </AppBar>
-  )
+  );
 }
 
 export default withStyles(pagesHeaderStyle)(LandingHeader);

@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 // material-ui components
-import withStyles from "material-ui/styles/withStyles";
+import { withStyles } from "@material-ui/core/styles";
 
 import infoStyle from "./infoStyle";
 
@@ -22,7 +22,7 @@ function InfoArea({ ...props }) {
 }
 
 InfoArea.defaultProps = {
-  iconColor: "gray"
+  iconColor: "gray",
 };
 
 InfoArea.propTypes = {
@@ -37,8 +37,8 @@ InfoArea.propTypes = {
     "success",
     "info",
     "rose",
-    "gray"
-  ])
+    "gray",
+  ]),
 };
 
 export default withStyles(infoStyle)(InfoArea);

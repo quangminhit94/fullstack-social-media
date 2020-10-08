@@ -3,10 +3,10 @@ import PropTypes from "prop-types";
 import cx from "classnames";
 
 // material-ui components
-import withStyles from "material-ui/styles/withStyles";
-import Card from "material-ui/Card";
-import CardContent from "material-ui/Card/CardContent";
-import CardHeader from "material-ui/Card/CardHeader";
+import { withStyles } from "@material-ui/core/styles";
+import Card from "@material-ui/core/Card";
+import CardContent from "@material-ui/core/CardContent";
+import CardHeader from "@material-ui/core/CardHeader";
 
 import regularCardStyle from "./regularCardStyle";
 
@@ -21,13 +21,13 @@ function RegularCard({ ...props }) {
     customCardClasses,
     contentAlign,
     subtitleAlign,
-    customCardTitleClasses
+    customCardTitleClasses,
   } = props;
   const cardClasses =
     classes.card +
     cx({
       [" " + classes.cardPlain]: plainCard,
-      [" " + customCardClasses]: customCardClasses !== undefined
+      [" " + customCardClasses]: customCardClasses !== undefined,
     });
   return (
     <Card className={cardClasses}>
@@ -35,8 +35,13 @@ function RegularCard({ ...props }) {
         <CardHeader
           classes={{
             root: classes.cardHeader,
-            title: classes.cardTitle + " " + classes[titleAlign] + " " + customCardTitleClasses,
-            subheader: classes.cardSubtitle + " " + classes[subtitleAlign]
+            title:
+              classes.cardTitle +
+              " " +
+              classes[titleAlign] +
+              " " +
+              customCardTitleClasses,
+            subheader: classes.cardSubtitle + " " + classes[subtitleAlign],
           }}
           title={cardTitle}
           subheader={cardSubtitle}
@@ -61,7 +66,7 @@ RegularCard.propTypes = {
   content: PropTypes.node,
   titleAlign: PropTypes.oneOf(["right", "left", "center"]),
   contentAlign: PropTypes.oneOf(["right", "left", "center"]),
-  subtitleAlign: PropTypes.oneOf(["right", "left", "center"])
+  subtitleAlign: PropTypes.oneOf(["right", "left", "center"]),
 };
 
 export default withStyles(regularCardStyle)(RegularCard);

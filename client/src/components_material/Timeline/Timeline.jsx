@@ -3,7 +3,7 @@ import cx from "classnames";
 import PropTypes from "prop-types";
 
 // material-ui components
-import withStyles from "material-ui/styles/withStyles";
+import { withStyles } from "@material-ui/core/styles";
 
 // core components
 import Badge from "components_material/Badge/Badge.jsx";
@@ -16,7 +16,7 @@ function Timeline({ ...props }) {
     classes.timeline +
     " " +
     cx({
-      [classes.timelineSimple]: simple
+      [classes.timelineSimple]: simple,
     });
   return (
     <ul className={timelineClass}>
@@ -26,7 +26,7 @@ function Timeline({ ...props }) {
           " " +
           cx({
             [classes.timelinePanelInverted]: prop.inverted,
-            [classes.timelineSimplePanel]: simple
+            [classes.timelineSimplePanel]: simple,
           });
         const timelineBadgeClasses =
           classes.timelineBadge +
@@ -34,10 +34,13 @@ function Timeline({ ...props }) {
           classes[prop.badgeColor] +
           " " +
           cx({
-            [classes.timelineSimpleBadge]: simple
+            [classes.timelineSimpleBadge]: simple,
           });
         return (
-          <li className={prop.hideBargeLine ? classes.finalItem : classes.item} key={key}>
+          <li
+            className={prop.hideBargeLine ? classes.finalItem : classes.item}
+            key={key}
+          >
             {prop.badgeIcon ? (
               <div className={timelineBadgeClasses}>
                 <prop.badgeIcon className={classes.badgeIcon} />
@@ -68,7 +71,7 @@ function Timeline({ ...props }) {
 Timeline.propTypes = {
   classes: PropTypes.object.isRequired,
   stories: PropTypes.arrayOf(PropTypes.object).isRequired,
-  simple: PropTypes.bool
+  simple: PropTypes.bool,
 };
 
 export default withStyles(timelineStyle)(Timeline);
