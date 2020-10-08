@@ -43,8 +43,8 @@ const landingRoutes = [
     state: "openPages",
     views: [
       {
-        path: "/blog/blog_page",
-        name: "Blog Page",
+        path: "/blog/posts",
+        name: "Blog",
         component: BlogPage,
       },
       {

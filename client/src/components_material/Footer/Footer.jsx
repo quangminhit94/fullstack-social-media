@@ -46,13 +46,14 @@ function Footer({ ...props }) {
             </ListItem>
             {routes.map((prop, key) => {
               if (prop.collapse) {
-                return prop.views.map((prop, key) => {
-                  return (
-                    <ListItem key={key} className={classes.inlineBlock}>
-                      <NavLink to={prop.path}>{prop.name}</NavLink>
-                    </ListItem>
-                  );
-                });
+                const { path, name } = prop.views[0];
+                // return prop.views.map((prop, key) => {
+                return (
+                  <ListItem className={classes.inlineBlock}>
+                    <NavLink to={path}>{name}</NavLink>
+                  </ListItem>
+                );
+                // });
               }
             })}
 

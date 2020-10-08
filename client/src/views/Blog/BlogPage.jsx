@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState, Fragment } from "react";
 import Axios from "axios";
 import { connect } from "react-redux";
 import { compose } from "redux";
-
+import { Link } from "react-router-dom";
 // context
 import { PostContext } from "utils/context/PostContextState";
 
@@ -85,7 +85,16 @@ const BlogPage = (props) => {
                 <ItemGrid xs={12} sm={6} md={6}>
                   <PostCard
                     headerColor="blue"
-                    cardTitle={<p>{post.title}</p>}
+                    cardTitle={
+                      <Link
+                        to={{
+                          pathname: `/blog/posts/${post.pid}/comments`,
+                          state: { post },
+                        }}
+                      >
+                        {post.title}
+                      </Link>
+                    }
                     cardSubtitle={<p>cardSubtitle</p>}
                     content={<span>{post.body}</span>}
                     footer={
