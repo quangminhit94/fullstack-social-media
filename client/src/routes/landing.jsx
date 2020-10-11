@@ -48,7 +48,7 @@ const landingRoutes = [
         component: BlogPage,
       },
       {
-        path: "/blog/posts/:pid/comments",
+        path: "/blog/post/:pid/comments",
         name: "Post and Comment",
         component: PostDetail,
       },
